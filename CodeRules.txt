@@ -1,0 +1,25 @@
+
+
+variables, camelCase
+methods, PascalCase
+comments start with // -- and are placed on same line after relevant code
+
+// comments before methods and nested statements giving short explanation
+
+limit to 3 nested statements
+
+
+global variables:
+    playerInput
+    mapBoundsX
+    mapBoundsY
+    playerPos
+    mapSeed
+
+
+segment your write statements to fit within visual studio bounds
+
+keep animations within 40, 20
+text under animations
+
+

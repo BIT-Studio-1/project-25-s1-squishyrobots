@@ -1,0 +1,16 @@
+
+
+
+    Communication:
+Communicate intent to adjust document in teams or in person to entire group.
+Only adjust code between 8am and 9pm 
+During these times, keep an eye on Teams
+If you aren't going to be in class, alert the group chat
+If you need help, discuss in the group chat
+If you don't understand code in the project, ask the group chat
+
+
+    Tasks:
+Issues should not take longer than a week to fix/complete
+Discuss all ideas with group before implementing 
+

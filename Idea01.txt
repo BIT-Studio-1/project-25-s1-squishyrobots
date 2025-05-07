@@ -1,0 +1,5 @@
+
+rooms as multiple documents
+switch statements of choices and room selection
+exit while loop in main
+
