@@ -1,5 +1,116 @@
 
+// Remember it's trash can, not trash cannot.
+
+
+
+
 rooms as multiple documents
 switch statements of choices and room selection
 exit while loop in main
+
+
+
+Location:
+    Infested space station
+
+Possible rooms:
+    shuttle bay -- start room * 2
+    escape pods -- end room * 1
+
+    captain quarters -- contains key to end room * 1
+    bridge -- turn on power for lore * 1
+    engine room * 1
+
+    med bay * 3
+
+    crew quarters( * 3. xbounds -3 !> xbounds - 3) * 1
+    
+    mess hall * 2
+    brig * 2
+    library w/ pool * 1
+    store room * 3
+    
+    engineering bay *1
+    rec room * 2
+    bathroom * 4
+ 
+    science room * 1
+    green house * 3
+
+    hallways * rest
+
+
+string[] playerHistory
+
+
+main sets up loop
+    while playing
+        start in room.
+        ask for input
+        repeat back input.
+        do the thing
+
+
+
+interactables
+    key - collect
+    bookshelf - read bookshelf
+    computer - if power on then read 
+    storage(box,locker,etc)
+    window - nothing outside
+    trash can - you find trash - you may find portable trash compactor (if you found every trashcan) -- insta-kills boss
+
+
+
+
+RoomClass
+    position in mapSeed int
+    rand 3 int items spawned
+
+
+
+
+
+rooms  (input)
+    generate things in room.
+
+    recieve input:
+    
+
+    interact switch
+        objects
+        cardinal direction movement between rooms
+        talk - interaction with npc?
+        
+
+
+set final room in global var if using rand room access
+
+set discovered rooms 
+
+
+
+global variables:
+    Map variables:
+        mapBoundsX  int
+        mapBoundsY int
+        mapSeed int
+        powerOn bool
+        trashCanCount int
+        mapArray roomClass
+
+    Player variables
+        playerInput string
+        playerPos int
+        playerHealthMax int
+        playerHealthCurrent int
+        
+        trashCansChecked int
+
+    Interactable variables
+        hasGreenkey bool
+        hasBluekey bool
+        hasRedkey bool
+        hasMiscItem bool
+
 

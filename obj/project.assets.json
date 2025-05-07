@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\BITY_Y1Projects\\project-25-s1-squishyrobots\\SquishyRobotGame\\SquishyRobotGame.csproj",
+      "projectUniqueName": "H:\\BITY_Y1Projects\\project-25-s1-squishyrobots\\SquishyRobotGame.csproj",
       "projectName": "SquishyRobotGame",
-      "projectPath": "H:\\BITY_Y1Projects\\project-25-s1-squishyrobots\\SquishyRobotGame\\SquishyRobotGame.csproj",
+      "projectPath": "H:\\BITY_Y1Projects\\project-25-s1-squishyrobots\\SquishyRobotGame.csproj",
       "packagesPath": "C:\\Users\\churaa1\\.nuget\\packages\\",
-      "outputPath": "H:\\BITY_Y1Projects\\project-25-s1-squishyrobots\\SquishyRobotGame\\obj\\",
+      "outputPath": "H:\\BITY_Y1Projects\\project-25-s1-squishyrobots\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
