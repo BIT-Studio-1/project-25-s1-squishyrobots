@@ -8,13 +8,14 @@ rooms as multiple documents
 switch statements of choices and room selection
 exit while loop in main
 
-
+a0 start room
+b0  
 
 Location:
     Infested space station
 
 Possible rooms:
-    shuttle bay -- start room * 2
+    shuttle bay -- start room * 1
     escape pods -- end room * 1
 
     captain quarters -- contains key to end room * 1
@@ -74,7 +75,7 @@ RoomClass
 rooms  (input)
     generate things in room.
 
-    recieve input:
+    receive input:
     
 
     interact switch
