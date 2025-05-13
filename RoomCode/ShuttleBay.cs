@@ -13,6 +13,27 @@ public static class ShuttleBay
         Player.GetInput();
 
 
+
+
+
+
+
+        switch (Player.input.ToLower())
+        {
+            case "escape pods":
+                Console.WriteLine("You choose the escape pods");
+                EscapePods.start();
+                break;
+
+            case "engine room":
+                Console.WriteLine("You choose the engine room");
+                EngineRoom.start();
+                break;
+            default:
+                Console.WriteLine("Invalid option");
+                break;
+        }
+
     }
 
 

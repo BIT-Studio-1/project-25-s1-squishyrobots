@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Ignore Spelling: interactibles
+
+using System;
 using System.Xml.Serialization;
 
 
@@ -17,7 +19,7 @@ namespace Globals
     {
         public string roomName = "Null";
         public string[] surroundingRoomNames;
-        public Interactible[] interactibles;
+        public Interactible[] interactables;
 
 
         /// <summary>
@@ -27,7 +29,7 @@ namespace Globals
         {
             this.roomName = roomName;
             this.surroundingRoomNames = surroundingRooms;
-            this.interactibles = interactibles;
+            this.interactables = interactibles;
 
         }
 
@@ -78,6 +80,12 @@ namespace Globals
         }
 
 
+        public static string[] options;
+        
+
+
+
+
 
     }
 
@@ -96,14 +104,51 @@ namespace Globals
         // generating a list of rooms
         public static List<Room> roomNames =
             [
-            new Room("Escape Pods", new string[] { "Shuttle Bay", "Engine Room" }, new Interactible[] { new Interactible() }),
-            new Room("Shuttle Bay", new string[] { "Escape Pods", "Engine Room" }, new Interactible[] { new Interactible() }),
+                // modular hallway rooms template
+            //new Room("Escape Pods", new string[] { "Shuttle Bay", "Engine Room" }, new Interactible[] { new Interactible() }), // input all interactibles within room
+            //new Room("Shuttle Bay", new string[] { "Escape Pods", "Storage", "Hallway" }, new Interactible[] { new Interactible() }),
+            //new Room("Engine Room", new string[] { "Escape Pods", "Brig", "Hallway" }, new Interactible[] { new Interactible() }),
+            //new Room("Bridge", new string[] { "Hallway" }, new Interactible[] { new Interactible() }),
+            //new Room("Lab", new string[] { "Storage", "Greenhouse", "Hallway" }, new Interactible[] { new Interactible() }),
+            //new Room("Storage", new string[] { "Shuttle Bay", "Lab" }, new Interactible[] { new Interactible() }),
+            //new Room("Brig", new string[] { "Engine Room" }, new Interactible[] { new Interactible() }),
+            //new Room("Mess Hall", new string[] { "Hallway" }, new Interactible[] { new Interactible() }),
+            //new Room("Medical Bay", new string[] { "Hallway" }, new Interactible[] { new Interactible() }),
+            //new Room("Captain Quarters", new string[] { "Hallway" }, new Interactible[] { new Interactible() }),
+            //new Room("Recreational Room", new string[] { "Hallway" }, new Interactible[] { new Interactible() }),
+            //new Room("Library", new string[] { "Hallway" }, new Interactible[] { new Interactible() }),
+            //new Room("Crew Quarters", new string[] { "Hallway" }, new Interactible[] { new Interactible() }),
+
+
+                // non-modular hallway rooms
+            new Room("Escape Pods", new string[] { "Shuttle Bay", "Engine Room" }, new Interactible[] { new Interactible() }), // input all interactibles within room
+            new Room("Shuttle Bay", new string[] { "Escape Pods", "Storage", "Hallway1" }, new Interactible[] { new Interactible() }),
+            new Room("Engine Room", new string[] { "Escape Pods", "Brig", "Hallway1" }, new Interactible[] { new Interactible() }),
+            new Room("Bridge", new string[] { "Hallway7" }, new Interactible[] { new Interactible() }),
+            new Room("Lab", new string[] { "Storage", "Greenhouse", "Hallway1" }, new Interactible[] { new Interactible() }),
+            new Room("Storage", new string[] { "Shuttle Bay", "Lab" }, new Interactible[] { new Interactible() }),
+            new Room("Brig", new string[] { "Engine Room" }, new Interactible[] { new Interactible() }),
+            new Room("Mess Hall", new string[] { "Hallway3", "Hallway4" }, new Interactible[] { new Interactible() }),
+            new Room("Medical Bay", new string[] { "Hallway4" }, new Interactible[] { new Interactible() }),
+            new Room("Captain Quarters", new string[] { "Hallway4", "Hallway7" }, new Interactible[] { new Interactible() }),
+            new Room("Recreational Room", new string[] { "Hallway3", "Hallway6" }, new Interactible[] { new Interactible() }),
+            new Room("Library", new string[] { "Hallway6" }, new Interactible[] { new Interactible() }),
+            new Room("Crew Quarters", new string[] { "Hallway6", "Hallway7" }, new Interactible[] { new Interactible() }),
+
+
+            // adjust later for modular use
+            new Room("Hallway1", new string[] { "Hallway2" }, new Interactible[] { new Interactible() }),
+            new Room("Hallway2", new string[] { "Hallway3" }, new Interactible[] { new Interactible() }),
+            new Room("Hallway3", new string[] { "Hallway4" }, new Interactible[] { new Interactible() }),
+            new Room("Hallway4", new string[] { "Hallway" }, new Interactible[] { new Interactible() }),
+            new Room("Hallway5", new string[] { "Hallway" }, new Interactible[] { new Interactible() }),
+            new Room("Hallway6", new string[] { "Hallway" }, new Interactible[] { new Interactible() }),
+            new Room("Hallway7", new string[] { "Hallway" }, new Interactible[] { new Interactible() }),
+
+
             ];
-            
 
-
-
-
+        public static int hallway = 0;
 
 
 

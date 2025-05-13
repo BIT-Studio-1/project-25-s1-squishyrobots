@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SquishyRobotGame")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+785303e76acced4ad2f6642cd7577fcb9efe9447")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bae709be195e01ca56a43e78f51baecdd8ef6acd")]
 [assembly: System.Reflection.AssemblyProductAttribute("SquishyRobotGame")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SquishyRobotGame")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
