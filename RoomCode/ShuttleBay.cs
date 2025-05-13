@@ -13,6 +13,35 @@ public static class ShuttleBay
         Player.GetInput();
 
 
+        switch (Player.input)
+        {
+            case "shuttle fuel":
+
+                break;
+            case "boarding pass":
+
+                break;
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
