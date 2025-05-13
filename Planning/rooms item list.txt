@@ -1,0 +1,124 @@
+1. Bridge
+   captain's log
+   Navigation console
+   communication Device- phone
+   star chart
+   helm control
+
+ 
+2. Brig 
+   Handcuffs
+   Cell key
+   security monitor 
+   prisoner ledger
+   Restraint chair
+
+3. Captain Quarter
+   Personal diary
+   captain's uniform
+   Holographic display
+   safe box
+   decorative sword
+
+4. Crew Quarter
+   Bunk bed
+   personal locker
+   crew uniform
+   alarm clock
+   other things- photo frame
+
+5. Engine room
+   wrench
+   fuel canister
+   control panel
+   Engine core
+   maintenance manual  
+
+6. Espacepods
+  
+   Escape pod manuals
+   oxygen tank
+   emergency rations
+   parachute
+   launch key
+
+7. Green House
+ 
+   lighting
+   temperature control
+   humidity control
+
+
+
+
+8. Hallway
+   wall map
+   Emergency light
+   security camera
+   floor plan
+
+9. Hallway general
+   Emergency exit sign
+   wall panel
+   Intercom
+   cleaning robot
+
+10.Lab
+   test tube
+   microscope
+   experiment log
+   chemical flask
+   data pad
+
+11. Library
+    Ancient  tome
+    books
+    book-mark
+    digital reader
+    computers
+    research notes
+    maps
+
+12. Med Bay
+    first aid kit
+    surgical tool
+    medical scanner
+    medicine bottle
+    stretcher 
+
+13. Mess Hall
+   food tray
+   cooking pot
+   tableware
+   vending machine
+   meal
+
+14. Rec Room
+    Card Deck
+    pool cue
+    holographic game
+    exercise equipment
+    music player
+
+15. Shuttle bay 
+    shuttle fuel
+    boarding pass
+    maintenance kit
+    cargo create
+
+16. store room
+    spare parts kits
+    emergency rations
+    tool boxes
+    oxygen canisters
+    storage create
+    boxes
+
+ 
+
+
+
+
+
+
+    
