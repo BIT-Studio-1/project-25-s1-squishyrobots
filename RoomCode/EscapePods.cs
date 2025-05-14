@@ -5,9 +5,13 @@ using Globals;
 
 public static class EscapePods
 {
+    public static string name = "escape pods";
+
     // replaces main
     public static void start()
     {
+        Map.enter(name);
+
         Console.WriteLine("You are in the Escape Pod room.");
 
         Player.GetInput();

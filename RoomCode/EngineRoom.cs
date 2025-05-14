@@ -5,9 +5,16 @@ using Globals;
 
 public static class EngineRoom
 {
+    public static string name = "engine room";
+
+
     // replaces main
     public static void start()
     {
+        Map.enter(name);
+
+
+
         Console.WriteLine("You are in the Engine Room.");
 
         Player.GetInput();
