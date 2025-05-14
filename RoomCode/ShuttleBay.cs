@@ -37,42 +37,85 @@ public static class ShuttleBay
             "You see a *fuel cell* in the corner that may help you restore power.",
             "There is a strange shine on the floor, and on closer inspection you find a *boarding pass* resting atop a puddle of glossy oil.",
             "A *repair kit* rests next to the damaged ship you came in with.",
-            "There is a stack of *cargo* that looks abandoned. You see the corner of a floral shirt sticking from a duffle bag."
+            "There is a stack of *cargo* that looks abandoned. You see the corner of a floral shirt sticking from a duffel bag."
         };
+
+
+
 
 
         for (int i = 0; i < observations.Length; i++)
         {
-            string[] chunks = observations[i].Split('*');
-            for (int j = 0; j < chunks.Length; j++)
+            Console.ForegroundColor = ConsoleColor.White;
+
+
+            string[] words = observations[i].Split(' ');
+
+            bool isSpecial = false;
+
+            for (int j = 0; j < words.Length; j++)
             {
-                if (j % 2 != 0)
-                {
-                    Console.ForegroundColor = ConsoleColor.Blue;
-
-                }
-                else
-                {
-                    Console.ForegroundColor = ConsoleColor.White;
-                }
-
-                if (j % lineWordLimit == 0)
+                if ((j % lineWordLimit) == 0)
                 {
                     Console.WriteLine();
                 }
 
-
-                if (j != chunks[j].Length - 1)
+                if (words[i][0] == '*')
                 {
-                    Console.Write(chunks[j] + " ");
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.Write(words[j]);
+                    isSpecial = true;
+                }
+                else if (words[i][words[i].Length - 1] == '*')
+                {
+                    Console.Write(words[j]);
+                    Console.ForegroundColor = ConsoleColor.White;
+                    isSpecial = false;
                 }
                 else
                 {
-                    Console.Write(chunks[j]);
+                    Console.Write(words[j]);
+                }
+
+
+                if (j != words[j].Length - 1)
+                {
+                    Console.Write(" ");
                 }
 
 
             }
+
+
+            //string[] chunks = observations[i].Split('*');
+            //for (int j = 0; j < chunks.Length; j++)
+            //{
+            //    if (j % 2 != 0)
+            //    {
+            //        Console.ForegroundColor = ConsoleColor.Blue;
+            //    }
+            //    else
+            //    {
+            //        Console.ForegroundColor = ConsoleColor.White;
+            //    }
+
+            //    if (j != chunks[j].Length - 1)
+            //    {
+            //        Console.Write(chunks[j] + " ");
+            //    }
+            //    else
+            //    {
+            //        Console.Write(chunks[j]);
+            //    }
+
+
+
+
+
+
+            //}
+
+
             Console.WriteLine();
         }
 
@@ -101,6 +144,20 @@ public static class ShuttleBay
                 break;
 
         }
+
+
+        switch (Player.input)
+        {
+            case "escape pods":
+
+                break;
+            case "store room":
+
+                break;
+        }
+
+
+
 
         Console.WriteLine();
 
