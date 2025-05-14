@@ -19,13 +19,6 @@ public static class EscapePods
 
 
 
-
-
-
-
-
-
-
         switch (Player.input.ToLower())
         {
 
