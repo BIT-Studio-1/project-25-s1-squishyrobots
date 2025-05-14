@@ -18,8 +18,28 @@ public static class MessHall
         Console.WriteLine("You are in the Mess Hall.");
 
         Player.GetInput();
-        
 
+
+        switch (Player.input)
+        {
+            case "food tray":
+                break;
+
+            case "cooking pot":
+                break;
+
+            case "tableware":
+                break;
+
+            case "vednding machine":
+                break;
+
+            case "meal":
+                break;
+
+
+        }
+        Console.WriteLine();
 
 
 

@@ -18,7 +18,29 @@ public static class CaptQuarters
         Console.WriteLine("You are in the Captain's Quarters.");
 
         Player.GetInput();
-        
+
+
+        switch (Player.input)
+        {
+            case "personal diaery":
+                break;
+
+            case "captain's uniform":
+                break;
+
+            case "holographic display":
+                break;
+
+            case "safe box":
+                break;
+
+            case "decorative sword":
+                break;
+
+
+        }
+        Console.WriteLine();
+
 
 
 
