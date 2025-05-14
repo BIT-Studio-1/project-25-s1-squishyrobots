@@ -100,7 +100,6 @@ public static class ShuttleBay
 
                 break;
 
-
         }
 
         Console.WriteLine();
