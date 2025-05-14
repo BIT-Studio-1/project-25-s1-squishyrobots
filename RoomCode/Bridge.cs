@@ -18,7 +18,8 @@ public static class Bridge
         Console.WriteLine("You are in the Bridge.");
 
         Player.GetInput();
-        
+
+
 
 
 

@@ -13,8 +13,6 @@ public static class MedBay
     {
         Map.enter(name);
 
-
-
         Console.WriteLine("You are in the Medical Bay.");
 
         Player.GetInput();
