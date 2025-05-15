@@ -8,23 +8,39 @@
     "net8.0": []
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\loudrs1\\.nuget\\packages\\": {},
+=======
+    "C:\\Users\\churaa1\\.nuget\\packages\\": {},
+>>>>>>> 43c818aa6691bd5f07e9e4c7d1e64cd6b6d3a490
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "H:\\StudioGames\\project-25-s1-squishyrobots\\SquishyRobotGame.csproj",
       "projectName": "SquishyRobotGame",
       "projectPath": "H:\\StudioGames\\project-25-s1-squishyrobots\\SquishyRobotGame.csproj",
       "packagesPath": "C:\\Users\\loudrs1\\.nuget\\packages\\",
       "outputPath": "H:\\StudioGames\\project-25-s1-squishyrobots\\obj\\",
+=======
+      "projectUniqueName": "H:\\BITY_Y1Projects\\project-25-s1-squishyrobots\\SquishyRobotGame.csproj",
+      "projectName": "SquishyRobotGame",
+      "projectPath": "H:\\BITY_Y1Projects\\project-25-s1-squishyrobots\\SquishyRobotGame.csproj",
+      "packagesPath": "C:\\Users\\churaa1\\.nuget\\packages\\",
+      "outputPath": "H:\\BITY_Y1Projects\\project-25-s1-squishyrobots\\obj\\",
+>>>>>>> 43c818aa6691bd5f07e9e4c7d1e64cd6b6d3a490
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\loudrs1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\churaa1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 43c818aa6691bd5f07e9e4c7d1e64cd6b6d3a490
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

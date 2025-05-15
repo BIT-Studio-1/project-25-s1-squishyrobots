@@ -11,7 +11,10 @@ namespace SquishyRobotGame
         {
             Player.location = "shuttle bay";
 
-
+            Console.WriteLine("" +
+                "Welcome to the Squishy Robot Game\n" +
+                "\t - inventory\n" +
+                "\t - rules\n");
 
             do
             {
@@ -29,6 +32,14 @@ namespace SquishyRobotGame
                         EngineRoom.start();
                         break;
                 }
+
+                // do while !exit:
+                //      query player
+                // if exit, then leave room loop.
+
+
+
+
 
 
                
