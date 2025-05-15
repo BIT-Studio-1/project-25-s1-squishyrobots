@@ -16,20 +16,16 @@ public static class ShuttleBay
         Console.WriteLine("\tYou are in the shuttle bay.\n");
 
 
-        Console.WriteLine(
+        string description = 
             "The shuttle bay is much like the ones you have seen before, \n" +
             "though this one is noticeably more cluttered than most.\n" +
             "Large steel boxes line the walls, some with the cargo straps still on them.\n" +
             "The ship you arrived on sits idle on one of the many gravity locks.\n" +
             "The lights in the bay seem to be malfunctioning might be something to do with the power, \n" +
             "or lack there of. The walls are white with subtle red accents, \n" +
-            "a common paint theme when it comes to {Name of company}"
-            );
-        Console.WriteLine();
-
-
-
-        int lineWordLimit = 5;
+            "a common paint theme when it comes to {Name of company}\n"
+            ;
+        Console.WriteLine(description);
 
 
         string[] observations =
@@ -40,82 +36,13 @@ public static class ShuttleBay
             "There is a stack of *cargo* that looks abandoned. You see the corner of a floral shirt sticking from a duffel bag."
         };
 
-
+        
 
 
 
         for (int i = 0; i < observations.Length; i++)
         {
-            Console.ForegroundColor = ConsoleColor.White;
-
-
-            string[] words = observations[i].Split(' ');
-
-            bool isSpecial = false;
-
-            for (int j = 0; j < words.Length; j++)
-            {
-                if ((j % lineWordLimit) == 0)
-                {
-                    Console.WriteLine();
-                }
-
-                if (words[i][0] == '*')
-                {
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.Write(words[j]);
-                    isSpecial = true;
-                }
-                else if (words[i][words[i].Length - 1] == '*')
-                {
-                    Console.Write(words[j]);
-                    Console.ForegroundColor = ConsoleColor.White;
-                    isSpecial = false;
-                }
-                else
-                {
-                    Console.Write(words[j]);
-                }
-
-
-                if (j != words[j].Length - 1)
-                {
-                    Console.Write(" ");
-                }
-
-
-            }
-
-
-            //string[] chunks = observations[i].Split('*');
-            //for (int j = 0; j < chunks.Length; j++)
-            //{
-            //    if (j % 2 != 0)
-            //    {
-            //        Console.ForegroundColor = ConsoleColor.Blue;
-            //    }
-            //    else
-            //    {
-            //        Console.ForegroundColor = ConsoleColor.White;
-            //    }
-
-            //    if (j != chunks[j].Length - 1)
-            //    {
-            //        Console.Write(chunks[j] + " ");
-            //    }
-            //    else
-            //    {
-            //        Console.Write(chunks[j]);
-            //    }
-
-
-
-
-
-
-            //}
-
-
+            Format.printSpecial(observations[i]);
             Console.WriteLine();
         }
 

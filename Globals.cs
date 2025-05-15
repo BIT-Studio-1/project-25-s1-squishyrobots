@@ -67,6 +67,79 @@ namespace Globals
     }
 
 
+
+
+    /// <summary>
+    /// This class is used to store methods that format inputted strings and prints them
+    /// </summary>
+    public static class Format
+    {
+        public const int lineWidthDefault = 10;
+
+        /// <summary>
+        /// This method is used to take a string and look for asterisks to 
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="lineWidth"></param>
+        public static void printSpecial(string input = "*null* text input", int lineWidth = lineWidthDefault)
+        {
+
+            Console.ForegroundColor = ConsoleColor.White;
+
+            string[] words = input.Split(' ');
+
+            bool isSpecial = false;
+
+            for (int j = 0; j < words.Length; j++)
+            {
+                if ((j % lineWidth) == 0)
+                {
+                    Console.WriteLine();
+                }
+
+                if (words[j][0] == '*' && words[j][words[j].Length - 1] == '*')
+                {
+                    // if started and ended with * then make blue then set back to default
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.Write(words[j].Remove(words[j].Length - 1).Remove(0, 1));
+                    Console.ForegroundColor = ConsoleColor.White;
+                    isSpecial = false;
+                }
+                else if (words[j][0] == '*')
+                {
+                    // if started with * then set blue until stop
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.Write(words[j].Remove(0, 1));
+                    isSpecial = true;
+                }
+                else if (words[j][words[j].Length - 1] == '*')
+                {
+                    // if ended with * then set back to default
+                    Console.Write(words[j].Remove(words[j].Length - 1));
+                    Console.ForegroundColor = ConsoleColor.White;
+                    isSpecial = false;
+                }
+                else
+                {
+                    Console.Write(words[j]);
+                }
+
+
+                if (j != words.Length - 1 % lineWidth)
+                {
+                    Console.Write(" ");
+                }
+
+
+            }
+
+        }
+
+
+
+    }
+
+
 }
 
 
