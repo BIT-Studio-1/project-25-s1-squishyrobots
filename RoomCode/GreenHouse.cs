@@ -13,12 +13,25 @@ public static class GreenHouse
     {
         Map.enter(name);
 
-
-
         Console.WriteLine("You are in the Green House.");
 
         Player.GetInput();
-        
+
+        switch (Player.input)
+        {
+            case "lighting":
+                break;
+
+            case "temperature control ":
+                break;
+
+            case "humidity control":
+                break;
+
+
+        }
+        Console.WriteLine();
+
 
 
 

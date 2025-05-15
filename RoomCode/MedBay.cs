@@ -13,14 +13,32 @@ public static class MedBay
     {
         Map.enter(name);
 
-
-
         Console.WriteLine("You are in the Medical Bay.");
 
         Player.GetInput();
-        
 
 
+
+        switch (Player.input)
+        {
+            case "first aid kit":
+                break;
+
+            case "surgical tools":
+                break;
+
+            case "medical scanner":
+                break;
+
+            case "medical bottle":
+                break;
+
+            case "stretcher":
+                break;
+
+
+        }
+        Console.WriteLine();
 
 
 

@@ -9,16 +9,13 @@ namespace SquishyRobotGame
     {
         static void Main(string[] args)
         {
+            Player.location = "shuttle bay";
 
 
 
-
-
-            while (Player.input != "exit")
+            do
             {
                 Console.ForegroundColor = ConsoleColor.Gray;
-
-
 
                 switch (Player.location)
                 {
@@ -34,18 +31,11 @@ namespace SquishyRobotGame
                 }
 
 
-                
-
-
-                ShuttleBay.start();
-
+               
+            } while (Player.input != "exit") ;
 
 
 
-
-            }
-
-            
 
 
 

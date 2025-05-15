@@ -18,10 +18,29 @@ public static class Bridge
         Console.WriteLine("You are in the Bridge.");
 
         Player.GetInput();
-        
 
 
 
+        switch (Player.input)
+        {
+            case " captain's log":
+                break;
+
+            case "navigation console":
+                break;
+
+            case "communication device - phone":
+                break;
+
+            case "star chart":
+                break;
+
+            case " helm control":
+                break;
+
+             
+        }
+        Console.WriteLine();
 
 
 
@@ -29,10 +48,20 @@ public static class Bridge
 
     }
 
+    
 
 
-
+    
+        
 }
+
+      
+
+
+
+
+
+
 
 
 
