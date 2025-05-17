@@ -15,6 +15,34 @@ public static class MedBay
 
         Console.WriteLine("You are in the Medical Bay.");
 
+
+        string description =
+            "blank"
+
+            ;
+
+
+        string[] observations =
+        {
+
+        };
+
+
+
+        Format.printConformed(description);
+
+        for (int i = 0; i < observations.Length; i++)
+        {
+            Format.printSpecial(observations[i]);
+            Console.WriteLine();
+        }
+
+
+
+
+
+
+
         Player.GetInput();
 
 

@@ -17,6 +17,31 @@ public static class Bridge
 
         Console.WriteLine("You are in the Bridge.");
 
+
+        string description =
+            "blank"
+
+            ;
+
+
+        string[] observations =
+        {
+
+        };
+
+
+
+        Format.printConformed(description);
+
+        for (int i = 0; i < observations.Length; i++)
+        {
+            Format.printSpecial(observations[i]);
+            Console.WriteLine();
+        }
+
+
+
+
         Player.GetInput();
 
 

@@ -17,6 +17,35 @@ public static class RecRoom
 
         Console.WriteLine("You are in the Rec. Room.");
 
+
+
+        string description =
+            "blank"
+
+            ;
+
+
+        string[] observations =
+        {
+
+        };
+
+
+
+        Format.printConformed(description);
+
+        for (int i = 0; i < observations.Length; i++)
+        {
+            Format.printSpecial(observations[i]);
+            Console.WriteLine();
+        }
+
+
+
+
+
+
+
         Player.GetInput();
 
 

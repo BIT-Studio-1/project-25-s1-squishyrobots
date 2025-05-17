@@ -17,6 +17,33 @@ public static class CaptQuarters
 
         Console.WriteLine("You are in the Captain's Quarters.");
 
+
+        string description =
+            "blank"
+
+            ;
+
+
+        string[] observations =
+        {
+
+        };
+
+
+
+        Format.printConformed(description);
+
+        for (int i = 0; i < observations.Length; i++)
+        {
+            Format.printSpecial(observations[i]);
+            Console.WriteLine();
+        }
+
+
+
+
+
+
         Player.GetInput();
 
 

@@ -17,6 +17,30 @@ public static class Brig
 
         Console.WriteLine("You are in the Brig.");
 
+
+        string description =
+            "blank"
+
+            ;
+
+
+        string[] observations =
+        {
+
+        };
+
+
+
+        Format.printConformed(description);
+
+        for (int i = 0; i < observations.Length; i++)
+        {
+            Format.printSpecial(observations[i]);
+            Console.WriteLine();
+        }
+
+
+
         Player.GetInput();
 
         switch (Player.input)

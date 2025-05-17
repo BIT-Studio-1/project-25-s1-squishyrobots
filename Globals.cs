@@ -74,7 +74,41 @@ namespace Globals
     /// </summary>
     public static class Format
     {
-        public const int lineWidthDefault = 10;
+        public const int lineWidthDefault = 5;
+
+
+
+        public static void printConformed(string input = "*null* text input", int lineWidth = lineWidthDefault)
+        {
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+
+
+
+
+            string[] words = input.Split(' ');
+
+
+            for (int i = 0; i < words.Length; i++)
+            {
+
+                if (i % lineWidth == 0)
+                {
+                    Console.WriteLine();
+                }
+
+                Console.Write(words[i]);
+
+                if (i != words.Length - 1 % lineWidth)
+                {
+                    Console.Write(" ");
+                }
+
+                
+            }
+        }
+
+
+
 
         /// <summary>
         /// This method is used to take a string and look for asterisks to 
@@ -92,7 +126,7 @@ namespace Globals
 
             for (int j = 0; j < words.Length; j++)
             {
-                if ((j % lineWidth) == 0)
+                if (j % lineWidth == 0)
                 {
                     Console.WriteLine();
                 }

@@ -17,6 +17,32 @@ public static class CrewQuarters
 
         Console.WriteLine("You are in the Crew Quarters.");
 
+
+        string description =
+            "blank"
+
+            ;
+
+
+        string[] observations =
+        {
+
+        };
+
+
+
+        Format.printConformed(description);
+
+        for (int i = 0; i < observations.Length; i++)
+        {
+            Format.printSpecial(observations[i]);
+            Console.WriteLine();
+        }
+
+
+
+
+
         Player.GetInput();
 
         switch (Player.input)
