@@ -41,13 +41,14 @@ public static class ShuttleBay
 
         };
 
-        
 
-        Format.printConformed(description);
+
+
+        Format.PrintConformed(description);
 
         for (int i = 0; i < observations.Length; i++)
         {
-            Format.printSpecial(observations[i]);
+            Format.PrintSpecial(observations[i]);
             Console.WriteLine();
         }
 
@@ -81,10 +82,10 @@ public static class ShuttleBay
         switch (Player.input)
         {
             case "escape pods":
-
+                Player.location = "escape pods";
                 break;
             case "store room":
-
+                Player.location = "store room";
                 break;
         }
 

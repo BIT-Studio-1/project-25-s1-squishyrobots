@@ -1,10 +1,22 @@
 ﻿// Ignore Spelling: interactibles
 
 using System;
+using System.Drawing;
 using System.Xml.Serialization;
 
 
 
+
+public static class Room
+{
+    public static string name = "default room name";
+
+    public static string getName()
+    {
+        return name;
+    }
+
+}
 
 
 
@@ -12,8 +24,6 @@ using System.Xml.Serialization;
 namespace Globals
 {
     
-
-
     /// <summary>
     /// This class is used to store the player global variables
     /// </summary>
@@ -45,6 +55,77 @@ namespace Globals
 
         }
 
+        public static void ShowInventory()
+        {
+
+            do
+            {
+
+
+                
+                Console.Clear();
+                Console.WriteLine("-------------------------------------------------");
+                Console.WriteLine("You have the following items in your inventory: ");
+                Console.WriteLine("-------------------------------------------------");
+
+
+                // list available items
+                if (hasRedKey)
+                {
+                    Console.WriteLine("Red Key");
+                }
+                if (hasGreenKey)
+                {
+                    Console.WriteLine("Green Key");
+                }
+                if (hasCrowbar)
+                {
+                    Console.WriteLine("Crowbar");
+                }
+                if (hasBattery)
+                {
+                    Console.WriteLine("Battery");
+                }
+
+                // if no items are in the inventory
+                if (!hasRedKey && !hasGreenKey && !hasCrowbar && !hasBattery)
+                {
+                    Console.WriteLine("You have no items in your inventory.");
+                }
+
+                // instructions for exit
+                Console.WriteLine("\n-- type 'back' to return --\n");
+
+
+
+                GetInput();
+
+                switch (input)
+                {
+                    case "red key":
+                        Console.WriteLine("A silver key card with two red stripes across the top");
+                        break;
+                    case "green key":
+                        Console.WriteLine("You have a green key.");
+                        break;
+                    case "crowbar":
+                        Console.WriteLine("You have a crowbar.");
+                        break;
+                    case "battery":
+                        Console.WriteLine("A cylinder with a pulsing ");
+                        break;
+                    default:
+                        Console.WriteLine("Unknown Item");
+                        break;
+                }
+
+
+            } while (input != "back");
+        }
+
+         
+
+
 
     }
 
@@ -58,7 +139,7 @@ namespace Globals
 
         public static void enter(string locationName)
         {
-            Player.location = locationName;
+            //Player.location = locationName;
             Player.ClearInput(); // may cause errors - check back later
 
         }   
@@ -67,22 +148,25 @@ namespace Globals
     }
 
 
-
-
     /// <summary>
     /// This class is used to store methods that format inputted strings and prints them
     /// </summary>
     public static class Format
     {
-        public const int lineWidthDefault = 5;
+        public const int lineWidthDefault = 12;
+        public const ConsoleColor defaultColour = ConsoleColor.Gray;
+        public const ConsoleColor defaultInterestColour = ConsoleColor.Blue;
 
 
-
-        public static void printConformed(string input = "*null* text input", int lineWidth = lineWidthDefault)
+        /// <summary>
+        /// This method is used to print a string in a default format no special characters, breaking each line at the line width
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="lineWidth"></param>
+        /// <param name="colour"></param>
+        public static void PrintConformed(string input = "*null* text input", int lineWidth = lineWidthDefault, ConsoleColor colour = ConsoleColor.DarkGray)
         {
-            Console.ForegroundColor = ConsoleColor.DarkGray;
-
-
+            Console.ForegroundColor = colour;
 
 
             string[] words = input.Split(' ');
@@ -102,63 +186,66 @@ namespace Globals
                 {
                     Console.Write(" ");
                 }
-
-                
             }
         }
 
 
-
-
         /// <summary>
-        /// This method is used to take a string and look for asterisks to 
+        /// This method is used to take a string and look for special characters to highlight with differing colours, breaking each line at the line width
         /// </summary>
         /// <param name="input"></param>
         /// <param name="lineWidth"></param>
-        public static void printSpecial(string input = "*null* text input", int lineWidth = lineWidthDefault)
+        public static void PrintSpecial(string input = "*null* text input", int lineWidth = lineWidthDefault, ConsoleColor baseColour = defaultColour, ConsoleColor interestColour = defaultInterestColour)
         {
 
-            Console.ForegroundColor = ConsoleColor.White;
-
+            Console.ForegroundColor = baseColour;
             string[] words = input.Split(' ');
 
-            bool isSpecial = false;
-
+            // loop through the words and check for asterisks
             for (int j = 0; j < words.Length; j++)
             {
+
+
+
+                // if the sentence is too long, split it into multiple lines
                 if (j % lineWidth == 0)
                 {
                     Console.WriteLine();
                 }
 
+
+
+
                 if (words[j][0] == '*' && words[j][words[j].Length - 1] == '*')
                 {
                     // if started and ended with * then make blue then set back to default
-                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.ForegroundColor = interestColour;
                     Console.Write(words[j].Remove(words[j].Length - 1).Remove(0, 1));
-                    Console.ForegroundColor = ConsoleColor.White;
-                    isSpecial = false;
+                    Console.ForegroundColor = baseColour;
                 }
                 else if (words[j][0] == '*')
                 {
                     // if started with * then set blue until stop
-                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.ForegroundColor = interestColour;
                     Console.Write(words[j].Remove(0, 1));
-                    isSpecial = true;
                 }
                 else if (words[j][words[j].Length - 1] == '*')
                 {
                     // if ended with * then set back to default
                     Console.Write(words[j].Remove(words[j].Length - 1));
-                    Console.ForegroundColor = ConsoleColor.White;
-                    isSpecial = false;
+                    Console.ForegroundColor = baseColour;
                 }
+                // can place other special characters here <<<<<<<<<<<<<<<<<<<<<<
+                // if the word is not a special word, just print it
                 else
                 {
                     Console.Write(words[j]);
                 }
 
 
+
+
+                // if the word is not the last word in the line, add a space
                 if (j != words.Length - 1 % lineWidth)
                 {
                     Console.Write(" ");
@@ -174,6 +261,7 @@ namespace Globals
     }
 
 
+    
 }
 
 

@@ -32,15 +32,14 @@ public static class Library
 
 
 
-        Format.printConformed(description);
+
+        Format.PrintConformed(description);
 
         for (int i = 0; i < observations.Length; i++)
         {
-            Format.printSpecial(observations[i]);
+            Format.PrintSpecial(observations[i]);
             Console.WriteLine();
         }
-
-
 
 
 

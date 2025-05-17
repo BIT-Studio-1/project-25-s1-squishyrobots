@@ -5,7 +5,7 @@ using Globals;
 
 public static class CaptQuarters
 {
-    public static string name = "captain quarters";
+    public static string name = "captains quarters";
 
 
     // replaces main
@@ -31,13 +31,14 @@ public static class CaptQuarters
 
 
 
-        Format.printConformed(description);
+        Format.PrintConformed(description);
 
         for (int i = 0; i < observations.Length; i++)
         {
-            Format.printSpecial(observations[i]);
+            Format.PrintSpecial(observations[i]);
             Console.WriteLine();
         }
+
 
 
 
