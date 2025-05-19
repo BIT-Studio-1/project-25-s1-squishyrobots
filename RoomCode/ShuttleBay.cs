@@ -53,12 +53,7 @@ public static class ShuttleBay
         }
 
 
-
         Player.GetInput();
-
-
-
-
 
 
         switch (Player.input)
@@ -89,31 +84,6 @@ public static class ShuttleBay
                 break;
         }
 
-
-
-
-        Console.WriteLine();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         switch (Player.input.ToLower())
         {
             case "escape pods":
@@ -125,10 +95,8 @@ public static class ShuttleBay
                 Console.WriteLine("You choose the engine room");
                 EngineRoom.start();
                 break;
-            default:
-                Console.WriteLine("Invalid option");
-                break;
         }
+
 
     }
 

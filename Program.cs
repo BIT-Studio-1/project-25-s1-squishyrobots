@@ -11,7 +11,6 @@ namespace SquishyRobotGame
         {
             Console.ForegroundColor = ConsoleColor.DarkGreen;
 
-            Console.SetWindowSize(Console.Screen)
 
 
             Player.location = "shuttle bay";

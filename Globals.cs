@@ -33,7 +33,7 @@ namespace Globals
         public static string location;
 
 
-        public static bool hasRedKey = false;
+        public static bool hasRedKey = true;
         public static bool hasGreenKey = false;
         public static bool hasCrowbar = false;
         public static bool hasBattery = false;
@@ -63,7 +63,6 @@ namespace Globals
 
 
                 
-                Console.Clear();
                 Console.WriteLine("-------------------------------------------------");
                 Console.WriteLine("You have the following items in your inventory: ");
                 Console.WriteLine("-------------------------------------------------");
@@ -100,24 +99,30 @@ namespace Globals
 
                 GetInput();
 
-                switch (input)
+                if (input != "back")
                 {
-                    case "red key":
-                        Console.WriteLine("A silver key card with two red stripes across the top");
-                        break;
-                    case "green key":
-                        Console.WriteLine("You have a green key.");
-                        break;
-                    case "crowbar":
-                        Console.WriteLine("You have a crowbar.");
-                        break;
-                    case "battery":
-                        Console.WriteLine("A cylinder with a pulsing ");
-                        break;
-                    default:
-                        Console.WriteLine("Unknown Item");
-                        break;
+                    switch (input)
+                    {
+                        case "red key":
+                            Console.WriteLine("A silver key card with two red stripes across the top");
+                            break;
+                        case "green key":
+                            Console.WriteLine("You have a green key.");
+                            break;
+                        case "crowbar":
+                            Console.WriteLine("You have a crowbar.");
+                            break;
+                        case "battery":
+                            Console.WriteLine("A cylinder with a pulsing ");
+                            break;
+                        default:
+                            Console.WriteLine("Unknown Item");
+                            break;
+                    }
+                    Console.WriteLine("\n\tPress enter to return");
+                    Console.ReadLine();
                 }
+                Console.Clear();
 
 
             } while (input != "back");
