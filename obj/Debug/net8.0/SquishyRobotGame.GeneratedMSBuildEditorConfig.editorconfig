@@ -8,7 +8,11 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SquishyRobotGame
+<<<<<<< HEAD
 build_property.ProjectDir = H:\StudioGames\project-25-s1-squishyrobots\
+=======
+build_property.ProjectDir = E:\BITY1_Projects\project-25-s1-squishyrobots\
+>>>>>>> c39ce6ecdd475f0bfc10d0160303d3482caec3d1
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 8.0

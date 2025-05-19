@@ -17,6 +17,35 @@ public static class EngineRoom
 
         Console.WriteLine("You are in the Engine Room.");
 
+
+        string description =
+            "blank"
+
+            ;
+
+
+        string[] observations =
+        {
+
+        };
+
+
+
+
+        Format.PrintConformed(description);
+
+        for (int i = 0; i < observations.Length; i++)
+        {
+            Format.PrintSpecial(observations[i]);
+            Console.WriteLine();
+        }
+
+
+
+
+
+
+
         Player.GetInput();
         switch (Player.input.ToLower())
         {

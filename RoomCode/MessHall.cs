@@ -17,6 +17,35 @@ public static class MessHall
 
         Console.WriteLine("You are in the Mess Hall.");
 
+
+        string description =
+            "blank"
+
+            ;
+
+
+        string[] observations =
+        {
+
+        };
+
+
+
+
+        Format.PrintConformed(description);
+
+        for (int i = 0; i < observations.Length; i++)
+        {
+            Format.PrintSpecial(observations[i]);
+            Console.WriteLine();
+        }
+
+
+
+
+
+
+
         Player.GetInput();
 
 
