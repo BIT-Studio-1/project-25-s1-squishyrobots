@@ -28,7 +28,7 @@ public static  class MainMenu
 
                 case "map":
                     Console.WriteLine("");
-                    break;
+                    break ;
             }
         }
     }

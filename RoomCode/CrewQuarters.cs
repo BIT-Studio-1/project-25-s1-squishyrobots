@@ -11,7 +11,6 @@ public static class CrewQuarters
     // replaces main
     public static void start()
     {
-        Map.enter(name);
 
 
 

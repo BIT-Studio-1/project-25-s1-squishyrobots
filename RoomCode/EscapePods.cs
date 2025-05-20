@@ -10,7 +10,6 @@ public static class EscapePods
     // replaces main
     public static void start()
     {
-        Map.enter(name);
 
         Console.WriteLine("You are in the Escape Pod room.");
 

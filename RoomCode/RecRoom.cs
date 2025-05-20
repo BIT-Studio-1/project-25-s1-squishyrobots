@@ -11,7 +11,6 @@ public static class RecRoom
     // replaces main
     public static void start()
     {
-        Map.enter(name);
 
 
 

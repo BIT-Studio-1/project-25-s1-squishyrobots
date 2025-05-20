@@ -11,7 +11,6 @@ public static class MedBay
     // replaces main
     public static void start()
     {
-        Map.enter(name);
 
         Console.WriteLine("You are in the Medical Bay.");
 
