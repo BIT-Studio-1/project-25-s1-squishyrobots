@@ -16,20 +16,16 @@ public static class ShuttleBay
         Console.WriteLine("\tYou are in the shuttle bay.\n");
 
 
-        Console.WriteLine(
+        string description = 
             "The shuttle bay is much like the ones you have seen before, \n" +
             "though this one is noticeably more cluttered than most.\n" +
             "Large steel boxes line the walls, some with the cargo straps still on them.\n" +
             "The ship you arrived on sits idle on one of the many gravity locks.\n" +
             "The lights in the bay seem to be malfunctioning might be something to do with the power, \n" +
             "or lack there of. The walls are white with subtle red accents, \n" +
-            "a common paint theme when it comes to {Name of company}"
-            );
-        Console.WriteLine();
-
-
-
-        int lineWordLimit = 5;
+            "a common paint theme when it comes to {Name of company}\n"
+            ;
+        Console.WriteLine(description);
 
 
         string[] observations =
@@ -37,42 +33,16 @@ public static class ShuttleBay
             "You see a *fuel cell* in the corner that may help you restore power.",
             "There is a strange shine on the floor, and on closer inspection you find a *boarding pass* resting atop a puddle of glossy oil.",
             "A *repair kit* rests next to the damaged ship you came in with.",
-            "There is a stack of *cargo* that looks abandoned. You see the corner of a floral shirt sticking from a duffle bag."
+            "There is a stack of *cargo* that looks abandoned. You see the corner of a floral shirt sticking from a duffel bag."
         };
+
+        
+
 
 
         for (int i = 0; i < observations.Length; i++)
         {
-            string[] chunks = observations[i].Split('*');
-            for (int j = 0; j < chunks.Length; j++)
-            {
-                if (j % 2 != 0)
-                {
-                    Console.ForegroundColor = ConsoleColor.Blue;
-
-                }
-                else
-                {
-                    Console.ForegroundColor = ConsoleColor.White;
-                }
-
-                if (j % lineWordLimit == 0)
-                {
-                    Console.WriteLine();
-                }
-
-
-                if (j != chunks[j].Length - 1)
-                {
-                    Console.Write(chunks[j] + " ");
-                }
-                else
-                {
-                    Console.Write(chunks[j]);
-                }
-
-
-            }
+            Format.printSpecial(observations[i]);
             Console.WriteLine();
         }
 
@@ -106,6 +76,20 @@ public static class ShuttleBay
 
 
         
+
+
+        switch (Player.input)
+        {
+            case "escape pods":
+
+                break;
+            case "store room":
+
+                break;
+        }
+
+
+
 
         Console.WriteLine();
 

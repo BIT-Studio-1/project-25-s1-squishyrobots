@@ -20,6 +20,7 @@ public static class Bridge
         Player.GetInput();
 
 
+
         switch (Player.input)
         {
             case " captain's log":
@@ -34,7 +35,7 @@ public static class Bridge
             case "star chart":
                 break;
 
-            case " helm comtrol":
+            case " helm control":
                 break;
 
              
