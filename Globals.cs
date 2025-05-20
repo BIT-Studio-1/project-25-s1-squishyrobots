@@ -31,7 +31,7 @@ namespace Globals
     {
         public static string input;
         public static string location;
-
+        public static bool isPlaying = false;
 
 
         /// <summary>
@@ -50,15 +50,12 @@ namespace Globals
         public static bool hasBattery = false;
 
 
-
         public static void ShowInventory()
         {
 
             do
             {
 
-
-                
                 Console.WriteLine("-------------------------------------------------");
                 Console.WriteLine("You have the following items in your inventory: ");
                 Console.WriteLine("-------------------------------------------------");
@@ -82,11 +79,13 @@ namespace Globals
                     Console.WriteLine("Battery");
                 }
 
+
                 // if no items are in the inventory
                 if (!hasRedKey && !hasGreenKey && !hasCrowbar && !hasBattery)
                 {
                     Console.WriteLine("You have no items in your inventory.");
                 }
+
 
                 // instructions for exit
                 Console.WriteLine("\n-- type 'back' to return --\n");
@@ -124,10 +123,6 @@ namespace Globals
             } while (input != "back");
         }
 
-         
-
-
-
     }
 
     
@@ -137,9 +132,6 @@ namespace Globals
     public static class Map
     {
         
-
-
-
 
     }
 
