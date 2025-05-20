@@ -1,13 +1,36 @@
-1. Bridge
-   captain's log
-   Navigation console
-   communication Device- phone
-   star chart
-   helm control
+
+---  1. Bridge ---   
+
+   a. Captain's log
+        - Read  
+             * You read all the captains secrets and learned where the ship went wrong
+
+   b. Navigation console
+        - Look
+             * It seems as though the navigation console has been on auto pilot
+         - Set Coordinates
+             * The console is now requesting coordinates of a destination 
+
+   c. Communication Device- phone
+        - Look 
+            * Seems as the Device was used to contact Mission Control
+        - Dial Number
+            * The phone requests you input a 9 number digit
+
+   d. Star chart
+        - Look 
+            * The chart has the distance between each star, along with each star name
+
+
+   e. Helm Control
+         - Look
+             * The controls look primitive, complicated and confusing
 
  
-2. Brig 
-   Handcuffs
+--- 2. Brig ----
+
+   a.  Handcuffs
+
    Cell key
    security monitor 
    prisoner ledger
