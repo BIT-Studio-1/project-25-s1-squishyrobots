@@ -5,13 +5,19 @@ using Globals;
 
 public static class StoreRoom
 {
+
     public static string name = "store room";
+
+
+    public static bool test = false;
+
+
+
 
 
     // replaces main
     public static void start()
     {
-        Map.enter(name);
 
 
 

@@ -11,8 +11,6 @@ public static class Brig
     // replaces main
     public static void start()
     {
-        Map.enter(name);
-
 
 
         Console.WriteLine("You are in the Brig.");

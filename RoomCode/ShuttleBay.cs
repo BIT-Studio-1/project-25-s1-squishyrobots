@@ -11,7 +11,6 @@ public static class ShuttleBay
     // replaces main
     public static void start()
     {
-        Map.enter(name); // possibly use in switch statements for actions.
 
         Console.WriteLine("\tYou are in the shuttle bay.\n");
 
