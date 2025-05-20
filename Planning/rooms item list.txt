@@ -30,10 +30,21 @@
 --- 2. Brig ----
 
    a.  Handcuffs
+    - Look 
+        * They seems to be in working condition 
+    - Take 
+        * The handcuffs are now in your inventory
 
-   Cell key
-   security monitor 
-   prisoner ledger
+   b.  Cell key
+    - Look
+        * It is a big metal key with an engraved code reading: "BP123" 
+
+   c.  Security Monitor
+    - Look
+        * There are 3 cameras pointing in different locations, they aren't labeled
+
+   Prisoner Ledger
+
    Restraint chair
 
 3. Captain Quarter
