@@ -11,8 +11,6 @@ namespace SquishyRobotGame
         {
             Console.ForegroundColor = ConsoleColor.DarkGreen;
 
-
-
             Player.location = "shuttle bay";
 
             // print out instructions:
@@ -21,12 +19,19 @@ namespace SquishyRobotGame
             "\t - inventory\n" +
             "\t - rules\n\n");
 
+
+            Player.input = "menu";
+
             do
             {
                 Console.ForegroundColor = ConsoleColor.Gray;
 
-
-                if (Player.input == "inventory")
+                if (Player.input == "menu")
+                {
+                    MainMenu.ShowMenu();
+                    Player.GetInput();
+                }
+                else if (Player.input == "inventory")
                 {
                     Player.ShowInventory();
                 }
