@@ -9,29 +9,88 @@ namespace SquishyRobotGame
     {
         static void Main(string[] args)
         {
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+
+
+
             Player.location = "shuttle bay";
 
+            // print out instructions:
             Console.WriteLine("" +
-                "Welcome to the Squishy Robot Game\n" +
-                "\t - inventory\n" +
-                "\t - rules\n");
+            "\nWelcome to the Squishy Robot Game\n" +
+            "\t - inventory\n" +
+            "\t - rules\n\n");
 
             do
             {
                 Console.ForegroundColor = ConsoleColor.Gray;
 
-                switch (Player.location)
+
+                if (Player.input == "inventory")
                 {
-                    case "shuttle bay":
-                        ShuttleBay.start();
-                        break;
-                    case "escape pods":
-                        EscapePods.start();
-                        break;
-                    case "engine room":
-                        EngineRoom.start();
-                        break;
+                    Player.ShowInventory();
                 }
+                else if (Player.input == "rules")
+                {
+                    Console.WriteLine("Rules: \n" +
+                        "1. You are a robot, and you need to escape the ship.\n" +
+                        "2. You can interact with objects in the environment.\n" +
+                        "3. Use the 'inventory' command to check your items.\n" +
+                        "4. Use the 'exit' command to leave the game.\n");
+                    Console.WriteLine("Press 'enter' to continue...");
+                    Player.GetInput();
+                }
+                else
+                {
+                    switch (Player.location)
+                    {
+                        case "shuttle bay":
+                            ShuttleBay.start();
+                            break;
+                        case "escape pods":
+                            EscapePods.start();
+                            break;
+                        case "engine room":
+                            EngineRoom.start();
+                            break;
+                        case "store room":
+                            StoreRoom.start();
+                            break;
+                        case "bridge":
+                            Bridge.start();
+                            break;
+                        case "brig":
+                            Brig.start();
+                            break;
+                        case "captains quarters":
+                            CaptQuarters.start();
+                            break;
+                        case "crew quarters":
+                            CrewQuarters.start();
+                            break;
+                        case "greenhouse":
+                            GreenHouse.start();
+                            break;
+                        case "med bay":
+                            MedBay.start();
+                            break;
+                        case "mess hall":
+                            MessHall.start();
+                            break;
+                        case "rec room":
+                            RecRoom.start();
+                            break;
+
+                    }
+                }
+
+
+                
+
+
+
+
+
 
                 // do while !exit:
                 //      query player
@@ -42,7 +101,7 @@ namespace SquishyRobotGame
 
 
 
-               
+
             } while (Player.input != "exit") ;
 
 

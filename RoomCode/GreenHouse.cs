@@ -5,7 +5,7 @@ using Globals;
 
 public static class GreenHouse
 {
-    public static string name = "green house";
+    public static string name = "greenhouse";
 
 
     // replaces main
@@ -14,6 +14,33 @@ public static class GreenHouse
         Map.enter(name);
 
         Console.WriteLine("You are in the Green House.");
+
+
+        string description =
+            "blank"
+
+            ;
+
+
+        string[] observations =
+        {
+
+        };
+
+
+
+
+        Format.PrintConformed(description);
+
+        for (int i = 0; i < observations.Length; i++)
+        {
+            Format.PrintSpecial(observations[i]);
+            Console.WriteLine();
+        }
+
+
+
+
 
         Player.GetInput();
 

@@ -17,6 +17,33 @@ public static class Library
 
         Console.WriteLine("You are in the Library.");
 
+
+
+        string description =
+            "blank"
+
+            ;
+
+
+        string[] observations =
+        {
+
+        };
+
+
+
+
+        Format.PrintConformed(description);
+
+        for (int i = 0; i < observations.Length; i++)
+        {
+            Format.PrintSpecial(observations[i]);
+            Console.WriteLine();
+        }
+
+
+
+
         Player.GetInput();
 
 

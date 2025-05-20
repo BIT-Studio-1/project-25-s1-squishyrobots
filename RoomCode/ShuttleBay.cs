@@ -15,8 +15,13 @@ public static class ShuttleBay
 
         Console.WriteLine("\tYou are in the shuttle bay.\n");
 
+        
+        // switch on room state? - inspection of items, documentation and main?
+        // switch includes rules and inventory methods found in global? possible separation into interaction file?
 
-        string description = 
+
+
+        string description =
             "The shuttle bay is much like the ones you have seen before, \n" +
             "though this one is noticeably more cluttered than most.\n" +
             "Large steel boxes line the walls, some with the cargo straps still on them.\n" +
@@ -25,7 +30,6 @@ public static class ShuttleBay
             "or lack there of. The walls are white with subtle red accents, \n" +
             "a common paint theme when it comes to {Name of company}\n"
             ;
-        Console.WriteLine(description);
 
 
         string[] observations =
@@ -34,25 +38,22 @@ public static class ShuttleBay
             "There is a strange shine on the floor, and on closer inspection you find a *boarding pass* resting atop a puddle of glossy oil.",
             "A *repair kit* rests next to the damaged ship you came in with.",
             "There is a stack of *cargo* that looks abandoned. You see the corner of a floral shirt sticking from a duffel bag."
+
         };
 
-        
 
 
+
+        Format.PrintConformed(description);
 
         for (int i = 0; i < observations.Length; i++)
         {
-            Format.printSpecial(observations[i]);
+            Format.PrintSpecial(observations[i]);
             Console.WriteLine();
         }
 
 
-
         Player.GetInput();
-
-
-
-
 
 
         switch (Player.input)
@@ -81,29 +82,20 @@ public static class ShuttleBay
         switch (Player.input)
         {
             case "escape pods":
-
+                Player.location = "escape pods";
                 break;
             case "store room":
-
+                Player.location = "store room";
                 break;
         }
 
 
 
 
-        Console.WriteLine();
+       
 
 
       
-
-
-
-
-
-
-
-
-
 
 
 
@@ -126,10 +118,8 @@ public static class ShuttleBay
                 Console.WriteLine("You choose the engine room");
                 EngineRoom.start();
                 break;
-            default:
-                Console.WriteLine("Invalid option");
-                break;
         }
+
 
     }
 

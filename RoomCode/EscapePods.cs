@@ -14,6 +14,31 @@ public static class EscapePods
 
         Console.WriteLine("You are in the Escape Pod room.");
 
+
+        string description =
+            "blank"
+
+            ;
+
+
+        string[] observations =
+        {
+
+        };
+
+
+
+
+        Format.PrintConformed(description);
+
+        for (int i = 0; i < observations.Length; i++)
+        {
+            Format.PrintSpecial(observations[i]);
+            Console.WriteLine();
+        }
+
+
+
         Player.GetInput();
 
 
