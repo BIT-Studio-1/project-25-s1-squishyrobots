@@ -3,7 +3,7 @@
 
    a. Captain's log
         - Read  
-             * You read all the captains secrets and learned where the ship went wrong
+             * There are lots of dates recording the exploration and issues with the ship.
 
    b. Navigation console
         - Look
@@ -15,7 +15,7 @@
         - Look 
             * Seems as the Device was used to contact Mission Control
         - Dial Number
-            * The phone requests you input a 9 number digit
+            * The phone requests you input a 10 digit number
 
    d. Star chart
         - Look 
@@ -43,23 +43,65 @@
     - Look
         * There are 3 cameras pointing in different locations, they aren't labeled
 
-   Prisoner Ledger
+   d.  Prisoner Ledger
+    - Look  
+        * It's a long long list of all the prisoners that were held in the cells
 
-   Restraint chair
 
-3. Captain Quarter
-   Personal diary
-   captain's uniform
-   Holographic display
-   safe box
-   decorative sword
+   e.  Restraint chair
+     - Look
+        * A heavy restraint chair with belt like straps used to immobilise inmates.
+
+
+--- 3. Captain Quarter ---
+
+   a.   Personal diary
+    - Read
+      * The diary contains personal reflections and hints of rising tension among the crew
+        
+   b.   Captain's Uniform
+        - Look
+        * A pristine, formal uniform with badges of rank and mission insigina
+        - Wear
+        * Yay ur the captain now :D
+
+   c.  Holographic display
+        - Look
+        * A faded image loops of the captains family and pre-mission briefings.
+
+   d.   Safe Box
+        - Look
+        * A sturdy box, locked tight with a 4 digit code
+        - Open
+        * It requires a 4 digit code
+
+   e.   Decorative Sword
+        - Look
+        * A ceremonial sword mounted on the wall, sharp despite its ornamental purpose
+        - Take
+        * The sword is now in your inventory
+
 
 4. Crew Quarter
-   Bunk bed
-   personal locker
-   crew uniform
-   alarm clock
-   other things- photo frame
+
+a. Bunk bed
+    - Look
+    * The sheets are unmade, and there's a faint smell of sweat and old cologne.
+
+b. Personal Locker
+   - Look 
+   * It's dented, likely from heavy use
+   - Open
+   * It's unlocked, inside are a few personal effects and an empty photo frame.
+
+c. Crew Uniform
+    - Look
+    * A basic crew uniform with a nametag partially scratched off.
+  
+d.  Alarm Clock
+    - Look
+    * It blinks 00:00, reset or maybe just broken.
+  
 
 5. Engine room
    wrench
