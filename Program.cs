@@ -9,22 +9,23 @@ namespace SquishyRobotGame
     {
         static void Main(string[] args)
         {
-            Console.ForegroundColor = ConsoleColor.DarkGreen;
 
             Player.location = "shuttle bay";
-
-            // print out instructions:
-            Format.PrintSpecial("" +
-            "\nWelcome to the Squishy Robot Game\n" +
-            "\t - *inventory* \n" +
-            "\t - rules\n\n");
-
 
 
             //Player.input = "menu";
 
             do
             {
+
+                // print out instructions:
+                Format.PrintSpecial("" +
+                "\tWelcome to the Squishy Robot Game\n" +
+                "\t- ^menu^ \n" +
+                "\t- *inventory* \n" +
+                "\t- %help% \n");
+
+
                 Console.ForegroundColor = ConsoleColor.Gray;
 
                 if (Player.input == "menu")
@@ -36,13 +37,13 @@ namespace SquishyRobotGame
                 {
                     Player.ShowInventory();
                 }
-                else if (Player.input == "rules")
+                else if (Player.input == "help")
                 {
-                    Format.PrintSpecial("Rules: \n" +
+                    Format.PrintSpecial("%Instructions% : \n" +
                         "1. You are a robot, and you need to escape the ship.\n" +
                         "2. You can interact with objects in the environment.\n" +
-                        "3. Use the 'inventory' command to check your items.\n" +
-                        "4. Use the 'exit' command to leave the game.\n");
+                        "3. Use the *'inventory'* command to check your items.\n" +
+                        "4. Use the ^'exit'^ command to leave the game.\n", 17);
                     Format.PrintSpecial("Press &'enter'& to continue...");
                     Player.GetInput();
                 }

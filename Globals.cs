@@ -39,6 +39,8 @@ namespace Globals
         /// </summary>
         public static void GetInput()
         {
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
             input = Console.ReadLine().ToLower();
             Console.Clear();
         }
@@ -76,7 +78,7 @@ namespace Globals
                 }
                 if (hasFuelCell)
                 {
-                    Console.WriteLine("Battery");
+                    Console.WriteLine("Fuel Cell");
                 }
 
 
@@ -89,7 +91,6 @@ namespace Globals
 
                 // instructions for exit
                 Console.WriteLine("\n-- type 'back' to return --\n");
-
 
 
                 GetInput();
@@ -110,19 +111,20 @@ namespace Globals
                         case "fuel cell":
                             Format.PrintSpecial("A beveled cylinder with a pulsing *blue bar* across its length. You get the feeling it still has an abundance of power stored within.");
                             break;
+                        case "":
+                            break;
                         default:
                             Format.PrintSpecial("^Unknown Item^");
                             break;
                     }
-                    Console.WriteLine("\n\tPress enter to return");
-                    Console.ReadLine();
-                }
-                Console.Clear();
 
+                    Format.PrintSpecial("\nPress %'enter'% to return");
+                    Console.ReadLine();
+
+                }
 
             } while (input != "back");
         }
-
     }
 
     
@@ -132,10 +134,8 @@ namespace Globals
     public static class Map
     {
         
-
     }
-
-
+    
 
     /// <summary>
     /// This class is used to store methods that format inputted strings and prints them
@@ -146,6 +146,7 @@ namespace Globals
         public const ConsoleColor defaultColour = ConsoleColor.Gray;
         public const ConsoleColor defaultInterestColour = ConsoleColor.Blue;
         public const ConsoleColor defaultDangerColour = ConsoleColor.Red;
+        public const ConsoleColor defaultHelpColour = ConsoleColor.Green;
 
 
         /// <summary>
@@ -158,9 +159,7 @@ namespace Globals
         {
             Console.ForegroundColor = colour;
 
-
             string[] words = input.Split(' ');
-
 
             for (int i = 0; i < words.Length; i++)
             {
@@ -177,15 +176,24 @@ namespace Globals
                     Console.Write(" ");
                 }
             }
+
+            Console.WriteLine();
         }
 
-
         /// <summary>
-        /// This method is used to take a string and look for special characters to highlight with differing colours, breaking each line at the line width
+        /// Method <c>PrintSpecial</c> formats and colour text then prints to console |
+        /// ^ Red |
+        /// % Green |
+        /// * Blue |
         /// </summary>
-        /// <param name="input"></param>
+        /// 
+        /// <param name="input">The text that is to be formatted</param>
         /// <param name="lineWidth"></param>
-        public static void PrintSpecial(string input = "*null* text input", int lineWidth = lineWidthDefault, ConsoleColor baseColour = defaultColour, ConsoleColor interestColour = defaultInterestColour, ConsoleColor dangerColour = defaultDangerColour)
+        /// <param name="baseColour"></param>
+        /// <param name="interestColour"></param>
+        /// <param name="dangerColour"></param>
+        /// <param name="helpColour"></param>
+        public static void PrintSpecial(string input = "*null* text input", int lineWidth = lineWidthDefault, ConsoleColor baseColour = defaultColour, ConsoleColor interestColour = defaultInterestColour, ConsoleColor dangerColour = defaultDangerColour, ConsoleColor helpColour = defaultHelpColour)
         {
 
             Console.ForegroundColor = baseColour;
@@ -202,7 +210,6 @@ namespace Globals
                 {
                     Console.WriteLine();
                 }
-
 
 
 
@@ -225,7 +232,7 @@ namespace Globals
                     Console.Write(words[j].Remove(words[j].Length - 1));
                     Console.ForegroundColor = baseColour;
                 }
-                else if (words[j][0] == '^' && words[j][words[j].Length - 1] == '*') // red / danger
+                else if (words[j][0] == '^' && words[j][words[j].Length - 1] == '^') // red / danger
                 {
                     // if started and ended with ^ then make red then set back to default
                     Console.ForegroundColor = dangerColour;
@@ -244,7 +251,25 @@ namespace Globals
                     Console.Write(words[j].Remove(words[j].Length - 1));
                     Console.ForegroundColor = baseColour;
                 }
-
+                else if (words[j][0] == '%' && words[j][words[j].Length - 1] == '%') // green / helpful
+                {
+                    // if started and ended with % then make green then set back to default
+                    Console.ForegroundColor = helpColour;
+                    Console.Write(words[j].Remove(words[j].Length - 1).Remove(0, 1));
+                    Console.ForegroundColor = baseColour;
+                }
+                else if (words[j][0] == '%')
+                {
+                    // if started with % then set green until stop
+                    Console.ForegroundColor = helpColour;
+                    Console.Write(words[j].Remove(0, 1));
+                }
+                else if (words[j][words[j].Length - 1] == '%')
+                {
+                    // if ended with & then set back to default
+                    Console.Write(words[j].Remove(words[j].Length - 1));
+                    Console.ForegroundColor = baseColour;
+                }
 
                 // can place other special characters here <<<<<<<<<<<<<<<<<<<<<<
                 // if the word is not a special word, just print it
@@ -264,6 +289,8 @@ namespace Globals
 
 
             }
+
+            Console.WriteLine();
 
         }
 
