@@ -30,9 +30,9 @@ public static class RecRoom
         };
 
 
-
-
         Format.PrintConformed(description);
+
+        Console.WriteLine();
 
         for (int i = 0; i < observations.Length; i++)
         {

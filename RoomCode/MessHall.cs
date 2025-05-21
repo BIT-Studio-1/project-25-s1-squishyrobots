@@ -29,9 +29,9 @@ public static class MessHall
         };
 
 
-
-
         Format.PrintConformed(description);
+
+        Console.WriteLine();
 
         for (int i = 0; i < observations.Length; i++)
         {

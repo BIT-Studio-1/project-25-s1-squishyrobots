@@ -47,7 +47,7 @@ namespace Globals
         public static bool hasRedKey = true;
         public static bool hasGreenKey = false;
         public static bool hasCrowbar = false;
-        public static bool hasBattery = false;
+        public static bool hasFuelCell = false;
 
 
         public static void ShowInventory()
@@ -74,14 +74,14 @@ namespace Globals
                 {
                     Console.WriteLine("Crowbar");
                 }
-                if (hasBattery)
+                if (hasFuelCell)
                 {
                     Console.WriteLine("Battery");
                 }
 
 
                 // if no items are in the inventory
-                if (!hasRedKey && !hasGreenKey && !hasCrowbar && !hasBattery)
+                if (!hasRedKey && !hasGreenKey && !hasCrowbar && !hasFuelCell)
                 {
                     Console.WriteLine("You have no items in your inventory.");
                 }
@@ -99,19 +99,19 @@ namespace Globals
                     switch (input)
                     {
                         case "red key":
-                            Console.WriteLine("A silver key card with two red stripes across the top");
+                            Format.PrintSpecial("A silver key card with two ^red stripes^ across the top.");
                             break;
                         case "green key":
-                            Console.WriteLine("You have a green key.");
+                            Format.PrintSpecial("You have a green key.");
                             break;
                         case "crowbar":
-                            Console.WriteLine("You have a crowbar.");
+                            Format.PrintSpecial("You have a crowbar.");
                             break;
-                        case "battery":
-                            Console.WriteLine("A cylinder with a pulsing ");
+                        case "fuel cell":
+                            Format.PrintSpecial("A beveled cylinder with a pulsing *blue bar* across its length. You get the feeling it still has an abundance of power stored within.");
                             break;
                         default:
-                            Console.WriteLine("Unknown Item");
+                            Format.PrintSpecial("^Unknown Item^");
                             break;
                     }
                     Console.WriteLine("\n\tPress enter to return");
@@ -145,6 +145,7 @@ namespace Globals
         public const int lineWidthDefault = 12;
         public const ConsoleColor defaultColour = ConsoleColor.Gray;
         public const ConsoleColor defaultInterestColour = ConsoleColor.Blue;
+        public const ConsoleColor defaultDangerColour = ConsoleColor.Red;
 
 
         /// <summary>
@@ -184,7 +185,7 @@ namespace Globals
         /// </summary>
         /// <param name="input"></param>
         /// <param name="lineWidth"></param>
-        public static void PrintSpecial(string input = "*null* text input", int lineWidth = lineWidthDefault, ConsoleColor baseColour = defaultColour, ConsoleColor interestColour = defaultInterestColour)
+        public static void PrintSpecial(string input = "*null* text input", int lineWidth = lineWidthDefault, ConsoleColor baseColour = defaultColour, ConsoleColor interestColour = defaultInterestColour, ConsoleColor dangerColour = defaultDangerColour)
         {
 
             Console.ForegroundColor = baseColour;
@@ -205,7 +206,7 @@ namespace Globals
 
 
 
-                if (words[j][0] == '*' && words[j][words[j].Length - 1] == '*')
+                if (words[j][0] == '*' && words[j][words[j].Length - 1] == '*') // blue / interest
                 {
                     // if started and ended with * then make blue then set back to default
                     Console.ForegroundColor = interestColour;
@@ -224,6 +225,27 @@ namespace Globals
                     Console.Write(words[j].Remove(words[j].Length - 1));
                     Console.ForegroundColor = baseColour;
                 }
+                else if (words[j][0] == '^' && words[j][words[j].Length - 1] == '*') // red / danger
+                {
+                    // if started and ended with ^ then make red then set back to default
+                    Console.ForegroundColor = dangerColour;
+                    Console.Write(words[j].Remove(words[j].Length - 1).Remove(0, 1));
+                    Console.ForegroundColor = baseColour;
+                }
+                else if (words[j][0] == '^')
+                {
+                    // if started with ^ then set red until stop
+                    Console.ForegroundColor = dangerColour;
+                    Console.Write(words[j].Remove(0, 1));
+                }
+                else if (words[j][words[j].Length - 1] == '^')
+                {
+                    // if ended with ^ then set back to default
+                    Console.Write(words[j].Remove(words[j].Length - 1));
+                    Console.ForegroundColor = baseColour;
+                }
+
+
                 // can place other special characters here <<<<<<<<<<<<<<<<<<<<<<
                 // if the word is not a special word, just print it
                 else

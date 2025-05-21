@@ -30,9 +30,9 @@ public static class Library
         };
 
 
-
-
         Format.PrintConformed(description);
+
+        Console.WriteLine();
 
         for (int i = 0; i < observations.Length; i++)
         {

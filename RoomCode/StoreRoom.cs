@@ -43,8 +43,9 @@ public static class StoreRoom
         };
 
 
-
         Format.PrintConformed(description);
+
+        Console.WriteLine();
 
         for (int i = 0; i < observations.Length; i++)
         {
@@ -68,10 +69,10 @@ public static class StoreRoom
             case "spare parts kits":
                 break;
 
-            case "emergecy rations":
+            case "emergency rations":
                 break;
 
-            case "tool boxs":
+            case "tool boxes":
                 break;
 
             case "oxygen canisters":
