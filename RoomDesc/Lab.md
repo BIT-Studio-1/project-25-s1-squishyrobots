@@ -14,7 +14,7 @@ Observations
         You lightly skim through the various documents some much longer than other until you get to the final report
         This one seems different however
 
-            Sol 2810397.5
+            Sol 141/2549392.5 (2267/25/11)
             The test was an astounding success, we were able to create artificial life. Everything was going according to plan until
             Francis dropped the beaker containing the specimen, then we lost sight of it. It seemed to shy away from the light however
             maybe its got some high levels of photosensitivity and can't stay in the light too long, Lets just hope it dose'nt take

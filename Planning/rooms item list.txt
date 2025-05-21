@@ -1,5 +1,8 @@
 
----  1. Bridge ---   
+---------------------
+1. Bridge  
+
+---------------------
 
    a. Captain's log
         - Read  
@@ -26,8 +29,10 @@
          - Look
              * The controls look primitive, complicated and confusing
 
- 
---- 2. Brig ----
+------------------- 
+2. Brig
+
+-------------------
 
    a.  Handcuffs
     - Look 
@@ -52,8 +57,10 @@
      - Look
         * A heavy restraint chair with belt like straps used to immobilise inmates.
 
+--------------------------
+3. Captain Quarter
 
---- 3. Captain Quarter ---
+--------------------------
 
    a.   Personal diary
     - Read
@@ -81,8 +88,10 @@
         - Take
         * The sword is now in your inventory
 
-
+--------------------
 4. Crew Quarter
+
+--------------------
 
 a. Bunk bed
     - Look
@@ -96,44 +105,128 @@ b. Personal Locker
 
 c. Crew Uniform
     - Look
-    * A basic crew uniform with a nametag partially scratched off.
+    * A basic crew uniform with a name tag partially scratched off.
   
 d.  Alarm Clock
     - Look
     * It blinks 00:00, reset or maybe just broken.
   
-
+------------------
 5. Engine room
-   wrench
-   fuel canister
-   control panel
-   Engine core
-   maintenance manual  
 
-6. Espacepods
+------------------
+
+a.  Wrench
+    - Look
+    * A heavy tool, stained with oil and dented at the edges
+    - Take
+    * The wrench is now in your inventory
+
+b.  Fuel Canister
+    - Look
+    * The canister sloshes when moved - there's still some fuel left
+    - Take
+    * The Canister is now in your inventory
+
+c.  Control Panel
+    - Look
+    * A complex interface of blinking lights and switches
+    - Activate
+    * The system powers up and hums softly
+
+d.  Engine core
+    - Look
+    * The core pulses slowly - either idle or low on energy
+
+e.  Maintenance Manual
+    - Read
+    * A dense book with repair procedures and emergency shutdown protocols
+
+f.  Maintenance Kit
+    - Look
+    * Full of wires, fuses and pilers
+    - Take 
+    * Kit added to your inventory
+
+--------------------
+6. Escape Pods
   
-   Escape pod manuals
-   oxygen tank
-   emergency rations
-   parachute
-   launch key
+--------------------
 
+a. Escape pod manuals
+    - Read
+    * Instructions on how to initiate launch and when to deploy parachute
+
+b. Oxygen Tank
+    - Look
+    * A nearly full tank, marked for emergency use only
+    - Take
+    * The tank is now in your inventory
+
+c. Emergency Rations
+    - Look
+    * Dried protein bars and water pouches, sealed tight.
+    
+d. Parachute
+    - Look
+    * A compact parachute pack with signs of recent handling
+    - Take
+    * Parachute is now in your inventory
+
+e. Launch Key
+    - Look
+    * A key with a take attached reading "ESC-001"
+    - Take
+    * Launch Key is now in your inventory
+
+--------------------
 7. Green House
+
+--------------------
  
-   lighting
-   temperature control
-   humidity control
+a. Lighting
+    - Look
+    * The lights flicker irregularly, casting eerie shadows on wilted plants
+
+b. Temperature Control
+    - Look
+    * A digital display blinks "Error - System Unstable"
+
+c. Humidity Control
+    - Look
+    * The dial is set unusually high - condensation clings to every surface
 
 
 
-
+------------------
 8. Hallway
-   wall map
-   Emergency light
-   security camera
-   floor plan
 
+------------------
+
+a. Wall map
+    - Look
+    * A faded map showing key ship sections. Some labels are smeared
+    - Take
+    * Map has been added to your inventory
+
+b. Emergency light
+    - Look
+    * A dim red light pulses slowly - likely running on backup power
+
+c. Security Camera
+    - Look
+    * The Lens is cracked, but it still shifts slightly as you move
+
+d. Floor plan
+    - Look
+    * The floor plan lists evacuation routes and restricted areas
+
+
+--------------------------
 9. Hallway general
+
+--------------------------
+
    Emergency exit sign
    wall panel
    Intercom
@@ -179,7 +272,6 @@ d.  Alarm Clock
 15. Shuttle bay 
     shuttle fuel
     boarding pass
-    maintenance kit
     cargo create
 
 16. store room
