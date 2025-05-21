@@ -1,5 +1,11 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Reflection.Metadata;
+using System.Runtime.InteropServices;
+using System.Xml.Linq;
 using Globals;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 
@@ -21,29 +27,26 @@ public static class ShuttleBay
 
 
         string description =
-            "The shuttle bay is much like the ones you have seen before, \n" +
-            "though this one is noticeably more cluttered than most.\n" +
-            "Large steel boxes line the walls, some with the cargo straps still on them.\n" +
-            "The ship you arrived on sits idle on one of the many gravity locks.\n" +
-            "The lights in the bay seem to be malfunctioning might be something to do with the power, \n" +
-            "or lack there of. The walls are white with subtle red accents, \n" +
-            "a common paint theme when it comes to {Name of company}\n"
+            "The shuttle bay is much like the ones you have seen before, though this one is noticeably more cluttered than most" +
+            "The ship you arrived on sits idle on one of the many gravity locks this for of landing pad is still pretty new but is still common place among the space stations in the system" +
+            "The lights in the bay seem to be flickering, must be something to do with the power, or lack there of" +
+            "The walls are white with subtle red accents, a common paint theme when it comes to { Name of company}"
             ;
 
 
         string[] observations =
         {
-            "You see a *fuel cell* in the corner that may help you restore power.",
-            "There is a strange shine on the floor, and on closer inspection you find a *boarding pass* resting atop a puddle of glossy oil.",
-            "A *repair kit* rests next to the damaged ship you came in with.",
-            "There is a stack of *cargo* that looks abandoned. You see the corner of a floral shirt sticking from a duffel bag."
-
+            "In the corner of the room you notice a *steel crate* , it looks like many of the others in the room but this one seems to be the only one lacking a lock on it",
+            "A *desk* sits near the door too what you can only assume to be the rest of the ship",
+            "On the side of the landing pad sits a large cylindrical structure, made entirely out of steel and painted in a vibrant red. Looks like a *silo* .",
         };
 
 
 
 
         Format.PrintConformed(description);
+
+        Console.WriteLine();
 
         for (int i = 0; i < observations.Length; i++)
         {
@@ -55,12 +58,29 @@ public static class ShuttleBay
         Player.GetInput();
 
 
+
+        // Interactions
         switch (Player.input)
         {
-            case "fuel cell":
+            case "steel crate":
+                Format.PrintSpecial("It takes some effort but you finally get the steel crate open, Inside sits a *fuel cell*, these are typically used for powering space stations much like this one, this might come in handy");
 
+                Format.PrintSpecial("Use 'back' to exit.");
+                Player.GetInput();
+                switch (Player.input)
+                {
+                    case "fuel cell":
+                        Format.PrintSpecial("You pick up the ^fuel cell!");
+                        Player.hasFuelCell = true;
+                        break;
+                    case "back":
+                        break;
+                    default:
+                        Format.PrintSpecial("^unknown command^");
+                        break;
+                }
                 break;
-            case "boarding pass":
+            case "desk":
                 
                 break;
             case "repair kit":
@@ -73,40 +93,8 @@ public static class ShuttleBay
         }  
 
 
-
-
-        
-
-
+        // Locations
         switch (Player.input)
-        {
-            case "escape pods":
-                Player.location = "escape pods";
-                break;
-            case "store room":
-                Player.location = "store room";
-                break;
-        }
-
-
-
-
-       
-
-
-      
-
-
-
-
-
-
-
-
-
-
-
-        switch (Player.input.ToLower())
         {
             case "escape pods":
                 Console.WriteLine("You choose the escape pods");
@@ -118,6 +106,7 @@ public static class ShuttleBay
                 EngineRoom.start();
                 break;
         }
+
 
 
     }

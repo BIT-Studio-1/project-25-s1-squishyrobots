@@ -29,8 +29,9 @@ public static class MedBay
 
 
 
-
         Format.PrintConformed(description);
+
+        Console.WriteLine();
 
         for (int i = 0; i < observations.Length; i++)
         {

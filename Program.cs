@@ -14,13 +14,14 @@ namespace SquishyRobotGame
             Player.location = "shuttle bay";
 
             // print out instructions:
-            Console.WriteLine("" +
+            Format.PrintSpecial("" +
             "\nWelcome to the Squishy Robot Game\n" +
-            "\t - inventory\n" +
+            "\t - *inventory* \n" +
             "\t - rules\n\n");
 
 
-            Player.input = "menu";
+
+            //Player.input = "menu";
 
             do
             {
@@ -37,12 +38,12 @@ namespace SquishyRobotGame
                 }
                 else if (Player.input == "rules")
                 {
-                    Console.WriteLine("Rules: \n" +
+                    Format.PrintSpecial("Rules: \n" +
                         "1. You are a robot, and you need to escape the ship.\n" +
                         "2. You can interact with objects in the environment.\n" +
                         "3. Use the 'inventory' command to check your items.\n" +
                         "4. Use the 'exit' command to leave the game.\n");
-                    Console.WriteLine("Press 'enter' to continue...");
+                    Format.PrintSpecial("Press &'enter'& to continue...");
                     Player.GetInput();
                 }
                 else
@@ -90,7 +91,7 @@ namespace SquishyRobotGame
                 }
 
 
-                
+
 
 
 
