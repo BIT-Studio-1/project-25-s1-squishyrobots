@@ -16,6 +16,7 @@ public static  class MainMenu
             Console.WriteLine("write options");
             Console.WriteLine("play");
             Console.WriteLine("map");
+           
 
 
             Player.GetInput();
@@ -27,7 +28,7 @@ public static  class MainMenu
                     break;
 
                 case "map":
-                    Console.WriteLine("");
+                    Console.WriteLine("map will be display here");
                     break ;
             }
         }
