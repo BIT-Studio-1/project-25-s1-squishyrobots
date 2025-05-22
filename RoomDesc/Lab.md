@@ -31,6 +31,6 @@ Observations
     The cupboards that sit above the counter seem to house a variety of items, but they unfortunately seemed to be locked (Key required)
         Inside the cupboards you find mostly paper, loose unused paper, along with empty flasks and beakers
         But inside on cupboard you find a keycard, maybe this unlocks a door somewhere in the ship
-        I should take it with me
+        You should take it with you
             The green keycard has been added too your inventory
 
