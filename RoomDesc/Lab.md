@@ -16,7 +16,7 @@ Observations
 
             Sol 141/2549392.5 (2267/25/11)
             The test was an astounding success, we were able to create artificial life. Everything was going according to plan until
-            Francis dropped the beaker containing the specimen, then we lost sight of it. It seemed to shy away from the light however
+            Francis dropped the beaker containing the specimen, then we lost sight of it. It seemed to shy away from the light however,
             maybe its got some high levels of photosensitivity and can't stay in the light too long, Lets just hope it dose'nt take
             us too long to find it. Unfortunately until we can find and contain the specimen we are unable to continue testing
             so begrudgingly I must end this report here.

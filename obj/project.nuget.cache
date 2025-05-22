@@ -1,15 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kZWiZL2zo5Y=",
+  "dgSpecHash": "JI1j4UM3Hdw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nishtha\\Otago Polytechnic\\studio 1 project\\project-25-s1-squishyrobots\\SquishyRobotGame.csproj",
+  "projectFilePath": "H:\\StudioGames\\project-25-s1-squishyrobots\\SquishyRobotGame.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file H:\\BITY_Y1Projects\\project-25-s1-squishyrobots\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

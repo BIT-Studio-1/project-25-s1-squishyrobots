@@ -1,5 +1,5 @@
 General Description:   
-    As you enter the engine room the rhythmic wurr of the engine can be heard Due to some sort of science that you are unable to understand the noise is isolated to this room Regardless you always found the sound of the engine calming The walls in this room are grey,seems they didnt bother painting these ones. Everyone always complains when they are put on engine maintenance you never understood why though, yes its cramped but at least its a nice temperature that can't be said about every room.
+    As you enter the engine room the rhythmic wurr of the engine can be heard Due to some sort of science that you are unable to understand the noise is isolated to this room. Regardless you always found the sound of the engine calming The walls in this room are grey,seems they didnt bother painting these ones. Everyone always complains when they are put on engine maintenance you never understood why though, yes its cramped but at least its a nice temperature that can't be said about every room.
 
 
 Observations:
