@@ -1,6 +1,6 @@
 Hallway 1:
     General Description:
-        Yep this is indeed a hallway nothing really special about it, it gets you from point A to point B, That's all it really needs to do, This particular hallway seems to have a bulkhead segmenting it off from its other hallway brothers. M
+        Yep this is indeed a hallway nothing really special about it, it gets you from point A to point B, That's all it really needs to do, This particular hallway seems to have a bulkhead segmenting it off from its other hallway brothers. 
 
     Observations:
         (No Keycard)
