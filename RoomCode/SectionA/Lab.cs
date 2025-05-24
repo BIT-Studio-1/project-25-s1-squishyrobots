@@ -5,7 +5,7 @@ using Globals;
 
 public static class Lab
 {
-    public static string name = "lab";
+    public const string name = "lab";
 
 
     // replaces main
@@ -13,8 +13,13 @@ public static class Lab
     {
 
 
-        Console.WriteLine("You are in the Lab.");
+        Format.PrintSpecial("You are in the Lab.");
 
+
+        Map.SurroundingRooms =
+           [
+
+           ];
 
 
         string description =
@@ -29,15 +34,12 @@ public static class Lab
         };
 
 
-
-        Format.PrintConformed(description);
+        Format.PrintSpecial(description);
 
         for (int i = 0; i < observations.Length; i++)
         {
             Format.PrintSpecial(observations[i]);
-            Console.WriteLine();
         }
-
 
 
 
@@ -47,6 +49,7 @@ public static class Lab
         Player.GetInput();
 
 
+        // actions
         switch (Player.input)
         {
             case "test tube":
@@ -66,21 +69,24 @@ public static class Lab
 
 
         }
-        Console.WriteLine();
 
-        switch (Player.input.ToLower())
+        // locations
+        switch (Player.input)
         {
-            case "storege":
-                Console.WriteLine("You choose the storege");
-                EscapePods.start();
+            case "store room":
+                if (Map.CanIAccess(StoreRoom.name))
+                {
+                    Player.location = StoreRoom.name;
+                }
                 break;
             case "greenhouse":
-                Console.WriteLine("You choose the shuttle bay");
-                ShuttleBay.start();
+                if (Map.CanIAccess(GreenHouse.name))
+                {
+                    Player.location = GreenHouse.name;
+                }
                 break;
 
             default:
-                Console.WriteLine("Invalid option");
                 break;
         }
 

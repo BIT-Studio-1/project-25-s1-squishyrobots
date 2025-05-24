@@ -6,7 +6,7 @@ using Globals;
 public static class StoreRoom
 {
 
-    public static string name = "store room";
+    public const string name = "store room";
 
 
     public static bool test = false;
@@ -19,10 +19,13 @@ public static class StoreRoom
     public static void start()
     {
 
+        Format.PrintSpecial("You are in the *Store Room* .");
 
-
-        Console.WriteLine("You are in the Store Room.");
-
+        Map.SurroundingRooms =
+           [
+            Lab.name,
+            ShuttleBay.name
+           ];
 
 
         string description =
@@ -43,14 +46,11 @@ public static class StoreRoom
         };
 
 
-        Format.PrintConformed(description);
-
-        Console.WriteLine();
+        Format.PrintSpecial(description);
 
         for (int i = 0; i < observations.Length; i++)
         {
             Format.PrintSpecial(observations[i]);
-            Console.WriteLine();
         }
 
 
@@ -89,19 +89,21 @@ public static class StoreRoom
         Console.WriteLine();
 
 
-        switch (Player.input.ToLower())
+        switch (Player.input)
         {
-            case "shuttlue bay":
-                Console.WriteLine("You choose the shuttlue bay");
-                EscapePods.start();
+            case "shuttle bay":
+                if (Map.CanIAccess(ShuttleBay.name))
+                {
+                    Player.location = ShuttleBay.name;
+                }
                 break;
             case "lab":
-                Console.WriteLine("You choose the lab");
-                ShuttleBay.start();
+                if (Map.CanIAccess(Lab.name))
+                {
+                    Player.location = Lab.name;
+                }
                 break;
-
             default:
-                Console.WriteLine("Invalid option");
                 break;
         }
 

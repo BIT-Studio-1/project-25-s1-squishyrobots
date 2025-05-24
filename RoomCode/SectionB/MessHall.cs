@@ -3,9 +3,9 @@ using Globals;
 
 
 
-public static class Bridge
+public static class MessHall
 {
-    public static string name = "bridge";
+    public const string name = "mess hall";
 
 
     // replaces main
@@ -13,8 +13,13 @@ public static class Bridge
     {
 
 
+        Format.PrintSpecial("You are in the Mess Hall.");
 
-        Console.WriteLine("You are in the Bridge.");
+
+        Map.SurroundingRooms =
+           [
+
+           ];
 
 
         string description =
@@ -29,13 +34,11 @@ public static class Bridge
         };
 
 
-
-        Format.PrintConformed(description);
+        Format.PrintSpecial(description);
 
         for (int i = 0; i < observations.Length; i++)
         {
             Format.PrintSpecial(observations[i]);
-            Console.WriteLine();
         }
 
 
@@ -44,31 +47,28 @@ public static class Bridge
         Player.GetInput();
 
 
-
         switch (Player.input)
         {
-            case " captain's log":
+            case "food tray":
                 break;
 
-            case "navigation console":
+            case "cooking pot":
                 break;
 
-            case "communication device - phone":
+            case "tableware":
                 break;
 
-            case "star chart":
+            case "vednding machine":
                 break;
 
-            case " helm control":
+            case "meal":
                 break;
 
-             
+
         }
 
-       
 
-
-       
+        
 
 
 
@@ -76,20 +76,10 @@ public static class Bridge
 
     }
 
-    
 
 
-    
-        
+
 }
-
-      
-
-
-
-
-
-
 
 
 

@@ -13,7 +13,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 public static class ShuttleBay
 {
 
-    public static string name = "shuttle bay";
+    public const string name = "shuttle bay";
     public static bool hasFuel = false;
 
 
@@ -22,7 +22,15 @@ public static class ShuttleBay
     public static void start()
     {
 
-        Format.PrintSpecial("You are in the *shuttle bay* .\n");
+        Format.PrintSpecial("You are in the *shuttle bay* .");
+
+        Map.SurroundingRooms = 
+            [
+            StoreRoom.name,
+            EscapePods.name,
+            EngineRoom.name
+            ];
+
 
         
         // switch on room state? - inspection of items, documentation and main?
@@ -31,18 +39,25 @@ public static class ShuttleBay
 
 
         string description =
-            "The shuttle bay is much like the ones you have seen before, though this one is noticeably more cluttered than most. " +
-            "The ship you arrived on sits idle on one of the many gravity locks this for of landing pad is still pretty new but is still common place among the space stations in the system. " +
-            "The lights in the bay seem to be flickering, must be something to do with the power, or lack there of. " +
-            "The walls are white with subtle red accents, a common paint theme when it comes to { Name of company}."
+            "The shuttle bay is much like the ones you have seen before, " +
+            "though this one is noticeably more cluttered than most. " +
+            "The ship you arrived on sits idle on one of the many gravity " +
+            "locks this for of landing pad is still pretty new but is still " +
+            "common place among the space stations in the system. " +
+            "The lights in the bay seem to be flickering, must be something " +
+            "to do with the power, or lack there of. " +
+            "The walls are white with subtle red accents, a common paint " +
+            "theme when it comes to {Name of company}."
             ;
 
 
         string[] observations =
         {
-            "In the corner of the room you notice a *steel crate* , it looks like many of the others in the room but this one seems to be the only one lacking a lock on it",
+            "In the corner of the room you notice a *steel crate* , it looks like many of the " +
+            "others in the room but this one seems to be the only one lacking a lock on it",
             "A *desk* sits near the door too what you can only assume to be the rest of the ship",
-            "On the side of the landing pad sits a large cylindrical structure, made entirely out of steel and painted in a vibrant red. Looks like a *silo* .",
+            "On the side of the landing pad sits a large cylindrical structure, made entirely out " +
+            "of steel and painted in a vibrant red. Looks like a *silo* .",
         };
 
 
@@ -64,7 +79,9 @@ public static class ShuttleBay
         switch (Player.input)
         {
             case "steel crate":
-                Format.PrintSpecial("It takes some effort but you finally get the steel crate open, Inside sits a *fuel cell* , these are typically used for powering space stations much like this one, this might come in handy");
+                Format.PrintSpecial("It takes some effort but you finally get the steel crate open, " +
+                    "Inside sits a *fuel cell* , these are typically used for powering space stations " +
+                    "much like this one, this might come in handy");
 
                 Format.PrintSpecial("Use %'back'% to exit.");
                 Player.GetInput();
@@ -87,7 +104,10 @@ public static class ShuttleBay
                 switch (Player.input)
                 {
                     case "boarding pass":
-                        Format.PrintSpecial("It's a tattered boarding pass with small burn marks around the edges. The first name is burned through but you can just make out the last name %'Collins'% . They seemed to be traveling beyond the station and just stopped for a refuel.");
+                        Format.PrintSpecial("It's a tattered boarding pass with small burn marks " +
+                            "around the edges. The first name is burned through but you can just " +
+                            "make out the last name %'Collins'% . They seemed to be traveling beyond " +
+                            "the station and just stopped for a refuel.");
                         Format.PrintSpecial("Press %'enter'% to exit.", Format.lineWidthDefault, ConsoleColor.DarkGray);
                         Player.GetInput();
                         break;
@@ -101,7 +121,10 @@ public static class ShuttleBay
             case "silo":
                 if (!hasFuel)
                 {
-                    Format.PrintSpecial("Upon closer inspection you notice a little gauge with a needle pointing to the ^red^ section. You surmise that this must be the canister that holds the fuel for the shuttles that land here, but at this present moment it seems to be ^empty^ and of little use.");
+                    Format.PrintSpecial("Upon closer inspection you notice a little gauge with a " +
+                        "needle pointing to the ^red^ section. You surmise that this must be the " +
+                        "canister that holds the fuel for the shuttles that land here, but at this " +
+                        "present moment it seems to be ^empty^ and of little use.");
                     if (Player.hasFuelCell)
                     {
                         Format.PrintSpecial("You have an item in your inventory that might help.");
@@ -116,7 +139,8 @@ public static class ShuttleBay
                             {
                                 case "fuel cell":
                                     hasFuel = true;
-                                    Format.PrintSpecial("You pull out the fuel cell and top up the silo with the glowing blue energy.");
+                                    Format.PrintSpecial("You pull out the fuel cell and top up the " +
+                                        "silo with the glowing blue energy.");
                                     Format.PrintSpecial("Press %'enter'% to exit.", Format.lineWidthDefault, ConsoleColor.DarkGray);
                                     Player.GetInput();
                                     Player.input = "back";
@@ -149,6 +173,8 @@ public static class ShuttleBay
             case "cargo":
 
                 break;
+            default:
+                break;
 
         }  
 
@@ -157,13 +183,24 @@ public static class ShuttleBay
         switch (Player.input)
         {
             case "escape pods":
-                EscapePods.start();
+                if (Map.CanIAccess(EscapePods.name))
+                {
+                    Player.location = EscapePods.name;
+                }
                 break;
             case "engine room":
-                EngineRoom.start();
+                if (Map.CanIAccess(EngineRoom.name))
+                {
+                    Player.location = EngineRoom.name;
+                }
                 break;
-            case "storage room":
-                StoreRoom.start();
+            case "store room":
+                if (Map.CanIAccess(StoreRoom.name))
+                {
+                    Player.location = StoreRoom.name;
+                }
+                break;
+            default:
                 break;
         }
 

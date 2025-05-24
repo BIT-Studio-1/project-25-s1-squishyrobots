@@ -3,16 +3,24 @@ using Globals;
 
 
 
-public static class MedBay
+public static class CrewQuarters
 {
-    public static string name = "medical bay";
+    public const string name = "crew quarters";
 
 
     // replaces main
     public static void start()
     {
 
-        Console.WriteLine("You are in the Medical Bay.");
+
+
+        Format.PrintSpecial("You are in the Crew Quarters.");
+
+
+        Map.SurroundingRooms =
+           [
+
+           ];
 
 
         string description =
@@ -27,16 +35,11 @@ public static class MedBay
         };
 
 
-
-
-        Format.PrintConformed(description);
-
-        Console.WriteLine();
+        Format.PrintSpecial(description);
 
         for (int i = 0; i < observations.Length; i++)
         {
             Format.PrintSpecial(observations[i]);
-            Console.WriteLine();
         }
 
 
@@ -44,28 +47,28 @@ public static class MedBay
 
         Player.GetInput();
 
-
-
+        // actions
         switch (Player.input)
         {
-            case "first aid kit":
+            case "bunk bed":
                 break;
 
-            case "surgical tools":
+            case "personal locker":
                 break;
 
-            case "medical scanner":
+            case "crew uniform":
                 break;
 
-            case "medical bottle":
+            case "alarm clock":
                 break;
 
-            case "stretcher":
+            case "other things like photo frame":
                 break;
 
 
         }
-        Console.WriteLine();
+
+        // locations
 
 
 

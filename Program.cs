@@ -2,7 +2,6 @@
 
 
 
-
 namespace SquishyRobotGame
 {
     internal class Program
@@ -23,7 +22,8 @@ namespace SquishyRobotGame
                 "\tWelcome to the Squishy Robot Game\n" +
                 "\t- ^menu^ \n" +
                 "\t- *inventory* \n" +
-                "\t- %help% \n");
+                "\t- %help% \n" +
+                "\t- ^map^ \n", 50);
 
 
                 Console.ForegroundColor = ConsoleColor.Gray;
@@ -32,6 +32,10 @@ namespace SquishyRobotGame
                 {
                     MainMenu.ShowMenu();
                     Player.GetInput();
+                }
+                else if (Player.input == "map")
+                {
+                    Map.ShowMap();
                 }
                 else if (Player.input == "inventory")
                 {
@@ -44,7 +48,7 @@ namespace SquishyRobotGame
                         "2. You can interact with objects in the environment.\n" +
                         "3. Use the *'inventory'* command to check your items.\n" +
                         "4. Use the ^'exit'^ command to leave the game.\n", 17);
-                    Format.PrintSpecial("Press &'enter'& to continue...");
+                    Format.PrintSpecial("Press %'enter'% to continue...");
                     Player.GetInput();
                 }
                 else

@@ -53,6 +53,7 @@ namespace Globals
         public static bool hasCrowbar = false;
         public static bool hasFuelCell = false;
 
+        public static int binsChecked = 0;
 
         public static void ShowInventory()
         {
@@ -137,136 +138,12 @@ namespace Globals
         /// This method is used to check if the player can access a room based on the room name
         /// </summary>
         /// <param name="roomName"></param>
-        public static bool CanIAccess(string roomName)
-        {
-
-            string purpleKeyDenied = $"^Denied Access^ ! You need the purple key to access the ^{roomName}^ !";
-            string blueKeyDenied = $"^Denied Access^ ! You need the blue key to access the ^{roomName}^ !";
-            string redKeyDenied = $"^Denied Access^ ! You need the red key to access the ^{roomName}^ !";
-
-            // switch statement based on Player.location and room input.
-
-            // has purple key & in lab 
-
-            switch (location)
-            {
-                case "store room":
-                    switch (roomName)
-                    {
-                        case "shuttle bay":
-                            return true;
-
-                        case "lab":
-                            if (hasPurpleKey)
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                Format.PrintSpecial(purpleKeyDenied);
-                                return false;
-                            }
-
-                        default:
-                            return false;
-                    }
-
-                case "lab":
-                    switch (roomName)
-                    {
-                        case "store room":
-                                if (hasPurpleKey)
-                                {
-                                    return true;
-                                }
-                                else
-                                {
-                                    Format.PrintSpecial(purpleKeyDenied);
-                                    return false;
-                                }
-
-                        case "greenhouse":
-                            if (hasPurpleKey)
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                Format.PrintSpecial(purpleKeyDenied);
-                                return false;
-                            }
-                        default:
-                            return false;
-                    }
-
-                case "shuttle bay":
-                    switch (roomName)
-                    {
-                        case "store room":
-                            return true;
-
-                        case "escape pods":
-                            return true;
-
-                        case "Engine Room":
-                            if (hasBlueKey)
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                Format.PrintSpecial(blueKeyDenied);
-                                return false;
-                            }
-
-                        default:
-                            return false;
-                    }
-
-                case "engine room":
-                    switch (roomName)
-                    {
-                        case "shuttle bay":
-                            return true;
-
-                        case "escape pods":
-                            return true;
-
-                        case "brig":
-                            if (hasRedKey)
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                Format.PrintSpecial(redKeyDenied);
-                                return false;
-                            }
-
-                        default:
-                            return false;
-                    }
-            }
-
-
-
-
-            return false;
-        }
-
-
-
-
-
-    }
-
-    
-    /// <summary>
-    /// This class is used to store the generic global map variables
-    /// </summary>
-    public static class Map
-    {
         
+
+
+
+
+
     }
     
 
