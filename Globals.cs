@@ -30,7 +30,7 @@ namespace Globals
     public static class Player
     {
         public static string input;
-        public static string location;
+        public static string location = "shuttle bay";
         public static bool isPlaying = false;
 
 
@@ -47,6 +47,8 @@ namespace Globals
 
 
         public static bool hasRedKey = true;
+        public static bool hasPurpleKey = false;
+        public static bool hasBlueKey = false;
         public static bool hasGreenKey = false;
         public static bool hasCrowbar = false;
         public static bool hasFuelCell = false;
@@ -125,6 +127,137 @@ namespace Globals
 
             } while (input != "back");
         }
+
+
+
+
+
+
+        /// <summary>
+        /// This method is used to check if the player can access a room based on the room name
+        /// </summary>
+        /// <param name="roomName"></param>
+        public static bool CanIAccess(string roomName)
+        {
+
+            string purpleKeyDenied = $"^Denied Access^ ! You need the purple key to access the ^{roomName}^ !";
+            string blueKeyDenied = $"^Denied Access^ ! You need the blue key to access the ^{roomName}^ !";
+            string redKeyDenied = $"^Denied Access^ ! You need the red key to access the ^{roomName}^ !";
+
+            // switch statement based on Player.location and room input.
+
+            // has purple key & in lab 
+
+            switch (location)
+            {
+                case "store room":
+                    switch (roomName)
+                    {
+                        case "shuttle bay":
+                            return true;
+
+                        case "lab":
+                            if (hasPurpleKey)
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                Format.PrintSpecial(purpleKeyDenied);
+                                return false;
+                            }
+
+                        default:
+                            return false;
+                    }
+
+                case "lab":
+                    switch (roomName)
+                    {
+                        case "store room":
+                                if (hasPurpleKey)
+                                {
+                                    return true;
+                                }
+                                else
+                                {
+                                    Format.PrintSpecial(purpleKeyDenied);
+                                    return false;
+                                }
+
+                        case "greenhouse":
+                            if (hasPurpleKey)
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                Format.PrintSpecial(purpleKeyDenied);
+                                return false;
+                            }
+                        default:
+                            return false;
+                    }
+
+                case "shuttle bay":
+                    switch (roomName)
+                    {
+                        case "store room":
+                            return true;
+
+                        case "escape pods":
+                            return true;
+
+                        case "Engine Room":
+                            if (hasBlueKey)
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                Format.PrintSpecial(blueKeyDenied);
+                                return false;
+                            }
+
+                        default:
+                            return false;
+                    }
+
+                case "engine room":
+                    switch (roomName)
+                    {
+                        case "shuttle bay":
+                            return true;
+
+                        case "escape pods":
+                            return true;
+
+                        case "brig":
+                            if (hasRedKey)
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                Format.PrintSpecial(redKeyDenied);
+                                return false;
+                            }
+
+                        default:
+                            return false;
+                    }
+            }
+
+
+
+
+            return false;
+        }
+
+
+
+
+
     }
 
     
@@ -294,7 +427,30 @@ namespace Globals
 
         }
 
+        public static void PrintCharacters(string input = "*null* text input", int lineWidth = lineWidthDefault * 5, ConsoleColor colour = ConsoleColor.DarkGray)
+        {
+            Console.ForegroundColor = colour;
 
+            char[] characters = input.ToCharArray();
+
+            for (int i = 0; i < characters.Length; i++)
+            {
+
+                if (i % lineWidth == 0)
+                {
+                    Console.WriteLine();
+                }
+
+                Console.Write(input[i]);
+
+                //if (i != input.Length - 1 % lineWidth)
+                //{
+                //    Console.Write(" ");
+                //}
+            }
+
+            Console.WriteLine();
+        }
 
     }
 
