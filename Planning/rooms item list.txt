@@ -227,66 +227,219 @@ d. Floor plan
 
 --------------------------
 
-   Emergency exit sign
-   wall panel
-   Intercom
-   cleaning robot
+a. Emergency exit sign
+    - Look
+    * The sign glows faintly green, above a sealed door.
 
+b. Wall Panel
+    - Look
+    * A removable panel with exposed wiring beneath it.
+
+c. Intercom
+    - Look
+    * The mic is dusty, possibly broken
+    - Use
+    * The speaker crackles to life - no reponse.
+
+d. Cleaning robot
+    - Look
+    * It's montionless, with a low battery warning blinking.
+
+-------------------
 10.Lab
-   test tube
-   microscope
-   experiment log
-   chemical flask
-   data pad
 
+------------------
+
+a. Test Tube
+    - Look
+    * A cracked tube containing a faintly glowing substance.
+
+b. Microscope
+    - Look
+    * The lens is dusty, but functional - something green is still on the slide.
+
+c. Experiment Log
+    - Look
+    * A dusty book with a leather strap to keep it close
+    - Read
+    * Notes describing strange experiments  
+
+d. Chemical Flask
+    - Look
+    * A cloudy liquid inside bubbles slightly when moved.
+
+e. Data Pad
+    - Read
+    * Lots of log entries detail experiments gone wrong and safety failures
+
+--------------------
 11. Library
-    Ancient  tome
-    books
-    book-mark
-    digital reader
-    computers
-    research notes
-    maps
 
+--------------------
+
+a. Ancient tome
+    - Look
+    * Bound in worn leather, written in a language you don’t recognise
+
+b. Books
+    - Look
+    * Stacks of manuals, fiction, and crew training material
+
+c. Book-mark
+    - Look
+    * A torn photo of the captain is tucked inside a sci-fi novel
+
+d. Digital reader
+    - Look
+    * A sleek tablet-like device; the screen is cracked but still responds
+    - Read
+    * A journal is open describing isolation and paranoia
+
+e. Computers
+    - Look
+    * Old terminals with flickering screens, some requesting login
+
+f. Research notes
+    - Read
+    * Describes behavioural anomalies in the crew before the incident
+
+g. Maps
+    - Look
+    * Star maps and old charts, some marked with red circles
+
+-----------------
 12. Med Bay
-    first aid kit
-    surgical tool
-    medical scanner
-    medicine bottle
-    stretcher 
 
+-----------------
+
+a. First Aid Kit
+    - Look
+    * Standard supplies — gauze, bandages, antiseptic
+    - Take
+    * First aid kit is now in your inventory
+
+b. Surgical Tool
+    - Look
+    * A clean scalpel, sharp and ready
+    - Take
+    * The tool is now in your inventory
+
+c. Medical Scanner
+    - Look
+    * It powers on with a beep, scanning for life signs
+
+d. Medicine Bottle
+    - Look
+    * Label worn off - contents unknown
+    - Take
+    * Bottle added to inventory
+
+e. Stretcher 
+    - Look
+    * Folded up against the wall, a faint bloodstain marks the corner
+
+---------------------
 13. Mess Hall
-   food tray
-   cooking pot
-   tableware
-   vending machine
-   meal
 
+---------------------
+
+a. Food Tray
+    - Look
+    * A half-eaten meal still sits on the tray, mould beginning to form
+
+b. Cooking Pot
+    - Look
+    * Blackened from heavy use — something burned in here
+
+c. Tableware
+    - Look
+    * Scattered forks and knives — one missing its handle
+
+d. Vending Machine
+    - Look
+    * Flickers when touched, some buttons still work.
+    - Use
+    * Pressed the buttons but nothing happens
+
+e. Meal
+    - Look
+    * Freeze-dried mystery meat, barely recognisable
+
+---------------------
 14. Rec Room
-    Card Deck
-    pool cue
-    holographic game
-    exercise equipment
-    music player
 
+---------------------
+
+a. Card Deck
+    - Look
+    * A few cards are missing; the joker is scratched with writing
+
+b. Pool Cue
+    - Look
+    * Splintered at the end — could be used as a weapon
+
+c. Holographic Game
+    - Look
+    * The projector starts a chess simulation
+    - Activate
+    * The projector starts a chess simulation
+
+d. Exercise Equipment
+    - Look
+    * Rusted and unused — weights lie scattered on the floor
+
+e. Music Player
+    - Look
+    * Cracked but still functional
+    - Use
+    * It plays a static-filled tune from a forgotten era
+
+----------------------
 15. Shuttle bay 
-    shuttle fuel
-    boarding pass
-    cargo create
 
+----------------------
+
+a. Shuttle Fuel
+    - Look
+    * Sealed drum labeled: "Volatile – Handle with care"
+    - Take
+    * Added to inventory
+
+b. Boarding Pass
+    - Look
+    * Issued to a crew member named “H. Ryan” — not in the ledger.
+
+c. Cargo Create
+    - Look
+    * Crate is sealed with a code lock
+    - Open
+    * Requires 3-digit access code
+
+------------------------
 16. store room
-    spare parts kits
-    emergency rations
-    tool boxes
-    oxygen canisters
-    storage create
-    boxes
 
- 
+------------------------
 
+a. Spare Parts Kits
+    - Look
+    * Labelled for use with propulsion systems
 
+b. Emergency Rations
+    - Look
+    * Same brand as the ones in the escape pods — slightly expired
 
+c. Tool Boxes
+    - Look
+    * Locked with a latch — opens to reveal multi-use tools
 
+d. Oxygen Canisters
+    - Look
+    * Stacked in a metal rack — some nearly empty
 
+e. Storage Create
+    - Look
+    * Filled with various unlabelled supplies
 
-    
+f. Boxes
+    - Look
+    * Stacked and sealed — faded writing says “Mission Supplies”
