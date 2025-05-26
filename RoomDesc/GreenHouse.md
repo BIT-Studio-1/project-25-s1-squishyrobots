@@ -1,5 +1,5 @@
 General Description
-    The green house is hot a humid, well it would kinda have to be. Rooms like these are typically installed so stations can me "Self Sustaining" But its common knowledge that most stations buy food stuffs from passing vessels And the green room is just used as a backup incase something goes wrong. Lines of troughs filled with soil and plants can be see everywhere in this room, the harsh lights beaming down on them trying to emulate the light from the star produced in humanities home system.
+    The green house is hot a humid, well it would kinda have to be. Rooms like these are typically installed so stations can be "Self Sustaining" But its common knowledge that most stations buy food stuffs from passing vessels And the green room is just used as a backup incase something goes wrong. Lines of troughs filled with soil and plants can be see everywhere in this room, the harsh lights beaming down on them trying to emulate the light from the star produced in humanities home system.
 
 
 Observations:
