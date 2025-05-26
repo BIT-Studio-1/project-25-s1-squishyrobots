@@ -3,19 +3,21 @@ using Globals;
 
 
 
-public static class Library
+public static class MedBay
 {
-    public static string name = "library";
+    public const string name = "medical bay";
 
 
     // replaces main
     public static void start()
     {
 
+        Format.PrintSpecial("You are in the Medical Bay.");
 
+        Map.SurroundingRooms =
+           [
 
-        Console.WriteLine("You are in the Library.");
-
+           ];
 
 
         string description =
@@ -30,14 +32,11 @@ public static class Library
         };
 
 
-        Format.PrintConformed(description);
-
-        Console.WriteLine();
+        Format.PrintSpecial(description);
 
         for (int i = 0; i < observations.Length; i++)
         {
             Format.PrintSpecial(observations[i]);
-            Console.WriteLine();
         }
 
 
@@ -46,34 +45,28 @@ public static class Library
         Player.GetInput();
 
 
+        // actions
         switch (Player.input)
         {
-            case "anienct tome":
+            case "first aid kit":
                 break;
 
-            case "books":
+            case "surgical tools":
                 break;
 
-            case "book-mark":
+            case "medical scanner":
                 break;
 
-            case "digital reader":
+            case "medical bottle":
                 break;
 
-            case "computers":
+            case "stretcher":
                 break;
-            case "research notes":
-                break;
-            case "maps":
-                break;
-
 
 
         }
-        Console.WriteLine();
 
-
-
+        // locations
 
 
 

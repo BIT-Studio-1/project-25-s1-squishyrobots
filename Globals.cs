@@ -30,7 +30,7 @@ namespace Globals
     public static class Player
     {
         public static string input;
-        public static string location;
+        public static string location = "shuttle bay";
         public static bool isPlaying = false;
 
 
@@ -47,10 +47,13 @@ namespace Globals
 
 
         public static bool hasRedKey = true;
+        public static bool hasPurpleKey = false;
+        public static bool hasBlueKey = false;
         public static bool hasGreenKey = false;
         public static bool hasCrowbar = false;
         public static bool hasFuelCell = false;
 
+        public static int binsChecked = 0;
 
         public static void ShowInventory()
         {
@@ -125,15 +128,22 @@ namespace Globals
 
             } while (input != "back");
         }
-    }
 
-    
-    /// <summary>
-    /// This class is used to store the generic global map variables
-    /// </summary>
-    public static class Map
-    {
+
+
+
+
+
+        /// <summary>
+        /// This method is used to check if the player can access a room based on the room name
+        /// </summary>
+        /// <param name="roomName"></param>
         
+
+
+
+
+
     }
     
 
@@ -294,7 +304,30 @@ namespace Globals
 
         }
 
+        public static void PrintCharacters(string input = "*null* text input", int lineWidth = lineWidthDefault * 5, ConsoleColor colour = ConsoleColor.DarkGray)
+        {
+            Console.ForegroundColor = colour;
 
+            char[] characters = input.ToCharArray();
+
+            for (int i = 0; i < characters.Length; i++)
+            {
+
+                if (i % lineWidth == 0)
+                {
+                    Console.WriteLine();
+                }
+
+                Console.Write(input[i]);
+
+                //if (i != input.Length - 1 % lineWidth)
+                //{
+                //    Console.Write(" ");
+                //}
+            }
+
+            Console.WriteLine();
+        }
 
     }
 

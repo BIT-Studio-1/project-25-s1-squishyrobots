@@ -31,6 +31,26 @@ Hallway 2:
                     You try to open the door but no matter how much strength you can muster you are bested by the door, we shall see who is laughing once you find that keycard
 
                 With Key:
-                    It takes you a moment to find the scanner for the keycard, its covered by the black vines that can be seen all over this section of the ship, You press the card to the reader and much like before there is a beep, this one louder than the other door, and the door is now open, although its heaver than the one from earlier. Looking through the door the black vines have fully taken over the walls, they weave their way through the doors and some even run across the floor, the pulsating that you noticed earlier is even more exemplified in these vines. One more door stands between me and the Bridge of the ship maybe you can find some answers there.
+                    It takes you a moment to find the scanner for the keycard, its covered by the black vines that can be seen all over this section of the ship, You press the card to the reader and much like before there is a beep, this one louder than the other door, and the door is now open, although its heaver than the one from earlier. Looking through the door the black vines have fully taken over the walls. One more door stands between you and the Bridge of the ship maybe you can find some answers there.
+
+
+Hallway 3:
+    General Description;
+        The black vines seen in the previous part of the ship have made themselves at home here, snaking into the vents and through doorways the pulsating that you noticed earlier now even more noticeable as you take a step into the hallway you notice the vines have managed to cover parts of the floor, whatever this stuff is, you know its not meant to be here. It seems to be originating from the bridge, maybe if you can make your way in there you can find a way to stop it, or find out if it can even be stopped.
+
+    Observations:
+        
+        Door too Captains Quarters:
+
+            Without hand:
+                Approaching the door to the captains quarters you notice that unlike most of the other doors in the station this one seems to be locked via a biometric scanner, you can only assume that its only going to open for the captain of the station. Maybe I can find him somewhere around and ask him to open the door
+
+            With Hand:
+                You take the hand from your back pocket you are not sure why you put a severed hand in your pocket but turns out it was useful after-all, you press the hand to the biometric scanner and after a few wurrs of some fancy lights that you are pretty sure do nothing the door opens reveling the room that lies beyond.
+        
+        Door too bridge:
+            
+            Without Keycard:
+                This door for some reason refuses to open, even when you give it a stern talking too. Maybe the keycard is somewhere around here.
                     
 

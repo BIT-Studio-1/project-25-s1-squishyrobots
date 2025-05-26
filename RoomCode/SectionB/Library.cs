@@ -3,9 +3,9 @@ using Globals;
 
 
 
-public static class CaptQuarters
+public static class Library
 {
-    public static string name = "captains quarters";
+    public const string name = "library";
 
 
     // replaces main
@@ -14,7 +14,14 @@ public static class CaptQuarters
 
 
 
-        Console.WriteLine("You are in the Captain's Quarters.");
+        Format.PrintSpecial("You are in the Library.");
+
+
+
+        Map.SurroundingRooms =
+           [
+
+           ];
 
 
         string description =
@@ -29,17 +36,12 @@ public static class CaptQuarters
         };
 
 
-
-        Format.PrintConformed(description);
+        Format.PrintSpecial(description);
 
         for (int i = 0; i < observations.Length; i++)
         {
             Format.PrintSpecial(observations[i]);
-            Console.WriteLine();
         }
-
-
-
 
 
 
@@ -47,30 +49,33 @@ public static class CaptQuarters
         Player.GetInput();
 
 
+        // actions
         switch (Player.input)
         {
-            case "personal diaery":
+            case "ancient tome":
                 break;
 
-            case "captain's uniform":
+            case "books":
                 break;
 
-            case "holographic display":
+            case "bookmark":
                 break;
 
-            case "safe box":
+            case "digital reader":
                 break;
 
-            case "decorative sword":
+            case "computer":
                 break;
+            case "research notes":
+                break;
+            case "maps":
+                break;
+
 
 
         }
-        Console.WriteLine();
 
-
-
-
+        //locations
 
 
 

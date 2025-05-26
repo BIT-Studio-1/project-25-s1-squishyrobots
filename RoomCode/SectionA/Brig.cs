@@ -5,7 +5,7 @@ using Globals;
 
 public static class Brig
 {
-    public static string name = "brig";
+    public const string name = "brig";
 
 
     // replaces main
@@ -13,7 +13,13 @@ public static class Brig
     {
 
 
-        Console.WriteLine("You are in the Brig.");
+        Format.PrintSpecial("You are in the Brig.");
+
+
+        Map.SurroundingRooms =
+           [
+            EngineRoom.name
+           ];
 
 
         string description =
@@ -28,20 +34,19 @@ public static class Brig
         };
 
 
-
-        Format.PrintConformed(description);
+        Format.PrintSpecial(description);
 
         for (int i = 0; i < observations.Length; i++)
         {
             Format.PrintSpecial(observations[i]);
-            Console.WriteLine();
         }
-
 
 
 
         Player.GetInput();
 
+
+        // actions
         switch (Player.input)
         {
             case "handcuffs":
@@ -61,19 +66,18 @@ public static class Brig
 
 
         }
-        Console.WriteLine();
 
-
+        // locations
         switch (Player.input.ToLower())
         {
             case "engine room":
-                Console.WriteLine("You choose the engine room");
-                EscapePods.start();
+                if (Map.CanIAccess(EngineRoom.name))
+                {
+                    Player.location = EngineRoom.name;
+                }
                 break;
-           
 
             default:
-                Console.WriteLine("Invalid option");
                 break;
         }
 

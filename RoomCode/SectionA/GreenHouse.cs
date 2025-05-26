@@ -5,14 +5,20 @@ using Globals;
 
 public static class GreenHouse
 {
-    public static string name = "greenhouse";
+    public const string name = "greenhouse";
 
 
     // replaces main
     public static void start()
     {
 
-        Console.WriteLine("You are in the Green House.");
+        Format.PrintSpecial("You are in the Green House.");
+
+
+        Map.SurroundingRooms =
+           [
+
+           ];
 
 
         string description =
@@ -27,14 +33,11 @@ public static class GreenHouse
         };
 
 
-
-
-        Format.PrintConformed(description);
+        Format.PrintSpecial(description);
 
         for (int i = 0; i < observations.Length; i++)
         {
             Format.PrintSpecial(observations[i]);
-            Console.WriteLine();
         }
 
 
@@ -43,6 +46,7 @@ public static class GreenHouse
 
         Player.GetInput();
 
+        // actions
         switch (Player.input)
         {
             case "lighting":
@@ -54,11 +58,23 @@ public static class GreenHouse
             case "humidity control":
                 break;
 
+            default:
+                break;
 
         }
-        Console.WriteLine();
 
-
+        // locations
+        switch (Player.input)
+        {
+            case "lab":
+                if (Map.CanIAccess(Lab.name))
+                {
+                    Player.location = Lab.name;
+                }
+                break;
+            default:
+                break;
+        }
 
 
 

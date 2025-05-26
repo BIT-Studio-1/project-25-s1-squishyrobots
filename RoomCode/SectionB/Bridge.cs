@@ -3,9 +3,9 @@ using Globals;
 
 
 
-public static class MessHall
+public static class Bridge
 {
-    public static string name = "mess hall";
+    public const string name = "bridge";
 
 
     // replaces main
@@ -14,7 +14,13 @@ public static class MessHall
 
 
 
-        Console.WriteLine("You are in the Mess Hall.");
+        Format.PrintSpecial("You are in the Bridge.");
+
+
+        Map.SurroundingRooms =
+           [
+
+           ];
 
 
         string description =
@@ -29,18 +35,12 @@ public static class MessHall
         };
 
 
-        Format.PrintConformed(description);
-
-        Console.WriteLine();
+        Format.PrintSpecial(description);
 
         for (int i = 0; i < observations.Length; i++)
         {
             Format.PrintSpecial(observations[i]);
-            Console.WriteLine();
         }
-
-
-
 
 
 
@@ -48,29 +48,31 @@ public static class MessHall
         Player.GetInput();
 
 
+
         switch (Player.input)
         {
-            case "food tray":
+            case " captain's log":
                 break;
 
-            case "cooking pot":
+            case "navigation console":
                 break;
 
-            case "tableware":
+            case "communication device - phone":
                 break;
 
-            case "vednding machine":
+            case "star chart":
                 break;
 
-            case "meal":
+            case " helm control":
                 break;
 
-
+             
         }
-        Console.WriteLine();
+
+       
 
 
-        
+       
 
 
 
@@ -78,10 +80,20 @@ public static class MessHall
 
     }
 
+    
 
 
-
+    
+        
 }
+
+      
+
+
+
+
+
+
 
 
 
