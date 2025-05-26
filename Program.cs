@@ -31,7 +31,6 @@ namespace SquishyRobotGame
                 if (Player.input == "menu")
                 {
                     MainMenu.ShowMenu();
-                    Player.GetInput();
                 }
                 else if (Player.input == "map")
                 {
