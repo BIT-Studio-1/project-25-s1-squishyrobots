@@ -12,7 +12,7 @@ namespace SquishyRobotGame
             Player.location = "shuttle bay";
 
 
-            //Player.input = "menu";
+            Player.input = "menu";
 
             do
             {
