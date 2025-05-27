@@ -11,120 +11,110 @@ namespace SquishyRobotGame
 
             Player.location = "shuttle bay";
 
+            Utility.Show();
 
-            Player.input = "menu";
+
+            //Player.input = "menu"; // set after title screen
 
             do
             {
 
-                // print out instructions:
-                Format.PrintSpecial("" +
-                "\tWelcome to the Squishy Robot Game\n" +
-                "\t- ^menu^ \n" +
-                "\t- *inventory* \n" +
-                "\t- %help% \n" +
-                "\t- ^map^ \n", 50);
+                switch (Player.location)
+                {
+
+                        // Section A
+
+                    case "brig":
+                        Brig.start();
+                        break;
+
+                    case "engine room":
+                        EngineRoom.start();
+                        break;
+
+                    case "escape pods":
+                        EscapePods.start();
+                        break;
+
+                    case "greenhouse":
+                        GreenHouse.start();
+                        break;
+
+                    case "lab":
+                        Lab.start();
+                        break;
+
+                    case "shuttle bay":
+                        ShuttleBay.start();
+                        break;
+
+                    case "store room":
+                        StoreRoom.start();
+                        break;
 
 
-                Console.ForegroundColor = ConsoleColor.Gray;
+                        // Section B
+                    case "library":
+                        Library.start();
+                        break;
 
-                if (Player.input == "menu")
-                {
-                    MainMenu.ShowMenu();
-                }
-                else if (Player.input == "map")
-                {
-                    Map.ShowMap();
-                }
-                else if (Player.input == "inventory")
-                {
-                    Player.ShowInventory();
-                }
-                else if (Player.input == "help")
-                {
-                    Format.PrintSpecial("%Instructions% : \n" +
-                        "1. You are a robot, and you need to escape the ship.\n" +
-                        "2. You can interact with objects in the environment.\n" +
-                        "3. Use the *'inventory'* command to check your items.\n" +
-                        "4. Use the ^'exit'^ command to leave the game.\n", 17);
-                    Format.PrintSpecial("Press %'enter'% to continue...");
-                    Player.GetInput();
-                }
-                else
-                {
-                    switch (Player.location)
-                    {
-                        case "shuttle bay":
-                            ShuttleBay.start();
-                            break;
-                        case "escape pods":
-                            EscapePods.start();
-                            break;
-                        case "engine room":
-                            EngineRoom.start();
-                            break;
-                        case "store room":
-                            StoreRoom.start();
-                            break;
-                        case "bridge":
-                            Bridge.start();
-                            break;
-                        case "brig":
-                            Brig.start();
-                            break;
-                        case "captains quarters":
-                            CaptQuarters.start();
-                            break;
-                        case "crew quarters":
-                            CrewQuarters.start();
-                            break;
-                        case "greenhouse":
-                            GreenHouse.start();
-                            break;
-                        case "med bay":
-                            MedBay.start();
-                            break;
-                        case "mess hall":
-                            MessHall.start();
-                            break;
-                        case "rec room":
-                            RecRoom.start();
-                            break;
+                    case "med bay":
+                        MedBay.start();
+                        break;
 
+                    case "mess hall":
+                        MessHall.start();
+                        break;
+
+                    case "rec room":
+                        RecRoom.start();
+                        break;
+
+
+                        // Section C
+                    case "bridge":
+                        Bridge.start();
+                        break;
+
+                    case "captains quarters":
+                        CaptQuarters.start();
+                        break;
+
+                    case "crew quarters":
+                        CrewQuarters.start();
+                        break;
+
+
+                        // switch on hallway selection due to ease of player input & consistency
+                    case "hallway":
+                        switch (Player.currentHallway)
+                        {
+                            case 1:
+                                PrimaryHallway.start(); // Section A
+                                break;
+                            case 2:
+                                IntermediateHallway.start(); // Section B
+                                break;
+                            case 3:
+                                TerminalHallway.start(); // Section C
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+
+                    default:
+                        break;
                     }
-                }
-
-
-
-
-
-
-
-
 
                 // do while !exit:
                 //      query player
                 // if exit, then leave room loop.
 
-
-
-
-
-
-
             } while (Player.input != "exit") ;
 
 
-
-
-
-
-
-
-
-
-
-
         }
+
     }
 }

@@ -71,7 +71,7 @@ public static class Brig
         switch (Player.input.ToLower())
         {
             case "engine room":
-                if (Map.CanIAccess(EngineRoom.name))
+                if (Map.CheckAccess(EngineRoom.name))
                 {
                     Player.location = EngineRoom.name;
                 }

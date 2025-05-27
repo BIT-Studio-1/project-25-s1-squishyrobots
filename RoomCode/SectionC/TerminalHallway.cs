@@ -1,35 +1,33 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Globals;
 
-
-
-public static class EngineRoom
+public static class TerminalHallway
 {
-    public const string name = "engine room";
-
-
+    public const string name = "hallway";
     // replaces main
     public static void start()
     {
 
-
-        Format.PrintSpecial("You are in the Engine Room.");
-
+        Format.PrintSpecial("You are in the *Hallway* .");
 
         Map.SurroundingRooms =
-           [
-            EscapePods.name,
-            ShuttleBay.name,
-            Brig.name,
-            PrimaryHallway.name
-           ];
+            [
+                Brig.name,
+                Lab.name,
+                GreenHouse.name,
+                ShuttleBay.name
+            ];
 
 
 
-        string description =
-            "blank"
-
+        string description = "" +
+            ""
             ;
+
 
 
         string[] observations =
@@ -38,14 +36,13 @@ public static class EngineRoom
         };
 
 
-        Format.PrintSpecial(description, Format.lineWidthDefault, ConsoleColor.DarkGray, ConsoleColor.DarkBlue, ConsoleColor.DarkRed, ConsoleColor.DarkGreen);
+        Format.PrintSpecial(description, Format.lineWidthDefault, ConsoleColor.DarkGray);
+
 
         for (int i = 0; i < observations.Length; i++)
         {
             Format.PrintSpecial(observations[i]);
         }
-
-
 
 
 
@@ -58,33 +55,29 @@ public static class EngineRoom
 
 
 
+
+
+        Utility.Check();
+
+
         // locations
         switch (Player.input)
         {
-            case "escape pods":
-                if (Map.CheckAccess(EscapePods.name))
+            case "lab":
+                if (Map.CheckAccess(Lab.name))
                 {
-                    Player.location = EscapePods.name;
+                    Player.location = Lab.name;
                 }
                 break;
+
             case "shuttle bay":
                 if (Map.CheckAccess(ShuttleBay.name))
                 {
                     Player.location = ShuttleBay.name;
                 }
                 break;
-
             default:
                 break;
         }
     }
-
-
-
-
 }
-
-
-
-
-

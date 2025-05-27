@@ -1,12 +1,4 @@
-﻿using System;
-using System.ComponentModel;
-using System.Data.SqlTypes;
-using System.Diagnostics;
-using System.Reflection.Metadata;
-using System.Runtime.InteropServices;
-using System.Xml.Linq;
-using Globals;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+﻿using Globals;
 
 
 
@@ -24,16 +16,16 @@ public static class ShuttleBay
 
         Format.PrintSpecial("You are in the *shuttle bay* .");
 
-        Map.SurroundingRooms = 
+        Map.SurroundingRooms =
             [
             StoreRoom.name,
             EscapePods.name,
             EngineRoom.name,
-            SouthHallway.name
+            PrimaryHallway.name
             ];
 
 
-        
+
         // switch on room state? - inspection of items, documentation and main?
         // switch includes rules and inventory methods found in global? possible separation into interaction file?
 
@@ -56,7 +48,7 @@ public static class ShuttleBay
         {
             "In the corner of the room you notice a *steel crate* , it looks like many of the " +
             "others in the room but this one seems to be the only one lacking a lock on it",
-            "A *desk* sits near the door too what you can only assume to be the rest of the ship",
+            "A *desk* sits near the door that leads to deeper sectors of the space station.",
             "On the side of the landing pad sits a large cylindrical structure, made entirely out " +
             "of steel and painted in a vibrant red. Looks like a *silo* .",
         };
@@ -80,88 +72,116 @@ public static class ShuttleBay
         switch (Player.input)
         {
             case "steel crate":
-                Format.PrintSpecial("It takes some effort but you finally get the steel crate open, " +
-                    "Inside sits a *fuel cell* , these are typically used for powering space stations " +
-                    "much like this one, this might come in handy");
-
-                Format.PrintSpecial("Use %'back'% to exit.");
-                Player.GetInput();
-                switch (Player.input)
+                if (!Items.hasFuelCell)
                 {
-                    case "fuel cell":
-                        Format.PrintSpecial("You pick up the *fuel cell* !");
-                        Items.hasFuelCell = true;
-                        Format.PrintSpecial("Press %'enter'% to exit.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                    while (Player.input != "back" && !Items.hasFuelCell)
+                    {
+
+                        Format.PrintSpecial("It takes some effort but you finally get the steel crate open, " +
+                            "Inside sits a *fuel cell* , these are typically used for powering space stations " +
+                            "much like this one, this might come in handy");
+
+                        Format.PrintSpecial("Type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
                         Player.GetInput();
-                        break;
-                    default:
-                        break;
+                        switch (Player.input)
+                        {
+                            case "fuel cell":
+                                Format.PrintSpecial("You pick up the *fuel cell* !");
+                                Items.hasFuelCell = true;
+                                Format.PrintSpecial("Press %'enter'% to continue.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                                Player.GetInput();
+                                break;
+                            case "back":
+                                break;
+                            default:
+                                Format.PrintSpecial("^unknown command^");
+                                Format.PrintSpecial("Press %'enter'% to return or type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                                Player.GetInput();
+                                break;
+                        }
+                    }
                 }
+                else
+                {
+                    Format.PrintSpecial("The crate is empty, you already took the fuel cell from it.");
+                    Format.PrintSpecial("Press %'enter'% to continue.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                    Player.GetInput();
+                }
+
                 break;
             case "desk":
-                Format.PrintSpecial("Upon looking a little closer at the desk you notice a *boarding pass* .");
-                Format.PrintSpecial("Press %'enter'% to exit.", Format.lineWidthDefault, ConsoleColor.DarkGray);
-                Player.GetInput();
-                switch (Player.input)
+                while (Player.input != "back")
                 {
-                    case "boarding pass":
-                        Format.PrintSpecial("It's a tattered boarding pass with small burn marks " +
-                            "around the edges. The first name is burned through but you can just " +
-                            "make out the last name %'Collins'% . They seemed to be traveling beyond " +
-                            "the station and just stopped for a refuel.");
-                        Format.PrintSpecial("Press %'enter'% to exit.", Format.lineWidthDefault, ConsoleColor.DarkGray);
-                        Player.GetInput();
-                        break;
-                    case "back":
-                        break;
-                    default:
-                        Format.PrintSpecial("^unknown command^");
-                        break;
+                    Format.PrintSpecial("Upon looking a little closer at the desk you notice a *boarding pass* .");
+                    Format.PrintSpecial("Type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                    Player.GetInput();
+                    switch (Player.input)
+                    {
+                        case "boarding pass":
+                            Format.PrintSpecial("It's a tattered boarding pass with small burn marks " +
+                                "around the edges. The first name is burned through but you can just " +
+                                "make out the last name %'Collins'% . They seemed to be traveling beyond " +
+                                "the station and just stopped for a refuel. You could probably use this to gain " +
+                                "access to a few more areas");
+                            Format.PrintSpecial("Press %'enter'% to return or type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                            Player.GetInput();
+                            break;
+                        case "back":
+                            break;
+                        default:
+                            Format.PrintSpecial("^unknown command^");
+                            Format.PrintSpecial("Press %'enter'% to return or type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                            Player.GetInput();
+                            break;
+                    }
                 }
                 break;
             case "silo":
+
                 if (!hasFuel)
                 {
-                    Format.PrintSpecial("Upon closer inspection you notice a little gauge with a " +
-                        "needle pointing to the ^red^ section. You surmise that this must be the " +
-                        "canister that holds the fuel for the shuttles that land here, but at this " +
-                        "present moment it seems to be ^empty^ and of little use.");
-                    if (Items.hasFuelCell)
-                    {
-                        Format.PrintSpecial("You have an item in your inventory that might help.");
-                    }
-                    if (Items.hasFuelCell)
-                    {
-                        Format.PrintSpecial("Type 'back' to exit.", Format.lineWidthDefault, ConsoleColor.DarkGray);
-                        while (Player.input != "back")
-                        {
-                            Player.GetInput();
-                            switch (Player.input)
-                            {
-                                case "fuel cell":
-                                    hasFuel = true;
-                                    Format.PrintSpecial("You pull out the fuel cell and top up the " +
-                                        "silo with the glowing blue energy.");
-                                    Format.PrintSpecial("Press %'enter'% to exit.", Format.lineWidthDefault, ConsoleColor.DarkGray);
-                                    Player.GetInput();
-                                    Player.input = "back";
-                                    break;
-                                case "back":
-                                    break;
-                                default:
-                                    Format.PrintSpecial("^unknown command^");
-                                    Player.GetInput();
-                                    break;
 
-                            }
-                        }
+                    //if (Items.hasFuelCell)
+                    //{
+                    //    while (Player.input != "back" && !hasFuel)
+                    //    {
+                    //        Format.PrintSpecial("Upon closer inspection you notice a little gauge with a " +
+                    //            "needle pointing to the ^red^ section. You surmise that this must be the " +
+                    //            "canister that holds the fuel for the shuttles that land here, but at this " +
+                    //            "present moment it seems to be ^empty^ and of little use.");
+                    //        //Format.PrintSpecial("You have an item in your inventory that might help.");
+                    //        Format.PrintSpecial("Type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                    //        Player.GetInput();
+                    //        switch (Player.input)
+                    //        {
+                    //            case "fuel cell":
+                    //                hasFuel = true;
+                    //                Format.PrintSpecial("You pull out the fuel cell and top up the " +
+                    //                    "silo with the glowing blue energy.");
+                    //                Format.PrintSpecial("Press %'enter'% to return or type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                    //                Player.GetInput();
+                    //                break;
+                    //            case "back":
+                    //                break;
+                    //            default:
+                    //                Format.PrintSpecial("^unknown command^");
+                    //                Format.PrintSpecial("Press %'enter'% to return or type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                    //                Player.GetInput();
+                    //                break;
+                    //        }
+                    //    }
+                    //}
+                    //else
+                    //{
 
-                    }
-                    else
-                    {
+                        Format.PrintSpecial("Upon closer inspection you notice a little gauge with a " +
+                                "needle pointing to the red section. You surmise that this must be the " +
+                                "canister that holds the fuel for the shuttles that land here, but at this " +
+                                "present moment it seems to be ^empty^ and of little use.");
+
                         Format.PrintSpecial("Press %'enter'% to exit.", Format.lineWidthDefault, ConsoleColor.DarkGray);
                         Player.GetInput();
-                    }
+                    //}
                 }
                 else
                 {
@@ -177,28 +197,35 @@ public static class ShuttleBay
             default:
                 break;
 
-        }  
+        }
 
 
         // Locations
         switch (Player.input)
         {
             case "escape pods":
-                if (Map.CanIAccess(EscapePods.name))
+                if (Map.CheckAccess(EscapePods.name))
                 {
                     Player.location = EscapePods.name;
                 }
                 break;
             case "engine room":
-                if (Map.CanIAccess(EngineRoom.name))
+                if (Map.CheckAccess(EngineRoom.name))
                 {
                     Player.location = EngineRoom.name;
                 }
                 break;
             case "store room":
-                if (Map.CanIAccess(StoreRoom.name))
+                if (Map.CheckAccess(StoreRoom.name))
                 {
                     Player.location = StoreRoom.name;
+                }
+                break;
+            case "hallway":
+                if (Map.CheckAccess(PrimaryHallway.name))
+                {
+                    Player.location = PrimaryHallway.name;
+                    Player.currentHallway = 1;
                 }
                 break;
             default:

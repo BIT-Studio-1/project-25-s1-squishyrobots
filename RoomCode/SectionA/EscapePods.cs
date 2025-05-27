@@ -13,6 +13,7 @@ public static class EscapePods
     public static void start()
     {
 
+
         Format.PrintSpecial("You are in the *Escape Pod room* .");
 
 
@@ -109,13 +110,13 @@ public static class EscapePods
         switch (Player.input)
         {
             case "shuttle bay":
-                if (Map.CanIAccess(ShuttleBay.name))
+                if (Map.CheckAccess(ShuttleBay.name))
                 {
                     Player.location = ShuttleBay.name;
                 }
                 break;
             case "engine room":
-                if (Map.CanIAccess(EngineRoom.name))
+                if (Map.CheckAccess(EngineRoom.name))
                 {
                     Player.location = EngineRoom.name;
                 }

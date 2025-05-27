@@ -1,24 +1,28 @@
 ﻿// Ignore Spelling: interactibles
 
-using System;
-using System.Drawing;
-using System.Xml.Serialization;
-
 
 
 // This page is used to store global variables that can be accessed from anywhere in the program.
+using Globals;
+
+
+
 namespace Globals
 {
-    
+
+
+
+
     /// <summary>
     /// This class is used to store the player global variables
     /// </summary>
     public static class Player
     {
-        public static string input;
+        public static string input = "";
         public static string location = "shuttle bay";
-        public static bool isPlaying = false;
-
+        //public static bool isPlaying = false;
+        public static bool hasWon = false;
+        public static int currentHallway = 0;
 
         /// <summary>
         /// This function is used to parse the input from the player
@@ -26,13 +30,92 @@ namespace Globals
         public static void GetInput()
         {
             Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
             input = Console.ReadLine().ToLower();
             Console.Clear();
+            Utility.Check();
+            Utility.showCount--;
+            Utility.Show();
+
+
         }
 
+
+
     }
-    
+
+
+
+
+
+
+    public static class Utility
+    {
+
+        public static int showCount = 0;
+
+        public static void Show()
+        {
+            if (showCount < 1)
+            {
+                showCount++;
+                // print out instructions:
+                Format.PrintSpecial("" +
+                " ~ Menu ~ " +
+                " *Inventory ~* " +
+                " ^Help ~^ " +
+                " %Map ~% ", 50, ConsoleColor.DarkMagenta, ConsoleColor.DarkBlue, ConsoleColor.DarkGreen, ConsoleColor.DarkYellow);
+            }
+            
+        }
+
+        public static void Check()
+        {
+            // map, inventory, help, menu
+
+            switch (Player.input)
+            {
+                case "map":
+                    Map.ShowMap();
+                    break;
+                case "inventory":
+                    //ShowInventory();
+                    break;
+                case "help":
+                    Format.PrintSpecial("%Instructions% : \n" +
+                        "1. You are a robot, and you are being piloted to find the ship's black box.\n" +
+                        "2. You can interact with blue objects in the environment.\n" +
+                        "3. Use the *'inventory'* to check your items.\n" +
+                        "4. Use the *'map'* to check where you are and where you can go next.\n" +
+                        "5. Use the ^'exit'^ command to leave the game.\n", 40);
+                    Format.PrintSpecial("Press %'enter'% to continue...");
+                    Player.GetInput();
+                    break;
+                case "menu":
+                    MainMenu.ShowMenu();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+
+        public static void Win()
+        {
+            Console.Clear();
+            Format.PrintSpecial("Congratulations! You completed the demo! More to come soon. Thanks for playing <3", Format.lineWidthDefault, ConsoleColor.Green);
+            Format.PrintSpecial("Press %'enter'% to continue exploring or ^'exit'^ to leave the game.", Format.lineWidthDefault, ConsoleColor.DarkGray, Format.defaultInterestColour, Format.defaultDangerColour, ConsoleColor.DarkGreen);
+            Player.hasWon = true;
+            Player.GetInput();
+
+        }
+
+
+
+
+    }
+
+
 
     /// <summary>
     /// This class is used to store methods that format inputted strings and prints them
@@ -76,6 +159,9 @@ namespace Globals
 
             Console.WriteLine();
         }
+
+
+
 
         /// <summary>
         /// Method <c>PrintSpecial</c> formats and colour text then prints to console |
@@ -169,7 +255,7 @@ namespace Globals
                         Console.ForegroundColor = baseColour;
                     }
                     // can place other special characters here <<<<<<<<<<<<<<<<<<<<<<
-                    
+
 
 
 
@@ -182,7 +268,8 @@ namespace Globals
                             if (i == 0)
                             {
                                 Console.WriteLine(temp[i] + ".");
-                            } else
+                            }
+                            else
                             {
                                 Console.Write(temp[i]);
                             }
@@ -203,7 +290,7 @@ namespace Globals
                         Console.Write(" ");
                     }
                 }
-                
+
 
 
             }
@@ -212,26 +299,40 @@ namespace Globals
 
         }
 
-        public static void PrintCharacters(string input = "*null* text input", int lineWidth = lineWidthDefault * 5, ConsoleColor colour = ConsoleColor.DarkGray)
+        public static void PrintCharacters(string input = "*null* text input", int lineWidth = lineWidthDefault * 5, ConsoleColor baseColour = ConsoleColor.DarkGray, ConsoleColor playerColour = defaultHelpColour)
         {
-            Console.ForegroundColor = colour;
+            Console.ForegroundColor = baseColour;
 
             char[] characters = input.ToCharArray();
+            bool isCharacter = false;
 
             for (int i = 0; i < characters.Length; i++)
             {
+
+                if (characters[i] == '*') // blue / interest
+                {
+                    // if started and ended with * then make blue then set back to default
+                    if (!isCharacter)
+                    {
+                        Console.ForegroundColor = playerColour;
+                        isCharacter = true;
+                    } else
+                    {
+                        Console.ForegroundColor = baseColour;
+                        isCharacter = false;
+                    }
+                } else
+                {
+                    Console.Write(input[i]);
+                }
 
                 if (i % lineWidth == 0)
                 {
                     Console.WriteLine();
                 }
 
-                Console.Write(input[i]);
 
-                //if (i != input.Length - 1 % lineWidth)
-                //{
-                //    Console.Write(" ");
-                //}
+
             }
 
             Console.WriteLine();
@@ -240,7 +341,7 @@ namespace Globals
     }
 
 
-    
+
 }
 
 

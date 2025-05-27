@@ -1,0 +1,28 @@
+﻿
+
+// nests
+
+while (Player.input != "back")
+
+switch (Player.input)
+
+
+    case "back":
+        break;
+    default:
+        Format.PrintSpecial("^unknown command^");
+        Format.PrintSpecial("Press %'enter'% to return or type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+        Player.GetInput();
+        break;
+        
+
+
+// prints
+
+Format.PrintSpecial("^unknown command^");
+
+Format.PrintSpecial("Type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+
+Format.PrintSpecial("Press %'enter'% to return or type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+
+Format.PrintSpecial("Press %'enter'% to continue.", Format.lineWidthDefault, ConsoleColor.DarkGray);

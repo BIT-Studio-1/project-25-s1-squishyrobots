@@ -13,6 +13,7 @@ public static class GreenHouse
     public static void start()
     {
 
+
         Format.PrintSpecial("You are in the Green House.");
 
 
@@ -68,7 +69,7 @@ public static class GreenHouse
         switch (Player.input)
         {
             case "lab":
-                if (Map.CanIAccess(Lab.name))
+                if (Map.CheckAccess(Lab.name))
                 {
                     Player.location = Lab.name;
                 }
