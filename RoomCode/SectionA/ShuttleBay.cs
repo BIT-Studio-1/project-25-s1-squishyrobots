@@ -90,7 +90,7 @@ public static class ShuttleBay
                 {
                     case "fuel cell":
                         Format.PrintSpecial("You pick up the *fuel cell* !");
-                        Player.hasFuelCell = true;
+                        Items.hasFuelCell = true;
                         Format.PrintSpecial("Press %'enter'% to exit.", Format.lineWidthDefault, ConsoleColor.DarkGray);
                         Player.GetInput();
                         break;
@@ -126,11 +126,11 @@ public static class ShuttleBay
                         "needle pointing to the ^red^ section. You surmise that this must be the " +
                         "canister that holds the fuel for the shuttles that land here, but at this " +
                         "present moment it seems to be ^empty^ and of little use.");
-                    if (Player.hasFuelCell)
+                    if (Items.hasFuelCell)
                     {
                         Format.PrintSpecial("You have an item in your inventory that might help.");
                     }
-                    if (Player.hasFuelCell)
+                    if (Items.hasFuelCell)
                     {
                         Format.PrintSpecial("Type 'back' to exit.", Format.lineWidthDefault, ConsoleColor.DarkGray);
                         while (Player.input != "back")
