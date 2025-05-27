@@ -9,36 +9,24 @@ using System.Threading;
 
 public static class MainMenu
 {
+   public  static void Title()
+    {
+
+
+    }
     public static void ShowMenu()
     {
         string input = " ";
         //string[] TitleLines = {/*you title lines here*/};
 
-        //while (input != "exit")
-        //{
-        //    Console.Clear();
-        //    // ASII lines for the title
-        //    string[] titleLines = new string[15];
-        //}
-
-        //{
-        //    Console.WriteLine(@"   _____                      _     _          _____       _           _   ");
-        //    Console.WriteLine(@"  / ___|                    | |   ()        |  __ \     | |         | |  ");
-        //    Console.WriteLine(@" | (___   ___  _   _ _ __ __| |_  _ _ __    | |) |   | |_   ___ | |_ ");
-        //    Console.WriteLine(@"  \___ \ / _ \| | | | '/ _| ' \| | '_ \   |  _  / | | | '_ \ / _ \| __|");
-        //    Console.WriteLine(@"  ___) | () | || | | | (| | | | | | | |  | | \ \ || | |) | () | |_ ");
-        //    Console.WriteLine(@" |/ \/ \,||  \|| |||| ||  ||  \\,|./ \/ \_|");
-        //}
-        //;
-        //color array for fun effect
         ConsoleColor[] colors = new ConsoleColor[]
         {
             ConsoleColor.Yellow,
             ConsoleColor.Cyan,
             ConsoleColor.Magenta,
             ConsoleColor.Green,
-            ConsoleColor.Blue,
-            ConsoleColor.Red
+            
+            
 
 
 
@@ -55,7 +43,7 @@ public static class MainMenu
             Console.ForegroundColor = colors[i % colors.Length];
 
             Console.WriteLine(title_lines[i]);
-            Thread.Sleep(1000); // 150 milisec delay
+            Thread.Sleep(1000); // 1000 milisec delay
         }
         // sublitle
         Console.ForegroundColor = ConsoleColor.White;
@@ -127,12 +115,18 @@ public static class MainMenu
                 case "instructions":
 
                     Console.WriteLine("you selected: instructions");
+                    Console.WriteLine("Enter to continue.");
+                    Console.ReadLine();
+                    Player.input = "menu";
                     break;
 
 
                 case "creadits":
 
                     Console.WriteLine("you selected: creadits");
+                    Console.WriteLine("Enter to continue.");
+                    Console.ReadLine();
+                    Player.input = "menu";
                     break;
 
 
