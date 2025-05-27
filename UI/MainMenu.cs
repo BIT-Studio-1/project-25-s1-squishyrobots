@@ -12,33 +12,33 @@ public static class MainMenu
     public static void ShowMenu()
     {
         string input = " ";
-        string[] TitleLines = {/*you title lines here*/};
+        //string[] TitleLines = {/*you title lines here*/};
 
-        while (input != "exit")
-        {
-            Console.Clear();
-            // ASII lines for the title
-            string[] titleLines = new string[15];
-        }
+        //while (input != "exit")
+        //{
+        //    Console.Clear();
+        //    // ASII lines for the title
+        //    string[] titleLines = new string[15];
+        //}
 
-        {
-            Console.WriteLine(@"   _____                      _     _          _____       _           _   ");
-            Console.WriteLine(@"  / ___|                    | |   ()        |  __ \     | |         | |  ");
-            Console.WriteLine(@" | (___   ___  _   _ _ __ __| |_  _ _ __    | |) |   | |_   ___ | |_ ");
-            Console.WriteLine(@"  \___ \ / _ \| | | | '/ _| ' \| | '_ \   |  _  / | | | '_ \ / _ \| __|");
-            Console.WriteLine(@"  ___) | () | || | | | (| | | | | | | |  | | \ \ || | |) | () | |_ ");
-            Console.WriteLine(@" |/ \/ \,||  \|| |||| ||  ||  \\,|./ \/ \_|");
-        }
-        ;
+        //{
+        //    Console.WriteLine(@"   _____                      _     _          _____       _           _   ");
+        //    Console.WriteLine(@"  / ___|                    | |   ()        |  __ \     | |         | |  ");
+        //    Console.WriteLine(@" | (___   ___  _   _ _ __ __| |_  _ _ __    | |) |   | |_   ___ | |_ ");
+        //    Console.WriteLine(@"  \___ \ / _ \| | | | '/ _| ' \| | '_ \   |  _  / | | | '_ \ / _ \| __|");
+        //    Console.WriteLine(@"  ___) | () | || | | | (| | | | | | | |  | | \ \ || | |) | () | |_ ");
+        //    Console.WriteLine(@" |/ \/ \,||  \|| |||| ||  ||  \\,|./ \/ \_|");
+        //}
+        //;
         //color array for fun effect
         ConsoleColor[] colors = new ConsoleColor[]
         {
             ConsoleColor.Yellow,
             ConsoleColor.Cyan,
-             ConsoleColor.Magenta,
-                 ConsoleColor.Green,
-                 ConsoleColor.Blue,
-                ConsoleColor.Red
+            ConsoleColor.Magenta,
+            ConsoleColor.Green,
+            ConsoleColor.Blue,
+            ConsoleColor.Red
 
 
 
@@ -55,7 +55,7 @@ public static class MainMenu
             Console.ForegroundColor = colors[i % colors.Length];
 
             Console.WriteLine(title_lines[i]);
-            Thread.Sleep(150); // 150 milisec delay
+            Thread.Sleep(1000); // 150 milisec delay
         }
         // sublitle
         Console.ForegroundColor = ConsoleColor.White;
@@ -90,55 +90,65 @@ public static class MainMenu
             Console.WriteLine("5.credits");
             Console.WriteLine("6.exit");
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.Write("\nselect an option (1-6):  ");
-            input = Console.ReadLine().ToLower();
+            Console.Write("\nselect an option:  ");
+            
 
-            Console.ResetColor();
+            
 
             Player.GetInput();
 
             switch (Player.input)
             {
-                case "1":
+                case "options":
 
-                    Console.WriteLine("you selected: write Options");
+                    Console.WriteLine("you selected: write options");
+                    Console.WriteLine("Enter to continue.");
+                    Console.ReadLine();
+                    Player.input = "menu";
                     break;
 
 
-                case "2":
+                case "play":
 
                     Console.WriteLine("you selected: play");
+                    Console.WriteLine("Enter to continue.");
+                    Console.ReadLine();
+                    Player.input = "menu";
                     break;
 
-                case "3":
+                case "map":
 
                     Console.WriteLine("you selected: map");
+                    Console.WriteLine("Enter to continue.");
+                    Console.ReadLine();
+                    Player.input = "menu";
                     break;
 
-                case "4":
+                case "instructions":
 
                     Console.WriteLine("you selected: instructions");
                     break;
 
 
-                case "5":
+                case "creadits":
 
                     Console.WriteLine("you selected: creadits");
                     break;
 
 
-                case "6":
+                case "exit":
 
 
                     Console.WriteLine("Exiting...");
+                    Thread.Sleep(2000);
 
 
-                    input = "exit"; // to end the loop
+                    Player.input = "exit"; // to end the loop
                     break;
                 default:
                     Console.WriteLine(" Invalid option. please try again. ");
-                    Console.WriteLine("\n Press enter to continue...");
-                    Console.ReadLine();
+                    Player.input = "menu";
+                    
                     break;
             }
         }
