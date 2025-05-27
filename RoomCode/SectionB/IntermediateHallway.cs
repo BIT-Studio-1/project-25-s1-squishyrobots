@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Globals;
 
-public static class SouthHallway
+public static class IntermediateHallway
 {
-    public const string name = "south hallway";
+    public const string name = "hallway";
     // replaces main
     public static void start()
     {
-        Format.PrintSpecial("You are in the Hallway.");
+
+        Format.PrintSpecial("You are in the *Hallway* .");
 
         Map.SurroundingRooms =
             [
@@ -52,18 +53,25 @@ public static class SouthHallway
         //actions
 
 
+
+
+
+
+        Utility.Check();
+
+
         // locations
         switch (Player.input)
         {
             case "lab":
-                if (Map.CanIAccess(Lab.name))
+                if (Map.CheckAccess(Lab.name))
                 {
                     Player.location = Lab.name;
                 }
                 break;
 
             case "shuttle bay":
-                if (Map.CanIAccess(ShuttleBay.name))
+                if (Map.CheckAccess(ShuttleBay.name))
                 {
                     Player.location = ShuttleBay.name;
                 }

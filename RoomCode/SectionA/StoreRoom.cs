@@ -41,7 +41,7 @@ public static class StoreRoom
         string[] observations =
         {
             "The *shelves* have a few different items that could be useful",
-            "Against the back wall you notice a set of 3 *locker* , painted in a dark blue the add and nice splash of colour too the otherwise dull room"
+            "Against the back wall you notice a set of 3 *lockers* , painted in a dark blue the add and nice splash of colour too the otherwise dull room"
         };
 
 
@@ -55,14 +55,16 @@ public static class StoreRoom
 
 
 
-
-
-
-
+        //lockers
+        //shelves
 
 
         Player.GetInput();
 
+
+
+
+        // actions
         switch (Player.input)
         {
             case "spare parts kits":
@@ -77,31 +79,35 @@ public static class StoreRoom
             case "oxygen canisters":
                 break;
 
-            case "storage create":
+            case "storage crate":
                 break;
             case "boxes":
                 break;
 
-
-
         }
-        Console.WriteLine();
 
 
+        Utility.Check();
+
+
+
+        // locations
         switch (Player.input)
         {
             case "shuttle bay":
-                if (Map.CanIAccess(ShuttleBay.name))
+                if (Map.CheckAccess(ShuttleBay.name))
                 {
                     Player.location = ShuttleBay.name;
                 }
                 break;
+
             case "lab":
-                if (Map.CanIAccess(Lab.name))
+                if (Map.CheckAccess(Lab.name))
                 {
                     Player.location = Lab.name;
                 }
                 break;
+            
             default:
                 break;
         }

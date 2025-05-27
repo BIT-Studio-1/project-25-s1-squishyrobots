@@ -12,13 +12,12 @@ public static class Lab
     public static void start()
     {
 
-
         Format.PrintSpecial("You are in the Lab.");
 
 
         Map.SurroundingRooms =
            [
-            SouthHallway.name,
+            PrimaryHallway.name,
             StoreRoom.name,
             GreenHouse.name
            ];
@@ -76,15 +75,22 @@ public static class Lab
         switch (Player.input)
         {
             case "store room":
-                if (Map.CanIAccess(StoreRoom.name))
+                if (Map.CheckAccess(StoreRoom.name))
                 {
                     Player.location = StoreRoom.name;
                 }
                 break;
             case "greenhouse":
-                if (Map.CanIAccess(GreenHouse.name))
+                if (Map.CheckAccess(GreenHouse.name))
                 {
                     Player.location = GreenHouse.name;
+                }
+                break;
+            case "hallway":
+                if (Map.CheckAccess(PrimaryHallway.name))
+                {
+                    Player.location = PrimaryHallway.name;
+                    Player.currentHallway = 1;
                 }
                 break;
 
