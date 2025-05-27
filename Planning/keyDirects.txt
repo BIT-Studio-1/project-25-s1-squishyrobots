@@ -1,0 +1,19 @@
+
+
+Store room - lab
+
+Store room - engine room
+Greenhouse - brig
+
+Lab locker - section B
+Brig - lab locker
+
+Shuttle bay - Mess hall & Rec room
+
+Library - section C
+Med bay - Capt. Quarters
+
+Capt. Quarters - Bridge
+
+
+
