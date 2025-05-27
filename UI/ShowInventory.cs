@@ -119,7 +119,10 @@ internal class Inventory
                         Format.PrintSpecial("A beveled cylinder with a pulsing *blue bar* across its length. You get the feeling it still has an abundance of power stored within.");
                         break;
                     case "blue key":
-                        Format.PrintSpecial()
+                        Format.PrintSpecial("You have a blue key");
+                        break;
+                    case "purple key":
+                        Format.PrintSpecial("You have a purple key");
                         break;
                     default:
                         Format.PrintSpecial("^Unknown Item^");
