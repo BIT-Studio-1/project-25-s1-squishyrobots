@@ -16,6 +16,13 @@ public static class EscapePods
         Format.PrintSpecial("You are in the *Escape Pod room* .");
 
 
+        Map.SurroundingRooms =
+           [
+            ShuttleBay.name,
+            EngineRoom.name
+           ];
+
+
         string description =
             "Escape pods line the walls on either side of you. " +
             "Some are bigger than the others, those are typically saved for the important personnel. " +
@@ -37,7 +44,7 @@ public static class EscapePods
 
 
 
-        Format.PrintConformed(description);
+        Format.PrintSpecial(description, Format.lineWidthDefault, ConsoleColor.DarkGray, ConsoleColor.DarkBlue, ConsoleColor.DarkRed, ConsoleColor.DarkGreen);
 
         for (int i = 0; i < observations.Length; i++)
         {
