@@ -8,43 +8,100 @@ internal class Inventory
 {
     public static string ShowInventory(Inventory inventory)
     {
-        if (Items.hasRedKey == true)
+
+        do
         {
-            Console.WriteLine("Red Key");
-        }
+
+            Console.WriteLine("-------------------------------------------------");
+            Console.WriteLine("You have the following items in your inventory: ");
+            Console.WriteLine("-------------------------------------------------");
 
 
-        // Brig Items
-        if (Items.hasHandcuffs == true)
-        {
-            Console.WriteLine("Handcuffs");
+
+            // Starting Items
+            if (Items.hasRedKey == true)
+            {
+                Console.WriteLine("Red Key");
+            }
+
+            // Brig Items
+            if (Items.hasHandcuffs == true)
+            {
+                Console.WriteLine("Handcuffs");
+            }
+
+            // Captain Quarters Items
+            if (Items.hasRedKey == true)
+            {
+                Console.WriteLine("Red Key");
+            }
+
+            // Engine Room Items
+            if (Items.hasWrench == true)
+            {
+                Console.WriteLine("Wrench");
+            }
+            if (Items.hasFuelCanister == true)
+            {
+                Console.WriteLine("Fuel Canister");
+            }
+            if (Items.hasMaintenanceKit == true)
+            {
+                Console.WriteLine("Maintenance Kit");
+            }
+
+            //Escape Pods
+            if (Items.hasOxygenTank == true)
+            {
+                Console.WriteLine("Oxygen Tank");
+            }
+            if (Items.hasParachute == true)
+            {
+                Console.WriteLine("Parachute");
+            }
+            if (Items.hasLaunchKey == true)
+            {
+                Console.WriteLine("Launch Key");
+            }
+
+            // Hallway Items
+            if (Items.hasWallMap == true)
+            {
+                Console.WriteLine("Wall Map");
+            }
+
+            // Med Bay Items
+            if (Items.hasFirstAidKit == true)
+            {
+                Console.WriteLine("First Aid Kit");
+            }
+            if (Items.hasSurgicalTool == true)
+            {
+                Console.WriteLine("Surgical Tool");
+            }
+            if (Items.hasMedicineBottle == true)
+            {
+                Console.WriteLine("Medicine Bottle");
+            }
+            if (Items.hasShuttleFuel == true)
+            {
+                Console.WriteLine("Shuttle Fuel");
+            }
+
+            // if no items are in the inventory
+            if (!Items.hasRedKey && !Items.hasGreenKey && !Items.hasCrowbar && !Items.hasFuelCell && !Items.hasPurpleKey && !Items.hasBlueKey && !Items.hasHandcuffs
+                && !Items.hasSword && !Items.hasWrench && !Items.hasFuelCanister && !Items.hasMaintenanceKit && !Items.hasOxygenTank && !Items.hasLaunchKey && !Items.hasWallMap
+                && !Items.hasFirstAidKit && !Items.hasSurgicalTool && !Items.hasMaintenanceKit && !Items.hasShuttleFuel)
+            {
+                Console.WriteLine("You have no items in your inventory.");
+            }
+
+
+
+
+
         }
 
-        // Captain Quarters Items
-        if (Items.hasRedKey == true)
-        {
-            Console.WriteLine("Red Key");
-        }
-
-        // Engine Room Items
-        if (Items.hasWrench == true)
-        {
-            Console.WriteLine("Wrench");
-        }
-        if (Items.hasFuelCanister == true)
-        {
-            Console.WriteLine("Fuel Canister");
-        }
-        if (Items.hasMaintenanceKit == true)
-        {
-            Console.WriteLine("Maintenance Kit");
-        }
-
-        //Escape Pods
-        if (Items.hasOxygenTank == true)
-        {
-            Console.WriteLine("Oxygen Tank");
-        }
 
 
 
