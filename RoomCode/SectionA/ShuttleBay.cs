@@ -28,7 +28,8 @@ public static class ShuttleBay
             [
             StoreRoom.name,
             EscapePods.name,
-            EngineRoom.name
+            EngineRoom.name,
+            SouthHallway.name
             ];
 
 
@@ -63,7 +64,7 @@ public static class ShuttleBay
 
 
 
-        Format.PrintSpecial(description, Format.lineWidthDefault, ConsoleColor.DarkGray);
+        Format.PrintSpecial(description, Format.lineWidthDefault, ConsoleColor.DarkGray, ConsoleColor.DarkBlue, ConsoleColor.DarkRed, ConsoleColor.DarkGreen);
 
 
         for (int i = 0; i < observations.Length; i++)
