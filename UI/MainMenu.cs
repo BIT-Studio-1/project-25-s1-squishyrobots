@@ -11,7 +11,19 @@ public static class MainMenu
 {
    public  static void Title()
     {
+        Console.Clear();
+        Console.CursorVisible = false;
 
+        string title = "SQUISHY ROBOT GAME";
+        ConsoleColor[] = new ConsoleColor[]
+        {
+            ConsoleColor.Magenta,
+            ConsoleColor.Cyan,
+            ConsoleColor.Red,
+            ConsoleColor.Green,
+            ConsoleColor.Yellow
+        };
+       
 
     }
     public static void ShowMenu()
