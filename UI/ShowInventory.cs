@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Globals;
 
 internal class Inventory
 {
@@ -96,11 +97,37 @@ internal class Inventory
                 Console.WriteLine("You have no items in your inventory.");
             }
 
+            // instructions for exit
+            Console.WriteLine("\n-- type 'back' to return --\n");
+
+            GetInput();
+
+            if (Player.input != "back")
+            {
+                switch (Player.input)
+                {
+                    case "red key":
+                        Format.PrintSpecial("A silver key card with two ^red stripes^ across the top.");
+                        break;
+                    case "green key":
+                        Format.PrintSpecial("You have a green key.");
+                        break;
+                    case "crowbar":
+                        Format.PrintSpecial("You have a crowbar.");
+                        break;
+                    case "fuel cell":
+                        Format.PrintSpecial("A beveled cylinder with a pulsing *blue bar* across its length. You get the feeling it still has an abundance of power stored within.");
+                        break;
+                    case "":
+                        break;
+                    default:
+                        Format.PrintSpecial("^Unknown Item^");
+                        break;
+                }
 
 
 
-
-        }
+            }
 
 
 
