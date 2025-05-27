@@ -15,7 +15,7 @@ public static class MainMenu
         Console.CursorVisible = false;
 
         string title = "SQUISHY ROBOT GAME";
-        ConsoleColor[] = new ConsoleColor[]
+        ConsoleColor[] colors = new ConsoleColor[]
         {
             ConsoleColor.Magenta,
             ConsoleColor.Cyan,
