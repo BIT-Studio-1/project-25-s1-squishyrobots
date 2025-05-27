@@ -14,23 +14,6 @@ public static class MainMenu
         string input = " ";
         //string[] TitleLines = {/*you title lines here*/};
 
-        //while (input != "exit")
-        //{
-        //    Console.Clear();
-        //    // ASII lines for the title
-        //    string[] titleLines = new string[15];
-        //}
-
-        //{
-        //    Console.WriteLine(@"   _____                      _     _          _____       _           _   ");
-        //    Console.WriteLine(@"  / ___|                    | |   ()        |  __ \     | |         | |  ");
-        //    Console.WriteLine(@" | (___   ___  _   _ _ __ __| |_  _ _ __    | |) |   | |_   ___ | |_ ");
-        //    Console.WriteLine(@"  \___ \ / _ \| | | | '/ _| ' \| | '_ \   |  _  / | | | '_ \ / _ \| __|");
-        //    Console.WriteLine(@"  ___) | () | || | | | (| | | | | | | |  | | \ \ || | |) | () | |_ ");
-        //    Console.WriteLine(@" |/ \/ \,||  \|| |||| ||  ||  \\,|./ \/ \_|");
-        //}
-        //;
-        //color array for fun effect
         ConsoleColor[] colors = new ConsoleColor[]
         {
             ConsoleColor.Yellow,
@@ -127,12 +110,18 @@ public static class MainMenu
                 case "instructions":
 
                     Console.WriteLine("you selected: instructions");
+                    Console.WriteLine("Enter to continue.");
+                    Console.ReadLine();
+                    Player.input = "menu";
                     break;
 
 
                 case "creadits":
 
                     Console.WriteLine("you selected: creadits");
+                    Console.WriteLine("Enter to continue.");
+                    Console.ReadLine();
+                    Player.input = "menu";
                     break;
 
 
