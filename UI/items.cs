@@ -8,9 +8,14 @@ using System.Threading.Tasks;
 
 public static class Items
 {
-    
-    
+
+
     public static bool hasRedKey = false;
+    public static bool hasPurpleKey = false;
+    public static bool hasBlueKey = false;
+    public static bool hasGreenKey = false;
+    public static bool hasCrowbar = false;
+    public static bool hasFuelCell = false;
 
 
     // Brig Items
@@ -39,12 +44,6 @@ public static class Items
 
     //Shuttle Bay Items
     public static bool hasShuttleFuel = false;
-
-
-
-
-
-
 
 }
 
