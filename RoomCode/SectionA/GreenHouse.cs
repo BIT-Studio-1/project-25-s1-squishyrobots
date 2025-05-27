@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography;
 using Globals;
 
 
@@ -17,7 +18,7 @@ public static class GreenHouse
 
         Map.SurroundingRooms =
            [
-
+            Lab.name
            ];
 
 
@@ -33,7 +34,7 @@ public static class GreenHouse
         };
 
 
-        Format.PrintSpecial(description);
+        Format.PrintSpecial(description, Format.lineWidthDefault, ConsoleColor.DarkGray, ConsoleColor.DarkBlue, ConsoleColor.DarkRed, ConsoleColor.DarkGreen);
 
         for (int i = 0; i < observations.Length; i++)
         {
@@ -76,16 +77,7 @@ public static class GreenHouse
                 break;
         }
 
-
-
-
-
-
-
     }
-
-
-
 
 }
 
