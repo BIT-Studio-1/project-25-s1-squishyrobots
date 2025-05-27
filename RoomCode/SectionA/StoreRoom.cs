@@ -45,7 +45,7 @@ public static class StoreRoom
         };
 
 
-        Format.PrintSpecial(description, Format.lineWidthDefault, ConsoleColor.DarkGray);
+        Format.PrintSpecial(description, Format.lineWidthDefault, ConsoleColor.DarkGray, ConsoleColor.DarkBlue, ConsoleColor.DarkRed, ConsoleColor.DarkGreen);
 
         for (int i = 0; i < observations.Length; i++)
         {

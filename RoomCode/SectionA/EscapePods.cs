@@ -73,7 +73,7 @@ public static class EscapePods
                     "being flung through space at 1389km/h with no internal gravity lock, there " +
                     "is also a large table in the center on the pod, again you are not quite sure " +
                     "how useful that would be but your guess is that the 'Investors' thought it " +
-                    "would provide insentive for those climbing the corporate ladder. Other than " +
+                    "would provide insensitive for those climbing the corporate ladder. Other than " +
                     "that there is the standard oxygen tanks and food rations although there is " +
                     "more of those than in the standard pods.");
                 Format.PrintSpecial("Press %'enter'% to exit.", Format.lineWidthDefault, ConsoleColor.DarkGray);
