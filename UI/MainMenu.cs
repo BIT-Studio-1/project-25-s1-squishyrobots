@@ -23,6 +23,14 @@ public static class MainMenu
             ConsoleColor.Green,
             ConsoleColor.Yellow
         };
+        // Animation Bouncing title
+        for (int bounce = 0; bounce < 3; bounce++)
+        {
+            Console.Clear();
+            int padding = (bounce % 2 == 0) ? 4 : 6;
+            for (int i = 0; i < padding; i++)
+                Console.WriteLine();
+        }
        
 
     }
