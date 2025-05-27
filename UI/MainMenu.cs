@@ -9,7 +9,11 @@ using System.Threading;
 
 public static class MainMenu
 {
-   
+   public  static void Title()
+    {
+
+
+    }
     public static void ShowMenu()
     {
         string input = " ";
@@ -21,8 +25,8 @@ public static class MainMenu
             ConsoleColor.Cyan,
             ConsoleColor.Magenta,
             ConsoleColor.Green,
-            ConsoleColor.Blue,
-            ConsoleColor.Red
+            
+            
 
 
 
@@ -39,7 +43,7 @@ public static class MainMenu
             Console.ForegroundColor = colors[i % colors.Length];
 
             Console.WriteLine(title_lines[i]);
-            Thread.Sleep(1000); // 150 milisec delay
+            Thread.Sleep(1000); // 1000 milisec delay
         }
         // sublitle
         Console.ForegroundColor = ConsoleColor.White;
