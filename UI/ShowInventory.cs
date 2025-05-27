@@ -100,8 +100,8 @@ internal class Inventory
             // instructions for exit
             Console.WriteLine("\n-- type 'back' to return --\n");
 
-            GetInput();
-
+            
+            // Player input for each item & back
             if (Player.input != "back")
             {
                 switch (Player.input)
@@ -118,16 +118,20 @@ internal class Inventory
                     case "fuel cell":
                         Format.PrintSpecial("A beveled cylinder with a pulsing *blue bar* across its length. You get the feeling it still has an abundance of power stored within.");
                         break;
-                    case "":
+                    case "blue key":
+                        Format.PrintSpecial()
                         break;
                     default:
                         Format.PrintSpecial("^Unknown Item^");
                         break;
+
                 }
 
+                Format.PrintSpecial("\nPress %'enter'% to return");
+                Console.ReadLine();
 
 
-            }
+            } while (Player.input != "back");
 
 
 
@@ -135,5 +139,5 @@ internal class Inventory
 
 
 
-    }
+        }
 }
