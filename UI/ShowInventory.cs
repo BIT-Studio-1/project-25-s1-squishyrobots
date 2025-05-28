@@ -12,152 +12,77 @@ internal class Inventory
     public static void ShowInventory()
     {
         // While player.input is not set to "back" do all this:
+        List<string> itemList = new List<string>();
+
+        if (Items.hasPurpleKey) itemList.Add("@Purple Key@");
+        if (Items.hasBlueKey) itemList.Add("*Blue Key*");
+        if (Items.hasGreenKey) itemList.Add("%Green Key%");
+        if (Items.hasRedKey) itemList.Add("^Red Key^");
+        if (Items.hasCrowbar) itemList.Add("$Crowbar$");
+        if (Items.hasFuelCell) itemList.Add("Fuel Cell");
+        if (Items.hasHandcuffs) itemList.Add("Handcuffs");
+        if (Items.hasSword) itemList.Add("Sword");
+        if (Items.hasWrench) itemList.Add("Wrench");
+        if (Items.hasFuelCanister) itemList.Add("Fuel Canister");
+        if (Items.hasMaintenanceKit) itemList.Add("Maintenance Kit");
+        if (Items.hasOxygenTank) itemList.Add("Oxygen Tank");
+        if (Items.hasParachute) itemList.Add("Parachute");
+        if (Items.hasLaunchKey) itemList.Add("Launch Key");
+        if (Items.hasWallMap) itemList.Add("Wall Map");
+        if (Items.hasFirstAidKit) itemList.Add("First Aid Kit");
+        if (Items.hasSurgicalTool) itemList.Add("Surgical Tool");
+        if (Items.hasMedicineBottle) itemList.Add("Medicine Bottle");
+        if (Items.hasShuttleFuel) itemList.Add("Shuttle Fuel");
+        if (Items.hasBoardingPass) itemList.Add("$Boarding Pass$");
+
+        int pageIndex = 0;
+        const int pageSize = 9;
+
         do
         {
+            Console.Clear();
+            Format.PrintSpecial("\t *-------------------------------------------------*");
+            Format.PrintSpecial("\t\t\t  *Inventory*");
+            Format.PrintSpecial("\t *You have the following items in your inventory: *");
+            Format.PrintSpecial("\t \t '$Important Items$' *-* 'Common Items'");
+            Format.PrintSpecial($"\t *Page* {pageIndex+1}");
+            Format.PrintSpecial("*\t-------------------------------------------------*");
+            Format.PrintSpecial(" ");
 
-            Format.PrintSpecial("*-------------------------------------------------*");
-            Format.PrintSpecial("*You have the following items in your inventory: * ");
-            Format.PrintSpecial("\'$Important Items$\' - \'Common Items\'");
-            Format.PrintSpecial("*-------------------------------------------------*");
-
-
-
-            
-            
-            if (Items.hasHandcuffs == true)
-            {
-                Format.PrintSpecial("%Green Key%");
-            }
-            
-            if (Items.hasFuelCell == true)
-            {
-                Format.PrintSpecial("Fuel Cell");
-            }
-
-                       // Display Items if in inventory
-
-            // Brig Items
-            if (Items.hasHandcuffs == true)
-            {
-                Format.PrintSpecial("Handcuffs");
-            }
-            if (Items.hasCrowbar == true)
-            {
-                Format.PrintSpecial("$Crowbar$");
-            }
-
-            // Captain Quarters Items
-            if (Items.hasSword == true)
-            {
-                Format.PrintSpecial("Sword");
-            }
-
-            // Engine Room Items
-            if (Items.hasWrench == true)
-            {
-                Format.PrintSpecial("Wrench");
-            }
-            if (Items.hasFuelCanister == true)
-            {
-                Format.PrintSpecial("Fuel Canister");
-            }
-            if (Items.hasMaintenanceKit == true)
-            {
-                Format.PrintSpecial("Maintenance Kit");
-            }
-
-            //Escape Pods
-            if (Items.hasOxygenTank == true)
-            {
-                Format.PrintSpecial("Oxygen Tank");
-            }
-            if (Items.hasParachute == true)
-            {
-                Format.PrintSpecial("Parachute");
-            }
-            if (Items.hasLaunchKey == true)
-            {
-                Format.PrintSpecial("Launch Key");
-            }
-
-            // Hallway Items
-            if (Items.hasWallMap == true)
-            {
-                Format.PrintSpecial("Wall Map");
-            }
-
-            // Lab Items
-            if (Items.hasPurpleKey == true)
-            {
-                Format.PrintSpecial("@Purple Key@");
-            }
-
-            // Med Bay Items
-            if (Items.hasFirstAidKit == true)
-            {
-                Format.PrintSpecial("First Aid Kit");
-            }
-            if (Items.hasSurgicalTool == true)
-            {
-                Format.PrintSpecial("Surgical Tool");
-            }
-            if (Items.hasMedicineBottle == true)
-            {
-                Format.PrintSpecial("Medicine Bottle");
-            }
-            if (Items.hasShuttleFuel == true)
-            {
-                Format.PrintSpecial("Shuttle Fuel");
-            }
-
-            // Shuttle Bay
-            if (Items.hasBoardingPass == true)
-            {
-                Format.PrintSpecial("$Boarding Pass$");
-            }
-            if (Items.hasBoardingPass == true)
-            {
-                Format.PrintSpecial("Fuel Cell");
-            }
-
-            // Store Room Items
-            if (Items.hasBlueKey == true)
-            {
-                Format.PrintSpecial("*Blue Key*");
-            }
-            if (Items.hasRedKey == true)
-            {
-                Format.PrintSpecial("^Red Key^");
-            }
-
-
-            // If no items are in the inventory
-            if (!Items.hasRedKey && !Items.hasGreenKey && !Items.hasCrowbar && !Items.hasFuelCell && !Items.hasPurpleKey && !Items.hasBlueKey && !Items.hasHandcuffs
-                && !Items.hasSword && !Items.hasWrench && !Items.hasFuelCanister && !Items.hasMaintenanceKit && !Items.hasOxygenTank && !Items.hasLaunchKey && !Items.hasWallMap
-                && !Items.hasFirstAidKit && !Items.hasSurgicalTool && !Items.hasMaintenanceKit && !Items.hasShuttleFuel)
+            if (itemList.Count == 0)
             {
                 Format.PrintSpecial("^You have no items in your inventory.^");
             }
-                       
+            else
+            {
+                var itemsToShow = itemList.Skip(pageIndex * pageSize).Take(pageSize).ToList();
 
-            // Instructions for exit
-            Format.PrintSpecial("\n-- type 'back' to return --\n");
+                for (int i = 0; i < itemsToShow.Count; i++)
+                {
+                    Console.Write(itemsToShow[i].PadRight(25));
+                    if ((i + 1) % 3 == 0 || i == itemsToShow.Count - 1) Console.WriteLine();
+                }
+                Console.WriteLine();
+            }
 
+            Format.PrintSpecial("\n-- *type* $'next'$ *to see more, or* $'back'$ *to return* --\n");
 
-            // Wait for input
-            Player.input = Console.ReadLine();
+            Player.input = Console.ReadLine().ToLower();
 
-
-            // Player input for each item & back
-            if (Player.input != "back")
+            if (Player.input == "next")
+            {
+                pageIndex++;
+                if (pageIndex * pageSize >= itemList.Count)
+                {
+                    pageIndex = 0;
+                }
+            }
+            else if (Player.input != "back")
             {
                 Console.Clear();
-
                 switch (Player.input)
                 {
-
-                                
-
+                    
                             // Brig Items
                             case "handcuffs":
                                 if (Items.hasHandcuffs)
