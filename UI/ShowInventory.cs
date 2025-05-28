@@ -54,7 +54,6 @@ internal class Inventory
 
         do
         {
-            Console.Clear();
 
             // Display inventory header
             Format.PrintSpecial("\t *-------------------------------------------------*");
