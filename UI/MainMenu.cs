@@ -53,7 +53,7 @@ public static class MainMenu
         foreach (string line in robotArt)
         {
             Console.WriteLine(line);
-            Thread.Sleep(150);
+            Thread.Sleep(1000);
         }
 
 
