@@ -39,7 +39,23 @@ public static class MainMenu
             Thread.Sleep(1000);
 
         }
-       
+
+        string[] robotArt = {
+    "     [::]     ",
+    "   /------\\   ",
+    "  |  .--.  |  ",
+    "  | ( () ) |  ",
+    "   \\ '--' /   ",
+    "    | || |    ",
+    "    ||||    ",
+};
+
+        foreach (string line in robotArt)
+        {
+            Console.WriteLine(line);
+            Thread.Sleep(150);
+        }
+
 
     }
     public static void ShowMenu()
