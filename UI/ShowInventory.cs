@@ -14,16 +14,37 @@ internal class Inventory
         {
 
             Format.PrintSpecial("-------------------------------------------------");
-            Format.PrintSpecial("You have the following items in your inventory: ");
+            Format.PrintSpecial("*You have the following items in your inventory: * ");
             Format.PrintSpecial("-------------------------------------------------");
 
 
 
             // Starting Items
-            if (Items.hasRedKey == true)
+            if (Items.hasHandcuffs == true)
             {
-                Format.PrintSpecial("Red Key");
+                Format.PrintSpecial("Handcuffs");
             }
+            if (Items.hasPurpleKey == true)
+            {
+                Format.PrintSpecial("Purple Key");
+            }
+            if (Items.hasBlueKey == true)
+            {
+                Format.PrintSpecial("Blue Key");
+            }
+            if (Items.hasHandcuffs == true)
+            {
+                Format.PrintSpecial("Green Key");
+            }
+            if (Items.hasCrowbar == true)
+            {
+                Format.PrintSpecial("Crowbar");
+            }
+            if (Items.hasFuelCell == true)
+            {
+                Format.PrintSpecial("Fuel Cell");
+            }
+
 
             // Brig Items
             if (Items.hasHandcuffs == true)
@@ -97,6 +118,8 @@ internal class Inventory
                 Format.PrintSpecial("You have no items in your inventory.");
             }
 
+            // Check 
+
             // Instructions for exit
             Format.PrintSpecial("\n-- type 'back' to return --\n");
 
@@ -111,8 +134,7 @@ internal class Inventory
                 switch (Player.input)
                 {
 
-                    case "back":
-                        break;
+                    
                     case "red key":
                         Console.Clear();
                         Format.PrintSpecial("A silver key card with two ^red stripes^ across the top.");
