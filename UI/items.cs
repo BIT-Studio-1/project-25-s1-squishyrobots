@@ -10,44 +10,44 @@ public static class Items
 {
 
     // Brig Items
-    public static bool hasHandcuffs = true;
-    public static bool hasCrowbar = true;
+    public static bool hasHandcuffs = false;
+    public static bool hasCrowbar = false;
 
     // Captain Quarters Items
-    public static bool hasSword = true;
+    public static bool hasSword = false;
 
     // Engine Room Items
-    public static bool hasWrench = true;
-    public static bool hasFuelCanister = true;
-    public static bool hasMaintenanceKit = true;
+    public static bool hasWrench = false;
+    public static bool hasFuelCanister = false;
+    public static bool hasMaintenanceKit = false;
 
     // Escape Pods Items
-    public static bool hasOxygenTank = true;
-    public static bool hasParachute = true;
-    public static bool hasLaunchKey = true;
+    public static bool hasOxygenTank = false;
+    public static bool hasParachute = false;
+    public static bool hasLaunchKey = false;
 
     // Green House
-    public static bool hasGreenKey = true;
+    public static bool hasGreenKey = false;
 
     // Hallway Items
-    public static bool hasWallMap = true;
+    public static bool hasWallMap = false;
 
     // Lab Items
-    public static bool hasPurpleKey = true;
+    public static bool hasPurpleKey = false;
 
     // Med Bay Items
-    public static bool hasFirstAidKit = true;
-    public static bool hasSurgicalTool = true;
-    public static bool hasMedicineBottle = true;
+    public static bool hasFirstAidKit = false;
+    public static bool hasSurgicalTool = false;
+    public static bool hasMedicineBottle = false;
 
     // Shuttle Bay Items
-    public static bool hasShuttleFuel = true;
-    public static bool hasFuelCell = true;
-    public static bool hasBoardingPass = true;
+    public static bool hasShuttleFuel = false;
+    public static bool hasFuelCell = false;
+    public static bool hasBoardingPass = false;
 
     // Store Room Items
-    public static bool hasRedKey = true;
-    public static bool hasBlueKey = true;
+    public static bool hasRedKey = false;
+    public static bool hasBlueKey = false;
 
 }
 
