@@ -13,9 +13,9 @@ internal class Inventory
         do
         {
 
-            Format.PrintSpecial("-------------------------------------------------");
+            Format.PrintSpecial("*-------------------------------------------------*");
             Format.PrintSpecial("*You have the following items in your inventory: * ");
-            Format.PrintSpecial("-------------------------------------------------");
+            Format.PrintSpecial("*-------------------------------------------------*");
 
 
 
@@ -115,10 +115,9 @@ internal class Inventory
                 && !Items.hasSword && !Items.hasWrench && !Items.hasFuelCanister && !Items.hasMaintenanceKit && !Items.hasOxygenTank && !Items.hasLaunchKey && !Items.hasWallMap
                 && !Items.hasFirstAidKit && !Items.hasSurgicalTool && !Items.hasMaintenanceKit && !Items.hasShuttleFuel)
             {
-                Format.PrintSpecial("You have no items in your inventory.");
+                Format.PrintSpecial("^You have no items in your inventory.^");
             }
-
-            // Check 
+                       
 
             // Instructions for exit
             Format.PrintSpecial("\n-- type 'back' to return --\n");
@@ -131,48 +130,259 @@ internal class Inventory
             // Player input for each item & back
             if (Player.input != "back")
             {
+                Console.Clear();
+
                 switch (Player.input)
                 {
 
-                    
-                    case "red key":
-                        Console.Clear();
-                        Format.PrintSpecial("A silver key card with two ^red stripes^ across the top.");
-                        Thread.Sleep(5000);
-                        break;
-                    case "green key":
-                        Console.Clear();
-                        Format.PrintSpecial("You have a green key.");
-                        Thread.Sleep(5000);
-                        break;
-                    case "crowbar":
-                        Console.Clear();
-                        Format.PrintSpecial("You have a crowbar.");
-                        Thread.Sleep(5000);
-                        break;
-                    case "fuel cell":
-                        Console.Clear();
-                        Format.PrintSpecial("A beveled cylinder with a pulsing *blue bar* across its length. You get the feeling it still has an abundance of power stored within.");
-                        Thread.Sleep(5000);
-                        break;
-                    case "blue key":
-                        Console.Clear();
-                        Format.PrintSpecial("You have a blue key");
-                        Thread.Sleep(5000);
-                        break;
-                    case "purple key":
-                        Console.Clear();
-                        Format.PrintSpecial("You have a purple key");
-                        Thread.Sleep(5000);
-                        break;
-                    default:
-                        Console.Clear();
-                        Format.PrintSpecial("^Unknown Item^");
-                        Thread.Sleep(5000);
-                        break;
+                    // Starting Items
+                              case "Red Key":
+                                if (Items.hasRedKey)
+                                {
+                                    Format.PrintSpecial("A silver key card with two ^red stripes^ across the top.");
+                                    Thread.Sleep(5000);
+                                }
+                                else
+                                {
+                                    Format.PrintSpecial("Item not in your inventory");
+                                    Thread.Sleep(5000);
+                                }
+                                break;
 
+                            case "Green Key":
+                                if (Items.hasGreenKey)
+                                {
+                                    Format.PrintSpecial("You have a green key.");
+                                    Thread.Sleep(5000);
+                                }
+                                else
+                                {
+                                    Format.PrintSpecial("Item not in your inventory");
+                                    Thread.Sleep(5000);
+                                }
+                                break;
+
+                            case "Crowbar":
+                                if (Items.hasCrowbar)
+                                {
+                                    Format.PrintSpecial("You have a crowbar.");
+                                    Thread.Sleep(5000);
+                                }
+                                else
+                                {
+                                    Format.PrintSpecial("Item not in your inventory");
+                                    Thread.Sleep(5000);
+                                }
+                                break;
+
+                            case "Fuel Cell":
+                                if (Items.hasFuelCell)
+                                {
+                                    Format.PrintSpecial("A beveled cylinder with a pulsing *blue bar* across its length. You get the feeling it still has an abundance of power stored within.");
+                                    Thread.Sleep(5000);
+                                }
+                                else
+                                {
+                                    Format.PrintSpecial("Item not in your inventory");
+                                    Thread.Sleep(5000);
+                                }
+                                break;
+
+                            case "Blue Key":
+                                if (Items.hasBlueKey)
+                                {
+                                    Format.PrintSpecial("You have a blue key");
+                                    Thread.Sleep(5000);
+                                }
+                                else
+                                {
+                                    Format.PrintSpecial("Item not in your inventory");
+                                    Thread.Sleep(5000);
+                                }
+                                break;
+
+                            case "Purple Key":
+                                if (Items.hasPurpleKey)
+                                {
+                                    Format.PrintSpecial("You have a purple key");
+                                    Thread.Sleep(5000);
+                                }
+                                else
+                                {
+                                    Format.PrintSpecial("Item not in your inventory");
+                                    Thread.Sleep(5000);
+                                }
+                                break;
+
+                            // Brig Items
+                            case "Handcuffs":
+                                if (Items.hasHandcuffs)
+                                {
+                                    Format.PrintSpecial("You have handcuffs");
+                                    Thread.Sleep(5000);
+                                }
+                                else
+                                {
+                                    Format.PrintSpecial("Item not in your inventory");
+                                    Thread.Sleep(5000);
+                                }
+                                break;
+
+                            // Captain Quarters Items
+                            case "Sword":
+                                if (Items.hasSword)
+                                {
+                                    Format.PrintSpecial("You have a sword");
+                                    Thread.Sleep(5000);
+                                }
+                                else
+                                {
+                                    Format.PrintSpecial("Item not in your inventory");
+                                    Thread.Sleep(5000);
+                                }
+                                break;
+
+                            // Engine Room Items
+                            case "Fuel Canister":
+                                if (Items.hasFuelCanister)
+                                {
+                                    Format.PrintSpecial("You have a fuel canister");
+                                    Thread.Sleep(5000);
+                                }
+                                else
+                                {
+                                    Format.PrintSpecial("Item not in your inventory");
+                                    Thread.Sleep(5000);
+                                }
+                                break;
+
+                            case "Maintenance Kit":
+                                if (Items.hasMaintenanceKit)
+                                {
+                                    Format.PrintSpecial("You have a maintenance kit");
+                                    Thread.Sleep(5000);
+                                }
+                                else
+                                {
+                                    Format.PrintSpecial("Item not in your inventory");
+                                    Thread.Sleep(5000);
+                                }
+                                break;
+
+                            // Escape Pod Items
+                            case "Oxygen Tank":
+                                if (Items.hasOxygenTank)
+                                {
+                                    Format.PrintSpecial("You have an oxygen tank");
+                                    Thread.Sleep(5000);
+                                }
+                                else
+                                {
+                                    Format.PrintSpecial("Item not in your inventory");
+                                    Thread.Sleep(5000);
+                                }
+                                break;
+
+                            case "Parachute":
+                                if (Items.hasParachute)
+                                {
+                                    Format.PrintSpecial("You have a parachute");
+                                    Thread.Sleep(5000);
+                                }
+                                else
+                                {
+                                    Format.PrintSpecial("Item not in your inventory");
+                                    Thread.Sleep(5000);
+                                }
+                                break;
+
+                            case "Launch Key":
+                                if (Items.hasLaunchKey)
+                                {
+                                    Format.PrintSpecial("You have a launch key");
+                                    Thread.Sleep(5000);
+                                }
+                                else
+                                {
+                                    Format.PrintSpecial("Item not in your inventory");
+                                    Thread.Sleep(5000);
+                                }
+                                break;
+
+                            // Hallway Items
+                            case "Wall Map":
+                                if (Items.hasWallMap)
+                                {
+                                    Format.PrintSpecial("You have a wall map");
+                                    Thread.Sleep(5000);
+                                }
+                                else
+                                {
+                                    Format.PrintSpecial("Item not in your inventory");
+                                    Thread.Sleep(5000);
+                                }
+                                break;
+
+                            // Medbay Items
+                            case "First Aid Kit":
+                                if (Items.hasFirstAidKit)
+                                {
+                                    Format.PrintSpecial("You have a first aid kit");
+                                    Thread.Sleep(5000);
+                                }
+                                else
+                                {
+                                    Format.PrintSpecial("Item not in your inventory");
+                                    Thread.Sleep(5000);
+                                }
+                                break;
+
+                            case "Surgical Tool":
+                                if (Items.hasSurgicalTool)
+                                {
+                                    Format.PrintSpecial("You have a surgical tool");
+                                    Thread.Sleep(5000);
+                                }
+                                else
+                                {
+                                    Format.PrintSpecial("Item not in your inventory");
+                                    Thread.Sleep(5000);
+                                }
+                                break;
+
+                            case "Medicine Bottle":
+                                if (Items.hasMedicineBottle)
+                                {
+                                    Format.PrintSpecial("You have a medicine bottle");
+                                    Thread.Sleep(5000);
+                                }
+                                else
+                                {
+                                    Format.PrintSpecial("Item not in your inventory");
+                                    Thread.Sleep(5000);
+                                }
+                                break;
+
+                            // Shuttle Bay Items
+                            case "Shuttle Fuel":
+                                if (Items.hasShuttleFuel)
+                                {
+                                    Format.PrintSpecial("You have shuttle fuel");
+                                    Thread.Sleep(5000);
+                                }
+                                else
+                                {
+                                    Format.PrintSpecial("Item not in your inventory");
+                                    Thread.Sleep(5000);
+                                }
+                                break;
+
+                            default:
+                                Format.PrintSpecial("^Unknown Input^");
+                                Thread.Sleep(3000);
+                                break;
+                        }                             
                 }
-            }
 
             Console.Clear();
 
