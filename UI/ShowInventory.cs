@@ -11,48 +11,45 @@ internal class Inventory
 {
     public static void ShowInventory()
     {
-
+        // While player.input is not set to "back" do all this:
         do
         {
 
             Format.PrintSpecial("*-------------------------------------------------*");
             Format.PrintSpecial("*You have the following items in your inventory: * ");
+            Format.PrintSpecial("\'$Important Items$\' - \'Common Items\'");
             Format.PrintSpecial("*-------------------------------------------------*");
 
 
 
-            if (Items.hasPurpleKey == true)
-            {
-                Format.PrintSpecial("@Purple Key@");
-            }
-            if (Items.hasBlueKey == true)
-            {
-                Format.PrintSpecial("*Blue Key*");
-            }
+            
+            
             if (Items.hasHandcuffs == true)
             {
                 Format.PrintSpecial("%Green Key%");
             }
-            if (Items.hasCrowbar == true)
-            {
-                Format.PrintSpecial("$Crowbar$");
-            }
+            
             if (Items.hasFuelCell == true)
             {
                 Format.PrintSpecial("Fuel Cell");
             }
 
+                       // Display Items if in inventory
 
             // Brig Items
             if (Items.hasHandcuffs == true)
             {
                 Format.PrintSpecial("Handcuffs");
             }
+            if (Items.hasCrowbar == true)
+            {
+                Format.PrintSpecial("$Crowbar$");
+            }
 
             // Captain Quarters Items
-            if (Items.hasRedKey == true)
+            if (Items.hasSword == true)
             {
-                Format.PrintSpecial("^Red Key^");
+                Format.PrintSpecial("Sword");
             }
 
             // Engine Room Items
@@ -89,6 +86,12 @@ internal class Inventory
                 Format.PrintSpecial("Wall Map");
             }
 
+            // Lab Items
+            if (Items.hasPurpleKey == true)
+            {
+                Format.PrintSpecial("@Purple Key@");
+            }
+
             // Med Bay Items
             if (Items.hasFirstAidKit == true)
             {
@@ -107,6 +110,25 @@ internal class Inventory
                 Format.PrintSpecial("Shuttle Fuel");
             }
 
+            // Shuttle Bay
+            if (Items.hasBoardingPass == true)
+            {
+                Format.PrintSpecial("$Boarding Pass$");
+            }
+            if (Items.hasBoardingPass == true)
+            {
+                Format.PrintSpecial("Fuel Cell");
+            }
+
+            // Store Room Items
+            if (Items.hasBlueKey == true)
+            {
+                Format.PrintSpecial("*Blue Key*");
+            }
+            if (Items.hasRedKey == true)
+            {
+                Format.PrintSpecial("^Red Key^");
+            }
 
 
             // If no items are in the inventory
@@ -202,6 +224,18 @@ internal class Inventory
                                     Thread.Sleep(5000);
                                 }
                                 break;
+                            case "wrench":
+                                if (Items.hasWrench)
+                                {
+                                    Format.PrintSpecial("A heavy tool, stained with oil and dented at the edges");
+                                    Thread.Sleep(5000);
+                                }
+                                else
+                                {
+                                    Format.PrintSpecial("Item not in your inventory");
+                                    Thread.Sleep(5000);
+                                }
+                                break;
 
                             // Escape Pod Items
                             case "oxygen Tank":
@@ -243,7 +277,7 @@ internal class Inventory
                                 }
                                 break;
 
-                            // Green Room
+                            // Green House
                             case "green key":
                                 if (Items.hasGreenKey)
                                 {
