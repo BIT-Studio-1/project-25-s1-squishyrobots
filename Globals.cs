@@ -110,11 +110,11 @@ namespace Globals
 
                 case "menu":
 
-                    //MainMenu.ShowMenu();
+                    MainMenu.ShowMenu();
 
-                    Format.PrintSpecial("Unfortunately, due to looping, we had to remove menu functionality for the time being.");
-                    Format.PrintSpecial("Press %'enter'% to continue.", Format.lineWidthDefault, ConsoleColor.DarkGray);
-                    Player.GetInput();
+                    //Format.PrintSpecial("Unfortunately, due to looping, we had to remove menu functionality for the time being.");
+                    //Format.PrintSpecial("Press %'enter'% to continue.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                    //Player.GetInput();
 
                     break;
                 default:

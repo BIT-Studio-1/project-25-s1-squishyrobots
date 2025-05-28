@@ -61,20 +61,20 @@ public static class StoreRoom
    
 
             case "lockers":
-                if (!Items.hasBlueKey)
+                if (!Items.hasGreenKey)
                 {
                     while (Player.input != "back")
                     {
-                        if (!Items.hasBlueKey)
+                        if (!Items.hasGreenKey)
                         {
-                            Format.PrintSpecial("You open the lockers and see a few items inside like a flashlight and an empty first aid kit, a blue *keycard* is tucked away in the corner of one of them. ");
+                            Format.PrintSpecial("You open the lockers and see a few items inside like a flashlight and an empty first aid kit, a green *keycard* is tucked away in the corner of one of them. ");
                             Format.PrintSpecial("Press %'enter'% to return or type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
                             Player.GetInput();
                             switch (Player.input)
                             {
                                 case "keycard":
-                                    Format.PrintSpecial("You take the *blue keycard*, it looks like it could be used to open a door somewhere on the station.");
-                                    Items.hasBlueKey = true;
+                                    Format.PrintSpecial("You take the %green keycard% , it looks like it could be used to open a door somewhere on the station.");
+                                    Items.hasGreenKey = true;
                                     Format.PrintSpecial("Press %'enter'% to return or type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
                                     Player.GetInput();
                                     break;
@@ -114,14 +114,14 @@ public static class StoreRoom
                         if (!Items.hasRedKey)
                         {
                             Format.PrintSpecial("You open the tool box and see a few tools inside, a screwdriver and a hammer are the most useful looking ones. " +
-                                "You also spot a small *red keycard* tucked away in the corner of the box.");
+                                "You also spot a small red *keycard* tucked away in the corner of the box.");
 
                             Format.PrintSpecial("Press %'enter'% to return or type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
                             Player.GetInput();
                             switch (Player.input)
                             {
                                 case "keycard":
-                                    Format.PrintSpecial("You take the red keycard, it looks like it could be used to open a door somewhere on the station.");
+                                    Format.PrintSpecial("You take the ^red keycard^ , it looks like it could be used to open a door somewhere on the station.");
                                     Items.hasRedKey = true;
                                     Format.PrintSpecial("Press %'enter'% to return or type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
                                     Player.GetInput();

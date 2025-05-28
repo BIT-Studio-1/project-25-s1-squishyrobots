@@ -20,7 +20,7 @@ public static class ShuttleBay
             [
             StoreRoom.name,
             EscapePods.name,
-            EngineRoom.name,
+            //EngineRoom.name,
             PrimaryHallway.name
             ];
 

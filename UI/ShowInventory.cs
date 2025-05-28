@@ -242,7 +242,9 @@ internal class Inventory
                         break;
                 }
 
-                Thread.Sleep(2500); // Delay before returning to inventory screen
+
+                Format.PrintSpecial("Press %'enter'% to continue.", 15, ConsoleColor.DarkGray);
+                Player.GetInput();
             }
 
         } while (Player.input != "back"); // Loop until player types 'back'

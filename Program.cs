@@ -13,13 +13,14 @@ namespace SquishyRobotGame
 
             MainMenu.Title();
 
+            Format.PrintSpecial("Press %'enter'% to continue.", 15, ConsoleColor.DarkGray);
+            Player.GetInput();
 
-            // main menu goes here.
+            MainMenu.ShowMenu(); //goes here.
             //Utility.Check();
 
 
             Player.location = "shuttle bay"; 
-            Utility.Show();
 
             do
             {

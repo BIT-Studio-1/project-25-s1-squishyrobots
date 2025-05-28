@@ -37,7 +37,7 @@ public static class EscapePods
         string[] observations =
         {
                 "Below the 'Release all escape pods' lever there is a *book* , the page count you estimate in the hundreds.",
-                "A door to a *luxury escape pod* is slightly ajar. You've always wondered what they looked like inside, now might be your chance to have a peek.",
+                "A door to a $luxury$ *escape pod* is slightly ajar. You've always wondered what they looked like inside, now might be your chance to have a peek.",
                 "Along the back wall sits a rack of what seem to be *parachutes* .",
                 "A *key* hangs from a hook on the back wall"
         };
@@ -59,15 +59,7 @@ public static class EscapePods
         // actions
         switch (Player.input)
         {
-            case "luxury escape pod":
-                Format.PrintSpecial("" +
-                    "Upon closer inspection you find its the user manual for the escape pods, " +
-                    "its rather odd that its located out here and not in the escape pod itself " +
-                    "but it may just be a maintenance manual.");
-                Format.PrintSpecial("Press %'enter'% to exit.", Format.lineWidthDefault, ConsoleColor.DarkGray);
-                Player.GetInput();
-                break;
-            case "book":
+            case "escape pod":
                 Format.PrintSpecial("" +
                     "Its surprisingly spacious, the chairs that line the walls are covered in a " +
                     "nice soft fabric, but you doubt that would make a difference when you are " +
@@ -77,6 +69,14 @@ public static class EscapePods
                     "would provide insensitive for those climbing the corporate ladder. Other than " +
                     "that there is the standard oxygen tanks and food rations although there is " +
                     "more of those than in the standard pods.");
+                Format.PrintSpecial("Press %'enter'% to exit.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                Player.GetInput();
+                break;
+            case "book":
+                Format.PrintSpecial("" +
+                    "Upon closer inspection you find its the user manual for the escape pods, " +
+                    "its rather odd that its located out here and not in the escape pod itself " +
+                    "but it may just be a maintenance manual.");
                 Format.PrintSpecial("Press %'enter'% to exit.", Format.lineWidthDefault, ConsoleColor.DarkGray);
                 Player.GetInput();
                 break;

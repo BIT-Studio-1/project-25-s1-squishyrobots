@@ -22,9 +22,8 @@ public static class PrimaryHallway
         {
             Map.SurroundingRooms =
             [
-                Brig.name,
+                EngineRoom.name,
                 Lab.name,
-                GreenHouse.name,
                 ShuttleBay.name,
                 IntermediateHallway.name
             ];
@@ -33,10 +32,9 @@ public static class PrimaryHallway
         {
             Map.SurroundingRooms =
             [
-                Brig.name,
+                EngineRoom.name,
                 Lab.name,
-                GreenHouse.name,
-                ShuttleBay.name,
+                ShuttleBay.name
             ];
         }
         

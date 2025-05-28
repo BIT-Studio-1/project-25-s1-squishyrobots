@@ -36,7 +36,7 @@ public static class MainMenu
             Console.WriteLine($"   * {title}*      ");
             Console.WriteLine("********************");
 
-            Thread.Sleep(1000);
+            Thread.Sleep(400);
 
         }
 
@@ -47,65 +47,27 @@ public static class MainMenu
     "  | ( () ) |  ",
     "   \\ '--' /   ",
     "    | || |    ",
-    "    ||||    ",
+    "    ||||||  ",
 };
 
         foreach (string line in robotArt)
         {
             Console.WriteLine(line);
-            Thread.Sleep(1000);
+            Thread.Sleep(400);
         }
 
 
     }
     public static void ShowMenu()
     {
-        string input = " ";
-        //string[] TitleLines = {/*you title lines here*/};
-
-        ConsoleColor[] colors = new ConsoleColor[]
-        {
-            ConsoleColor.Yellow,
-            ConsoleColor.Cyan,
-            ConsoleColor.Magenta,
-            ConsoleColor.Green,
-            
-            
-
-
-
-        };
         
-        string[] title_lines = new string[]
-        {
-            "********************",
-            "*squishy robot game*",
-            "********************",
-        };
-        //print each line with the color and delay(pop up effect)
-        for (int i = 0; i < title_lines.Length; i++)
-        {
-            Console.ForegroundColor = colors[i % colors.Length];
-
-            Console.WriteLine(title_lines[i]);
-            Thread.Sleep(1000); // 1000 milisec delay
-        }
-        // sublitle
-        Console.ForegroundColor = ConsoleColor.White;
-        Console.WriteLine("\n welcome to the SquishyRobot Game!");
-
-
-        Console.WriteLine("press enter to continue...\n");
-        Console.ReadLine();
 
         // main menu loop
-        while (input != "exit")
+        while (Player.input != "back" && Player.input != "exit")
         {
-            Console.Clear();
+            
 
             Console.ForegroundColor = ConsoleColor.Green;
-
-
 
             // display the menu
 
@@ -116,12 +78,12 @@ public static class MainMenu
             Console.WriteLine("*                   *");
             Console.WriteLine("*                   *");
             Console.WriteLine("*********************");
-            Console.WriteLine("1.write options");
-            Console.WriteLine("2.play");
-            Console.WriteLine("3.map");
-            Console.WriteLine("4.instructions");
-            Console.WriteLine("5.credits");
-            Console.WriteLine("6.exit");
+            Format.PrintSpecial("*play*");
+            //Console.WriteLine("options");
+            Console.WriteLine("map");
+            Console.WriteLine("help");
+            //Console.WriteLine("credits");
+            Console.WriteLine("exit");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("\nselect an option:  ");
             
@@ -142,31 +104,17 @@ public static class MainMenu
 
 
                 case "play":
-
-                    Console.WriteLine("you selected: play");
-                    Console.WriteLine("Enter to continue.");
-                    Console.ReadLine();
-                    Player.input = "menu";
+                    Player.input = "back";
                     break;
 
                 case "map":
-
-                    Console.WriteLine("you selected: map");
-                    Console.WriteLine("Enter to continue.");
-                    Console.ReadLine();
-                    Player.input = "menu";
                     break;
 
-                case "instructions":
-
-                    Console.WriteLine("you selected: instructions");
-                    Console.WriteLine("Enter to continue.");
-                    Console.ReadLine();
-                    Player.input = "menu";
+                case "help":
                     break;
 
 
-                case "creadits":
+                case "credits":
 
                     Console.WriteLine("you selected: creadits");
                     Console.WriteLine("Enter to continue.");
@@ -176,13 +124,9 @@ public static class MainMenu
 
 
                 case "exit":
-
-
                     Console.WriteLine("Exiting...");
-                    Thread.Sleep(2000);
+                    Thread.Sleep(1000);
 
-
-                    Player.input = "exit"; // to end the loop
                     break;
                 default:
                     Console.WriteLine(" Invalid option. please try again. ");

@@ -110,20 +110,29 @@ public static class Brig
                 break;
 
             case "terminal":
-                Format.PrintSpecial("The screen of the terminal has a few applications open, the one immediately shown " +
+                if (Map.powerOn)
+                {
+                    Format.PrintSpecial("The screen of the terminal has a few applications open, the one immediately shown " +
                     "to you is the prisoner management system, a simple database showing the list of inmates, what they " +
                     "did and how long they need to be held before being transported to the systems judicial holding site. " +
                     "You scan the names to see if you recognize any of them. None immediately jump out at you however. " +
                     "The second application is the security monitoring system, it shows the feeds of a variety of cameras " +
                     "around the station. Nothing out of the ordinary that you can see, well apart from the absence of the " +
                     "crew but we knew this already.");
-                Format.PrintSpecial("Press %'enter'% to return.", Format.lineWidthDefault, ConsoleColor.DarkGray);
-                Player.GetInput();
-                break;
+                    Format.PrintSpecial("Press %'enter'% to return.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                    Player.GetInput();
+                } 
+                else
+                {
+                    Format.PrintSpecial("No sign of life from the terminal. Might need power to operate it.");
+                    Format.PrintSpecial("Press %'enter'% to return.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                    Player.GetInput();
+                }
 
+                break;
             case "door":
                 Format.PrintSpecial("Trying the door you find it unlocked and inside is a restraint chair, its bulky and on " +
-                    "the arm rest are leather straps, this relic is a remanent of Terra Sol 3, we have more effective ways of " +
+                    "the arm rest are leather straps, this relic is a remnant of Terra Sol 3, we have more effective ways of " +
                     "getting information now but sometimes these are still used.");
                 Format.PrintSpecial("Press %'enter'% to return.", Format.lineWidthDefault, ConsoleColor.DarkGray);
                 Player.GetInput();

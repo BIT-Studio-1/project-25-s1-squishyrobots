@@ -185,13 +185,13 @@ public static class Map
                         Player.location = "shuttle bay";
                         break;
                     case "lab":
-                        if (Items.hasBlueKey)
+                        if (Items.hasGreenKey)
                         {
                             Player.location = "lab";    
                         }
                         else
                         {
-                            RefuseAccess(blueKeyDenied);
+                            RefuseAccess(greenKeyDenied);
                         }
                         break;
                     default:
@@ -203,24 +203,24 @@ public static class Map
                 switch (roomName)
                 {
                     case "store room":
-                        if (Items.hasBlueKey)
+                        if (Items.hasGreenKey)
                         {
                             Player.location = "store room";
                         }
                         else
                         {
-                            RefuseAccess(blueKeyDenied);
+                            RefuseAccess(greenKeyDenied);
                             
                         }
                         break;
                     case "greenhouse":
-                        if (Items.hasBlueKey)
+                        if (Items.hasGreenKey)
                         {
                             Player.location = "greenhouse";
                         }
                         else
                         {
-                            RefuseAccess(blueKeyDenied);
+                            RefuseAccess(greenKeyDenied);
                         }
                         break;
                     case "hallway":
@@ -270,13 +270,13 @@ public static class Map
                         Player.location = "escape pods";
                         break;
                     case "brig":
-                        if (Items.hasRedKey)
+                        if (Items.hasBlueKey)
                         {
                             Player.location = "brig";
                         }
                         else
                         {
-                            RefuseAccess(redKeyDenied);
+                            RefuseAccess(blueKeyDenied);
                         }
                         break;
                     case "hallway":
