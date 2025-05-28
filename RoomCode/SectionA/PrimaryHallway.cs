@@ -8,7 +8,9 @@ using Globals;
 public static class PrimaryHallway
 {
     public const string name = "hallway";
-    public const bool bulkheadUnlocked = false;
+
+    public static bool bulkheadUnlocked = false;
+
     // replaces main
     public static void start()
     {
@@ -43,9 +45,8 @@ public static class PrimaryHallway
 
         string description = "" +
             "Yep this is indeed a hallway nothing really special about it, it gets you from point A " +
-            "to point B, That's all it really needs to do, This particular hallway seems to have a " +
-            "*bulkhead* segmenting it off from its other hallway brothers. " +
-            "It has a ^colour^ striped keypad on its left."
+            "to point B, That's all it really needs to do."
+
             ;
 
 
@@ -54,7 +55,9 @@ public static class PrimaryHallway
 
         string[] observations =
         {
-
+            "This particular hallway seems to have a " +
+            "*bulkhead* segmenting it off from its other hallway brothers and " +
+            "it has a @purple@ striped keypad on its left."
         };
 
 
@@ -73,57 +76,56 @@ public static class PrimaryHallway
 
 
         //actions
+        switch (Player.input)
+        {
+            case "bulkhead":
+                if (bulkheadUnlocked)
+                {
+                    Format.PrintSpecial("The bulkhead is already unlocked, you can pass through it.");
+                    Format.PrintSpecial("Press %'enter'% to continue.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                    Player.GetInput();
+                }
+                else
+                {
+                    if (Items.hasPurpleKey)
+                    {
+                        Format.PrintSpecial("You insert the purple key into the keypad and turn it, the bulkhead " +
+                             "opens with a hiss of air. You can now pass through it.");
+                        bulkheadUnlocked = true;
+                        Format.PrintSpecial("Press %'enter'% to continue.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                        Player.GetInput();
+                    }
+                    else 
+                    { 
+                        Format.PrintSpecial("The bulkhead is locked, you need to find a way to unlock it.");
+                        Format.PrintSpecial("Press %'enter'% to continue.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                        Player.GetInput();
+                    }
+                }
+                break;
+        }
 
-
-
-
-
-
-        Utility.Check();
 
 
         // locations
         switch (Player.input)
         {
             case "lab":
-                if (Map.CheckAccess(Lab.name))
-                {
-                    Player.location = Lab.name;
-                }
+                Map.MoveTo(Lab.name);
                 break;
 
             case "shuttle bay":
-                if (Map.CheckAccess(ShuttleBay.name))
-                {
-                    Player.location = ShuttleBay.name;
-                }
+                Map.MoveTo(ShuttleBay.name);
                 break;
 
             case "engine room":
-                if (Map.CheckAccess(EngineRoom.name))
-                {
-                    Player.location = EngineRoom.name;
-                }
+                Map.MoveTo(EngineRoom.name);
                 break;
 
             case "hallway":
-
-                if (Map.CheckAccess(IntermediateHallway.name + "2"))
+                if (bulkheadUnlocked)
                 {
-
-                    if (Player.hasWon == true)
-                    {
-                        Format.PrintSpecial("You have already won the game, there is no need to go back to the hallway.");
-                        Player.GetInput();
-                    }
-
-
-                    Player.currentHallway = 2;
-
-                    //Player.location = IntermediateHallway.name;
-
-                    Player.hasWon = true;
-
+                    Map.MoveTo(IntermediateHallway.name);
                 }
                 break;
 

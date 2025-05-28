@@ -21,8 +21,66 @@ switch (Player.input)
 
 Format.PrintSpecial("^unknown command^");
 
+
 Format.PrintSpecial("Type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
 
 Format.PrintSpecial("Press %'enter'% to return or type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
 
 Format.PrintSpecial("Press %'enter'% to continue.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+
+Format.PrintSpecial("Press %'enter'% to return.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+
+
+
+Format.PrintSpecial("");
+Format.PrintSpecial("Press %'enter'% to return.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+Player.GetInput();
+
+
+
+
+
+// pickup case template
+        case "item":
+            if (!Items.hasItem)
+            {
+                while (Player.input != "back")
+                {
+                    if (!Items.hasItem)
+                    {
+                        Format.PrintSpecial("%description%");
+                        Format.PrintSpecial("Type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                        Player.GetInput();
+                        switch (Player.input)
+                        {
+                            case "crowbar":
+                                Format.PrintSpecial("%what happens%");
+                                Items.hasItem = true;
+                                Format.PrintSpecial("Press %'enter'% to return or type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                                Player.GetInput();
+                                break;
+
+                            case "back":
+                                break;
+                            default:
+                                Format.PrintSpecial("^unknown command^");
+                                Format.PrintSpecial("Press %'enter'% to return or type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                                Player.GetInput();
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        Format.PrintSpecial("Item gone");
+                        Format.PrintSpecial("Type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                        Player.GetInput();
+                    }
+                }
+            }
+            else
+            {
+                Format.PrintSpecial("Item gone");
+                Format.PrintSpecial("Press %'enter'% to return.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                Player.GetInput();
+            }
+            break;

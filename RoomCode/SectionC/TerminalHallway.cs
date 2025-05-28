@@ -64,18 +64,13 @@ public static class TerminalHallway
         switch (Player.input)
         {
             case "lab":
-                if (Map.CheckAccess(Lab.name))
-                {
-                    Player.location = Lab.name;
-                }
+                Map.MoveTo(EngineRoom.name);
                 break;
 
             case "shuttle bay":
-                if (Map.CheckAccess(ShuttleBay.name))
-                {
-                    Player.location = ShuttleBay.name;
-                }
+                Map.MoveTo(ShuttleBay.name);
                 break;
+
             default:
                 break;
         }

@@ -12,7 +12,6 @@ namespace Globals
 
 
 
-
     /// <summary>
     /// This class is used to store the player global variables
     /// </summary>
@@ -24,6 +23,7 @@ namespace Globals
         public static bool hasWon = false;
         public static int currentHallway = 0;
 
+
         /// <summary>
         /// This function is used to parse the input from the player >> ALWAYS LOWERCASE 
         /// </summary>
@@ -31,7 +31,7 @@ namespace Globals
         {
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-            input = Console.ReadLine().ToLower(); 
+            input = Console.ReadLine().ToLower();
 
             Console.Clear();
             Utility.showCount--; // possibly redundant
@@ -43,6 +43,7 @@ namespace Globals
 
 
         }
+
 
     }
 
@@ -85,23 +86,36 @@ namespace Globals
             switch (Player.input)
             {
                 case "map":
+
                     Map.ShowMap();
                     break;
+
                 case "inventory":
-                    //Inventory.ShowInventory();
+
+                    Inventory.ShowInventory();
                     break;
+
                 case "help":
+
                     Format.PrintSpecial("%Instructions% : \n" +
                         "1. You are a robot, and you are being piloted to find the ship's black box.\n" +
                         "2. You can interact with blue objects in the environment.\n" +
                         "3. Use the *'inventory'* to check your items.\n" +
                         "4. Use the *'map'* to check where you are and where you can go next.\n" +
-                        "5. Use the ^'exit'^ command to leave the game.\n", 40);
-                    Format.PrintSpecial("Press %'enter'% to continue...");
+                        "5. Use the ^'exit'^ command to leave the game.\n\n" +
+                        " $This game is best enjoyed in 'Fullscreen' mode. Please consider adjusting your window.$ ", 40);
+                    Format.PrintSpecial("Press %'enter'% to continue.", Format.lineWidthDefault, ConsoleColor.DarkGray);
                     Player.GetInput();
                     break;
+
                 case "menu":
-                    MainMenu.ShowMenu();
+
+                    //MainMenu.ShowMenu();
+
+                    Format.PrintSpecial("Unfortunately, due to looping, we had to remove menu functionality for the time being.");
+                    Format.PrintSpecial("Press %'enter'% to continue.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                    Player.GetInput();
+
                     break;
                 default:
                     break;
@@ -335,7 +349,7 @@ namespace Globals
 
 
                     // if the word is not the last word in the line, add a space
-                    if (j != words.Length - 1 % lineWidth)
+                    if (/*j < 1 && words[j-1][words[j-1].Length-1] != '.' && */j != words.Length - 1 % lineWidth)
                     {
                         Console.Write(" ");
                     }

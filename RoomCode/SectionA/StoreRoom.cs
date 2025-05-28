@@ -9,10 +9,6 @@ public static class StoreRoom
     public const string name = "store room";
 
 
-    public static bool test = false;
-
-
-
 
 
     // replaces main
@@ -21,6 +17,7 @@ public static class StoreRoom
 
         Format.PrintSpecial("You are in the *Store Room* .");
 
+        
         Map.SurroundingRooms =
            [
             Lab.name,
@@ -40,8 +37,8 @@ public static class StoreRoom
 
         string[] observations =
         {
-            "The *shelves* have a few different items that could be useful",
-            "Against the back wall you notice a set of 3 *lockers* , painted in a dark blue the add and nice splash of colour too the otherwise dull room"
+            "Against the back wall you notice a set of 3 *lockers* , painted in a dark blue the add and nice splash of colour too the otherwise dull room",
+            "A *tool box* peeks out from under a shelf, its lid slightly open, you can see a few tools inside"
         };
 
 
@@ -55,39 +52,108 @@ public static class StoreRoom
 
 
 
-        //lockers
-        //shelves
-
-
         Player.GetInput();
-
-
 
 
         // actions
         switch (Player.input)
         {
-            case "spare parts kits":
+   
+
+            case "lockers":
+                if (!Items.hasBlueKey)
+                {
+                    while (Player.input != "back")
+                    {
+                        if (!Items.hasBlueKey)
+                        {
+                            Format.PrintSpecial("You open the lockers and see a few items inside like a flashlight and an empty first aid kit, a blue *keycard* is tucked away in the corner of one of them. ");
+                            Format.PrintSpecial("Press %'enter'% to return or type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                            Player.GetInput();
+                            switch (Player.input)
+                            {
+                                case "keycard":
+                                    Format.PrintSpecial("You take the *blue keycard*, it looks like it could be used to open a door somewhere on the station.");
+                                    Items.hasBlueKey = true;
+                                    Format.PrintSpecial("Press %'enter'% to return or type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                                    Player.GetInput();
+                                    break;
+
+                                case "back":
+                                    break;
+                                default:
+                                    Format.PrintSpecial("^unknown command^");
+                                    Format.PrintSpecial("Press %'enter'% to return or type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                                    Player.GetInput();
+                                    break;
+                            }
+                        }
+                        else
+                        {
+                            Format.PrintSpecial("You open the lockers and see a few items inside, the flashlight and the empty first aid kit are still there.");
+                            Format.PrintSpecial("Type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                            Player.GetInput();
+                        }
+                    }
+                }
+                else
+                {
+                    Format.PrintSpecial("You open the lockers and see a few items inside, the flashlight and the empty first aid kit are still there.");
+                    Format.PrintSpecial("Press %'enter'% to return.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                    Player.GetInput();
+                }
+
                 break;
 
-            case "emergency rations":
-                break;
 
-            case "tool boxes":
-                break;
+            case "tool box":
+                if (!Items.hasRedKey)
+                {
+                    while (Player.input != "back")
+                    {
+                        if (!Items.hasRedKey)
+                        {
+                            Format.PrintSpecial("You open the tool box and see a few tools inside, a screwdriver and a hammer are the most useful looking ones. " +
+                                "You also spot a small *red keycard* tucked away in the corner of the box.");
 
-            case "oxygen canisters":
-                break;
+                            Format.PrintSpecial("Press %'enter'% to return or type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                            Player.GetInput();
+                            switch (Player.input)
+                            {
+                                case "keycard":
+                                    Format.PrintSpecial("You take the red keycard, it looks like it could be used to open a door somewhere on the station.");
+                                    Items.hasRedKey = true;
+                                    Format.PrintSpecial("Press %'enter'% to return or type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                                    Player.GetInput();
+                                    break;
 
-            case "storage crate":
-                break;
-            case "boxes":
-                break;
+                                case "back":
+                                    break;
+                                default:
+                                    Format.PrintSpecial("^unknown command^");
+                                    Format.PrintSpecial("Press %'enter'% to return or type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                                    Player.GetInput();
+                                    break;
+                            }
+                        }
+                        else
+                        {
+                            Format.PrintSpecial("You open the tool box and see a few tools inside, a screwdriver and a hammer are the most useful looking ones.");
 
+                            Format.PrintSpecial("Press %'enter'% to return or type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                            Player.GetInput();
+                        }
+                    }
+                }
+                else
+                {
+                    Format.PrintSpecial("You open the tool box and see a few tools inside, a screwdriver and a hammer are the most useful looking ones.");
+                    Format.PrintSpecial("Press %'enter'% to return.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                    Player.GetInput();
+                }
+                break;
         }
 
-
-        Utility.Check();
 
 
 
@@ -95,17 +161,11 @@ public static class StoreRoom
         switch (Player.input)
         {
             case "shuttle bay":
-                if (Map.CheckAccess(ShuttleBay.name))
-                {
-                    Player.location = ShuttleBay.name;
-                }
+                Map.MoveTo(ShuttleBay.name);
                 break;
 
             case "lab":
-                if (Map.CheckAccess(Lab.name))
-                {
-                    Player.location = Lab.name;
-                }
+                Map.MoveTo(Lab.name);
                 break;
             
             default:

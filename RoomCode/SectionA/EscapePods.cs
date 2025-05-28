@@ -94,7 +94,7 @@ public static class EscapePods
             case "key":
                 Format.PrintSpecial("This must be one of the keys to launch the escape pod, you " +
                     "know its rather interesting that even now we still use simple metal keys to " +
-                    "lock important things away, This is due to the simplicity of clone a key card.");
+                    "lock important things away, This is due to the simplicity of clone-a-keycard.");
                 Format.PrintSpecial("Press %'enter'% to exit.", Format.lineWidthDefault, ConsoleColor.DarkGray);
                 Player.GetInput();
                 break;
@@ -110,16 +110,10 @@ public static class EscapePods
         switch (Player.input)
         {
             case "shuttle bay":
-                if (Map.CheckAccess(ShuttleBay.name))
-                {
-                    Player.location = ShuttleBay.name;
-                }
+                Map.MoveTo(ShuttleBay.name);
                 break;
             case "engine room":
-                if (Map.CheckAccess(EngineRoom.name))
-                {
-                    Player.location = EngineRoom.name;
-                }
+                Map.MoveTo(EngineRoom.name);
                 break;
             default:
                 break;

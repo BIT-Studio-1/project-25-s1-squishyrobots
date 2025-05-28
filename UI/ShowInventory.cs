@@ -100,7 +100,9 @@ internal class Inventory
             Format.PrintSpecial("-- *type* $'next'$ *to see next page, or* $'back'$ *to return* --");
             Format.PrintSpecial("-- *or type an item name to inspect it* --");
 
-            Player.input = Console.ReadLine().ToLower().Trim();
+            //Player.input = Console.ReadLine().ToLower().Trim();
+            Player.GetInput(); // Get input from player
+
 
             if (Player.input == "next")
             {
