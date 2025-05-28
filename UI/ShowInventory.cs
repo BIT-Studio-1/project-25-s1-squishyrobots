@@ -155,7 +155,7 @@ internal class Inventory
                             case "Green Key":
                                 if (Items.hasGreenKey)
                                 {
-                                    Format.PrintSpecial("A black key card with two $green stripes% across the top.");
+                                    Format.PrintSpecial("A black key card with two %green stripes% across the top.");
                                     Thread.Sleep(5000);
                                 }
                                 else
@@ -225,7 +225,7 @@ internal class Inventory
                             case "Handcuffs":
                                 if (Items.hasHandcuffs)
                                 {
-                                    Format.PrintSpecial("You have handcuffs");
+                                    Format.PrintSpecial("The Handcuffs seems to be in working condition");
                                     Thread.Sleep(5000);
                                 }
                                 else
@@ -239,7 +239,7 @@ internal class Inventory
                             case "Sword":
                                 if (Items.hasSword)
                                 {
-                                    Format.PrintSpecial("You have a sword");
+                                    Format.PrintSpecial("A ceremonial sword that was once mounted on the wall, sharp despite its ornamental purpose");
                                     Thread.Sleep(5000);
                                 }
                                 else
@@ -253,7 +253,7 @@ internal class Inventory
                             case "Fuel Canister":
                                 if (Items.hasFuelCanister)
                                 {
-                                    Format.PrintSpecial("You have a fuel canister");
+                                    Format.PrintSpecial("The canister sloshes when moved - there's still some fuel left");
                                     Thread.Sleep(5000);
                                 }
                                 else
@@ -266,7 +266,7 @@ internal class Inventory
                             case "Maintenance Kit":
                                 if (Items.hasMaintenanceKit)
                                 {
-                                    Format.PrintSpecial("You have a maintenance kit");
+                                    Format.PrintSpecial("Full of wires, fuses and pilers");
                                     Thread.Sleep(5000);
                                 }
                                 else
@@ -280,7 +280,7 @@ internal class Inventory
                             case "Oxygen Tank":
                                 if (Items.hasOxygenTank)
                                 {
-                                    Format.PrintSpecial("You have an oxygen tank");
+                                    Format.PrintSpecial("A nearly full tank, marked for emergency use only");
                                     Thread.Sleep(5000);
                                 }
                                 else
@@ -293,7 +293,7 @@ internal class Inventory
                             case "Parachute":
                                 if (Items.hasParachute)
                                 {
-                                    Format.PrintSpecial("You have a parachute");
+                                    Format.PrintSpecial("A compact parachute pack with signs of recent handling");
                                     Thread.Sleep(5000);
                                 }
                                 else
@@ -306,7 +306,7 @@ internal class Inventory
                             case "Launch Key":
                                 if (Items.hasLaunchKey)
                                 {
-                                    Format.PrintSpecial("You have a launch key");
+                                    Format.PrintSpecial("A key with a tag attached reading \"ESC-001");
                                     Thread.Sleep(5000);
                                 }
                                 else
@@ -320,7 +320,7 @@ internal class Inventory
                             case "Wall Map":
                                 if (Items.hasWallMap)
                                 {
-                                    Format.PrintSpecial("You have a wall map");
+                                    Format.PrintSpecial("A faded map showing key ship sections. Some labels are smeared");
                                     Thread.Sleep(5000);
                                 }
                                 else
@@ -334,7 +334,7 @@ internal class Inventory
                             case "First Aid Kit":
                                 if (Items.hasFirstAidKit)
                                 {
-                                    Format.PrintSpecial("You have a first aid kit");
+                                    Format.PrintSpecial("Standard supplies — gauze, bandages, antiseptic");
                                     Thread.Sleep(5000);
                                 }
                                 else
@@ -347,7 +347,7 @@ internal class Inventory
                             case "Surgical Tool":
                                 if (Items.hasSurgicalTool)
                                 {
-                                    Format.PrintSpecial("You have a surgical tool");
+                                    Format.PrintSpecial("A clean scalpel, sharp and ready");
                                     Thread.Sleep(5000);
                                 }
                                 else
@@ -360,7 +360,7 @@ internal class Inventory
                             case "Medicine Bottle":
                                 if (Items.hasMedicineBottle)
                                 {
-                                    Format.PrintSpecial("You have a medicine bottle");
+                                    Format.PrintSpecial("Label worn off - contents unknown");
                                     Thread.Sleep(5000);
                                 }
                                 else
@@ -374,7 +374,7 @@ internal class Inventory
                             case "Shuttle Fuel":
                                 if (Items.hasShuttleFuel)
                                 {
-                                    Format.PrintSpecial("You have shuttle fuel");
+                                    Format.PrintSpecial("Sealed drum labeled: \"Volatile – Handle with care\"");
                                     Thread.Sleep(5000);
                                 }
                                 else
