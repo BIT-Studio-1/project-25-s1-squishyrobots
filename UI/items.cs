@@ -10,7 +10,7 @@ public static class Items
 {
 
 
-    public static bool hasRedKey = false;
+    // Starting Items
     public static bool hasPurpleKey = false;
     public static bool hasBlueKey = false;
     public static bool hasGreenKey = false;
@@ -19,6 +19,7 @@ public static class Items
 
 
     // Brig Items
+    public static bool hasRedKey = false;
     public static bool hasHandcuffs = false;
 
     // Captain Quarters Items
