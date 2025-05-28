@@ -43,6 +43,7 @@ public static class Items
     // Shuttle Bay Items
     public static bool hasShuttleFuel = true;
     public static bool hasFuelCell = true;
+    public static bool hasBoardingPass = true;
 
     // Store Room Items
     public static bool hasRedKey = true;
