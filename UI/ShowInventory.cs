@@ -51,7 +51,7 @@ internal class Inventory
 
             if (itemList.Count == 0)
             {
-                Format.PrintSpecial("^You have no items in your inventory.^");
+                Format.PrintSpecial("\t ^You have no items in your inventory.^");
             }
             else
             {
