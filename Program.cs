@@ -9,12 +9,17 @@ namespace SquishyRobotGame
         static void Main(string[] args)
         {
 
-            Player.location = "shuttle bay";
 
+
+            MainMenu.Title();
+
+
+            // main menu goes here.
+            //Utility.Check();
+
+
+            Player.location = "shuttle bay"; 
             Utility.Show();
-
-
-            //Player.input = "menu"; // set after title screen
 
             do
             {
@@ -23,7 +28,6 @@ namespace SquishyRobotGame
                 {
 
                         // Section A
-
                     case "brig":
                         Brig.start();
                         break;
@@ -111,7 +115,10 @@ namespace SquishyRobotGame
                 //      query player
                 // if exit, then leave room loop.
 
-            } while (Player.input != "exit") ;
+            } while (Player.input != "exit");
+
+            Format.PrintSpecial("Thank you for playing!\nGame is now closing.");
+            Thread.Sleep(1000);
 
 
         }

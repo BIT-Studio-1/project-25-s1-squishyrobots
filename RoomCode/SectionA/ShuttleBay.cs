@@ -25,10 +25,8 @@ public static class ShuttleBay
             ];
 
 
-
         // switch on room state? - inspection of items, documentation and main?
         // switch includes rules and inventory methods found in global? possible separation into interaction file?
-
 
 
         string description =
@@ -52,7 +50,6 @@ public static class ShuttleBay
             "On the side of the landing pad sits a large cylindrical structure, made entirely out " +
             "of steel and painted in a vibrant red. Looks like a *silo* .",
         };
-
 
 
 
@@ -110,31 +107,53 @@ public static class ShuttleBay
 
                 break;
             case "desk":
-                while (Player.input != "back")
+                if (!Items.hasBoardingPass)
                 {
-                    Format.PrintSpecial("Upon looking a little closer at the desk you notice a *boarding pass* .");
-                    Format.PrintSpecial("Type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
-                    Player.GetInput();
-                    switch (Player.input)
+                    while (Player.input != "back")
                     {
-                        case "boarding pass":
-                            Format.PrintSpecial("It's a tattered boarding pass with small burn marks " +
-                                "around the edges. The first name is burned through but you can just " +
-                                "make out the last name %'Collins'% . They seemed to be traveling beyond " +
-                                "the station and just stopped for a refuel. You could probably use this to gain " +
-                                "access to a few more areas");
-                            Format.PrintSpecial("Press %'enter'% to return or type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
-                            Player.GetInput();
-                            break;
-                        case "back":
-                            break;
-                        default:
-                            Format.PrintSpecial("^unknown command^");
-                            Format.PrintSpecial("Press %'enter'% to return or type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
-                            Player.GetInput();
-                            break;
+                        if (Items.hasBoardingPass)
+                        {
+                            Format.PrintSpecial("It's a desk with nothing on it.");
+
+                        } else
+                        {
+                            Format.PrintSpecial("Upon looking a little closer at the desk you notice a *boarding pass* .");
+
+                        }
+                        Format.PrintSpecial("Type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                        Player.GetInput();
+
+                        switch (Player.input)
+                        {
+                            case "boarding pass":
+                                Format.PrintSpecial("It's a tattered boarding pass with small burn marks " +
+                                    "around the edges. The first name is burned through but you can just " +
+                                    "make out the last name %'Collins'% . They seemed to be traveling beyond " +
+                                    "the station and just stopped for a refuel. You could probably use this to gain " +
+                                    "access to a few more areas");
+                                Items.hasBoardingPass = true;
+                                Format.PrintSpecial("You collected the *boarding pass* .");
+                                Format.PrintSpecial("Press %'enter'% to return or type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                                Player.GetInput();
+                                break;
+                            case "back":
+                                break;
+                            default:
+                                Format.PrintSpecial("^unknown command^");
+                                Format.PrintSpecial("Press %'enter'% to return or type %'back'% to leave.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                                Player.GetInput();
+                                break;
+                        }
+
                     }
                 }
+                else
+                {
+                    Format.PrintSpecial("It's a desk with nothing on it.");
+                    Format.PrintSpecial("Press %'enter'% to return.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                    Player.GetInput();
+                }
+
                 break;
             case "silo":
 
@@ -174,19 +193,19 @@ public static class ShuttleBay
                     //else
                     //{
 
-                        Format.PrintSpecial("Upon closer inspection you notice a little gauge with a " +
-                                "needle pointing to the red section. You surmise that this must be the " +
-                                "canister that holds the fuel for the shuttles that land here, but at this " +
-                                "present moment it seems to be ^empty^ and of little use.");
+                    Format.PrintSpecial("Upon closer inspection you notice a little gauge with a " +
+                            "needle pointing to the red section. You surmise that this must be the " +
+                            "canister that holds the fuel for the shuttles that land here, but at this " +
+                            "present moment it seems to be ^empty^ and of little use.");
 
-                        Format.PrintSpecial("Press %'enter'% to exit.", Format.lineWidthDefault, ConsoleColor.DarkGray);
-                        Player.GetInput();
+                    Format.PrintSpecial("Press %'enter'% to return.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                    Player.GetInput();
                     //}
                 }
                 else
                 {
                     Format.PrintSpecial("It's a full fuel silo");
-                    Format.PrintSpecial("Press %'enter'% to exit.", Format.lineWidthDefault, ConsoleColor.DarkGray);
+                    Format.PrintSpecial("Press %'enter'% to return.", Format.lineWidthDefault, ConsoleColor.DarkGray);
                     Player.GetInput();
                 }
 
@@ -200,34 +219,26 @@ public static class ShuttleBay
         }
 
 
+
         // Locations
         switch (Player.input)
         {
             case "escape pods":
-                if (Map.CheckAccess(EscapePods.name))
-                {
-                    Player.location = EscapePods.name;
-                }
+                Map.MoveTo(EscapePods.name);
                 break;
+
             case "engine room":
-                if (Map.CheckAccess(EngineRoom.name))
-                {
-                    Player.location = EngineRoom.name;
-                }
+                Map.MoveTo(EngineRoom.name);
                 break;
+
             case "store room":
-                if (Map.CheckAccess(StoreRoom.name))
-                {
-                    Player.location = StoreRoom.name;
-                }
+                Map.MoveTo(StoreRoom.name);
                 break;
+
             case "hallway":
-                if (Map.CheckAccess(PrimaryHallway.name))
-                {
-                    Player.location = PrimaryHallway.name;
-                    Player.currentHallway = 1;
-                }
+                Map.MoveTo(PrimaryHallway.name);
                 break;
+
             default:
                 break;
         }

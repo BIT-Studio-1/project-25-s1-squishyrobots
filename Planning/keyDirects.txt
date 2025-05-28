@@ -1,14 +1,16 @@
 
 
-Store room - lab
+Store room - lab - green key
+Store room - greenhouse green key
 
-Store room - engine room
-Greenhouse - brig
+Store room - engine room - red key
 
-Lab locker - section B
-Brig - lab locker
+	Greenhouse - brig - blue key
 
-Shuttle bay - Mess hall & Rec room
+Lab locker - section B - purple key
+Brig - lab locker - crowbar
+
+Shuttle bay - Mess hall & Rec room - boarding pass
 
 Library - section C
 Med bay - Capt. Quarters

@@ -9,17 +9,9 @@ using System.Threading.Tasks;
 public static class Items
 {
 
-
-    public static bool hasRedKey = false;
-    public static bool hasPurpleKey = false;
-    public static bool hasBlueKey = false;
-    public static bool hasGreenKey = false;
-    public static bool hasCrowbar = false;
-    public static bool hasFuelCell = false;
-
-
     // Brig Items
     public static bool hasHandcuffs = false;
+    public static bool hasCrowbar = false;
 
     // Captain Quarters Items
     public static bool hasSword = false;
@@ -34,16 +26,28 @@ public static class Items
     public static bool hasParachute = false;
     public static bool hasLaunchKey = false;
 
+    // Green House
+    public static bool hasGreenKey = false;
+
     // Hallway Items
     public static bool hasWallMap = false;
+
+    // Lab Items
+    public static bool hasPurpleKey = false;
 
     // Med Bay Items
     public static bool hasFirstAidKit = false;
     public static bool hasSurgicalTool = false;
     public static bool hasMedicineBottle = false;
 
-    //Shuttle Bay Items
+    // Shuttle Bay Items
     public static bool hasShuttleFuel = false;
+    public static bool hasFuelCell = false;
+    public static bool hasBoardingPass = false;
+
+    // Store Room Items
+    public static bool hasRedKey = false;
+    public static bool hasBlueKey = false;
 
 }
 
