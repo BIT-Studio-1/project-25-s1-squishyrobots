@@ -20,10 +20,7 @@ internal class Inventory
 
 
             // Starting Items
-            if (Items.hasHandcuffs == true)
-            {
-                Format.PrintSpecial("Handcuffs");
-            }
+            
             if (Items.hasPurpleKey == true)
             {
                 Format.PrintSpecial("Purple Key");
