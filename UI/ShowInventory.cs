@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Globals;
+using Microsoft.VisualBasic;
 
 internal class Inventory
 {
@@ -23,15 +25,19 @@ internal class Inventory
             
             if (Items.hasPurpleKey == true)
             {
-                Format.PrintSpecial("Purple Key");
+                Format.PrintSpecial("*Purple Key*", 50,
+                ConsoleColor.White,       
+                ConsoleColor.Magenta,    
+                ConsoleColor.White,      
+                ConsoleColor.White);     
             }
             if (Items.hasBlueKey == true)
             {
-                Format.PrintSpecial("Blue Key");
+                Format.PrintSpecial("*Blue Key*");
             }
             if (Items.hasHandcuffs == true)
             {
-                Format.PrintSpecial("Green Key");
+                Format.PrintSpecial("%Green Key%");
             }
             if (Items.hasCrowbar == true)
             {
@@ -52,7 +58,7 @@ internal class Inventory
             // Captain Quarters Items
             if (Items.hasRedKey == true)
             {
-                Format.PrintSpecial("Red Key");
+                Format.PrintSpecial("^Red Key^");
             }
 
             // Engine Room Items
@@ -149,7 +155,7 @@ internal class Inventory
                             case "Green Key":
                                 if (Items.hasGreenKey)
                                 {
-                                    Format.PrintSpecial("You have a green key.");
+                                    Format.PrintSpecial("A black key card with two $green stripes% across the top.");
                                     Thread.Sleep(5000);
                                 }
                                 else
@@ -162,7 +168,7 @@ internal class Inventory
                             case "Crowbar":
                                 if (Items.hasCrowbar)
                                 {
-                                    Format.PrintSpecial("You have a crowbar.");
+                                    Format.PrintSpecial("A worn crowbar, sturdy enough to pry open doors—or defend yourself.");
                                     Thread.Sleep(5000);
                                 }
                                 else
@@ -188,7 +194,7 @@ internal class Inventory
                             case "Blue Key":
                                 if (Items.hasBlueKey)
                                 {
-                                    Format.PrintSpecial("You have a blue key");
+                                    Format.PrintSpecial("A silver key card with two *blue stripes* across the top.");
                                     Thread.Sleep(5000);
                                 }
                                 else
@@ -201,7 +207,11 @@ internal class Inventory
                             case "Purple Key":
                                 if (Items.hasPurpleKey)
                                 {
-                                    Format.PrintSpecial("You have a purple key");
+                                    Format.PrintSpecial("A silver key card with two *purple stripes* across the top.", 50,
+                                    ConsoleColor.White,       
+                                    ConsoleColor.Magenta,     
+                                    ConsoleColor.White,       
+                                    ConsoleColor.White);
                                     Thread.Sleep(5000);
                                 }
                                 else
@@ -380,7 +390,7 @@ internal class Inventory
                                 break;
                         }                             
                 }
-
+            // Display exit
             Console.Clear();
 
 
