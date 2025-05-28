@@ -136,6 +136,8 @@ namespace Globals
         public const ConsoleColor defaultInterestColour = ConsoleColor.Blue;
         public const ConsoleColor defaultDangerColour = ConsoleColor.Red;
         public const ConsoleColor defaultHelpColour = ConsoleColor.Green;
+        public const ConsoleColor defaultImportantColour = ConsoleColor.Magenta;
+        public const ConsoleColor defaultHintColour = ConsoleColor.Yellow;
 
 
         /// <summary>
@@ -177,7 +179,7 @@ namespace Globals
         /// @ Purple |
         /// $ Yellow |
         /// </summary>
-        public static void PrintSpecial(string input = "*null* text input", int lineWidth = lineWidthDefault, ConsoleColor baseColour = defaultColour, ConsoleColor interestColour = defaultInterestColour, ConsoleColor dangerColour = defaultDangerColour, ConsoleColor helpColour = defaultHelpColour)
+        public static void PrintSpecial(string input = "*null* text input", int lineWidth = lineWidthDefault, ConsoleColor baseColour = defaultColour, ConsoleColor interestColour = defaultInterestColour, ConsoleColor dangerColour = defaultDangerColour, ConsoleColor helpColour = defaultHelpColour, ConsoleColor importantColour = defaultImportantColour, ConsoleColor hintColour = defaultHintColour)
         {
 
             Console.ForegroundColor = baseColour;
@@ -265,14 +267,14 @@ namespace Globals
                     else if (words[j][0] == '@' && words[j][words[j].Length - 1] == '@') // purple / important / pretty cool
                     {
                         // if started and ended with @ then make purple then set back to default
-                        Console.ForegroundColor = helpColour;
+                        Console.ForegroundColor = importantColour;
                         Console.Write(words[j].Remove(words[j].Length - 1).Remove(0, 1));
                         Console.ForegroundColor = baseColour;
                     }
                     else if (words[j][0] == '@')
                     {
                         // if started with @ then set purple until stop
-                        Console.ForegroundColor = helpColour;
+                        Console.ForegroundColor = importantColour;
                         Console.Write(words[j].Remove(0, 1));
                     }
                     else if (words[j][words[j].Length - 1] == '@')
@@ -286,14 +288,14 @@ namespace Globals
                     else if (words[j][0] == '$' && words[j][words[j].Length - 1] == '$') // yellow / location / hints
                     {
                         // if started and ended with $ then make yellow then set back to default
-                        Console.ForegroundColor = helpColour;
+                        Console.ForegroundColor = hintColour;
                         Console.Write(words[j].Remove(words[j].Length - 1).Remove(0, 1));
                         Console.ForegroundColor = baseColour;
                     }
                     else if (words[j][0] == '$')
                     {
                         // if started with $ then set yellow until stop
-                        Console.ForegroundColor = helpColour;
+                        Console.ForegroundColor = hintColour;
                         Console.Write(words[j].Remove(0, 1));
                     }
                     else if (words[j][words[j].Length - 1] == '$')
@@ -357,9 +359,9 @@ namespace Globals
             for (int i = 0; i < characters.Length; i++)
             {
 
-                if (characters[i] == '*') // blue / interest
+                if (characters[i] == '*') // green
                 {
-                    // if started and ended with * then make blue then set back to default
+                    // if started and ended with * then make green then set back to default
                     if (!isCharacter)
                     {
                         Console.ForegroundColor = playerColour;
