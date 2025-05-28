@@ -30,6 +30,14 @@ public static class MainMenu
             int padding = (bounce % 2 == 0) ? 4 : 6;
             for (int i = 0; i < padding; i++)
                 Console.WriteLine();
+
+            Console.ForegroundColor = colors[bounce % colors.Length];
+            Console.WriteLine("********************");
+            Console.WriteLine($"   * {title}*      ");
+            Console.WriteLine("********************");
+
+            Thread.Sleep(1000);
+
         }
        
 
@@ -51,6 +59,7 @@ public static class MainMenu
 
 
         };
+        
         string[] title_lines = new string[]
         {
             "********************",
