@@ -21,15 +21,9 @@ internal class Inventory
 
 
 
-            // Starting Items
-            
             if (Items.hasPurpleKey == true)
             {
-                Format.PrintSpecial("*Purple Key*", 50,
-                ConsoleColor.White,       
-                ConsoleColor.Magenta,    
-                ConsoleColor.White,      
-                ConsoleColor.White);     
+                Format.PrintSpecial("@Purple Key@");
             }
             if (Items.hasBlueKey == true)
             {
@@ -41,7 +35,7 @@ internal class Inventory
             }
             if (Items.hasCrowbar == true)
             {
-                Format.PrintSpecial("Crowbar");
+                Format.PrintSpecial("$Crowbar$");
             }
             if (Items.hasFuelCell == true)
             {
@@ -113,6 +107,8 @@ internal class Inventory
                 Format.PrintSpecial("Shuttle Fuel");
             }
 
+
+
             // If no items are in the inventory
             if (!Items.hasRedKey && !Items.hasGreenKey && !Items.hasCrowbar && !Items.hasFuelCell && !Items.hasPurpleKey && !Items.hasBlueKey && !Items.hasHandcuffs
                 && !Items.hasSword && !Items.hasWrench && !Items.hasFuelCanister && !Items.hasMaintenanceKit && !Items.hasOxygenTank && !Items.hasLaunchKey && !Items.hasWallMap
@@ -168,7 +164,7 @@ internal class Inventory
                             case "Crowbar":
                                 if (Items.hasCrowbar)
                                 {
-                                    Format.PrintSpecial("A worn crowbar, sturdy enough to pry open doors—or defend yourself.");
+                                    Format.PrintSpecial("A worn $crowbar$, sturdy enough to pry open doors—or defend yourself.");
                                     Thread.Sleep(5000);
                                 }
                                 else
@@ -207,12 +203,7 @@ internal class Inventory
                             case "Purple Key":
                                 if (Items.hasPurpleKey)
                                 {
-                                    Format.PrintSpecial("A silver key card with two *purple stripes* across the top.", 50,
-                                    ConsoleColor.White,       
-                                    ConsoleColor.Magenta,     
-                                    ConsoleColor.White,       
-                                    ConsoleColor.White);
-                                    Thread.Sleep(5000);
+                                    Format.PrintSpecial("A silver key card with two @purple stripes@ across the top.");
                                 }
                                 else
                                 {
