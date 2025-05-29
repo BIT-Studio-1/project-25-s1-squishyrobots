@@ -1,0 +1,29 @@
+squishy robots issues:
+
+	engine room from shuttle bay error not showing need key to move
+
+	add taste function
+	
+	change terminal to red in brig when power off
+
+	locker and test tube in lab not showing blue when power on
+
+	Silo looks like its interactable. it is not
+
+	help commands should be more visible
+
+	highlight lab locker objective
+
+	have objectives panel + update when objective has been read
+
+	print list of surrounding rooms in each room
+
+	formatting issues with break and unnecessary spaces
+
+
+	
+
+	
+	
+
+	
