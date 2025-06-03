@@ -70,7 +70,7 @@ public static class MainMenu
             Console.ForegroundColor = ConsoleColor.Green;
 
             // display the menu
-            string"paidRidht(10)" + "string";
+            
 
             Console.WriteLine("*********************");
             Console.WriteLine("*********************");
