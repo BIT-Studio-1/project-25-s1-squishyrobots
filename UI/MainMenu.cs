@@ -78,7 +78,7 @@ public static class MainMenu
             Console.WriteLine("*                   *");
             Console.WriteLine("*                   *");
             Console.WriteLine("*********************");
-            Console.WriteLine("*play*");
+            Format.PrintSpecial("*play*");
             //Console.WriteLine("options");
             Console.WriteLine("map");
             Console.WriteLine("help");
